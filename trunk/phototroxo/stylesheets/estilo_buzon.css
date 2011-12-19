@@ -1,0 +1,24 @@
+	
+body {
+	
+	background-color :#F2F2F2;/*#E6E6E6;/*#E6E6E6;/*#FFFFFF;/* #58ACFA;/*#F0F0D0;*/ /* beige */
+	width : 800px;
+	margin-left : auto;
+	margin-right : auto;
+	font-family: Helvetica;
+
+}
+
+#label_escribir{
+	display: block;	
+}
+
+#div_enviar{
+	margin: 750px;
+	height: 40px;
+	margin-top: 0px;
+	
+}
+textarea{
+	resize: none;
+}
