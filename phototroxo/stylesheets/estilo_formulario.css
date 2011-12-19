@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* Photrotroxo - estilo_formulario.css */
 
 body {
 	background-color : #F2F2F2; /* beige */
@@ -33,13 +33,6 @@ input,select,textarea{
 	text-align : center;
 	margin-top: 8px;
 }
-
-/*#div_datos_personales,
-#div_direccion,
-#div_practica,
-{
-  margin-bottom: 0.5em;
-}*/
 
 #label_dni,
 #label_nombre,

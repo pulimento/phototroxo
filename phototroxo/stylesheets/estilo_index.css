@@ -1,36 +1,32 @@
-/* Estilos generales */
+/* Photrotroxo - estilo_index.css */
 
-body{
-	background-color :#F2F2F2;/*#E6E6E6;/*#E6E6E6;/*#FFFFFF;/* #58ACFA;/*#F0F0D0;*/ /* beige */
+body {
+	background-color : #F2F2F2; /* beige */
 	width : 800px;
 	margin-left : auto;
 	margin-right : auto;
+	font-family: Helvetica;
 }
 
-input,select,textarea{
+input,select,textarea {
 	border: 1px solid black;
 	font-weight : bold;
 }
 
-#div_header .img{
+#div_header .img {
 	width : 600px;
 }
 
-#div_submit,
-#div_acepto{
+#div_submit, #div_acepto {
 	text-align : center;
 	margin-bottom : 0.5em;
 }
-
-
 
 legend {
   font-weight: bolder;
 }
 
-
-#label_pass
-#label_usuario{
+#label_pass, #label_usuario {
 	margin-top : auto;
 	margin-bottom : auto;
   	display: block;
@@ -40,58 +36,6 @@ legend {
   	padding-right: 0.5em;
 }
 
-/* Datos personales */
-
-
-
-
-#div_pass,
-#div_usuario{
+#div_pass, #div_usuario {
 	 margin-bottom: 0.5em;
-
-}
-
-input#pass {
-  width: 12em;
-}
-
-input#usuario {
-  width: 6em;
-}
-
-
-
-
-/* Registro */
-input#usuario{
-	width: 12em;
-}
-input#contraseÃ±a{
-	width: 12em;
-
-
-/* Pr�ctica */
-
-#div_comprimido {
-  float: left;
-  margin-right: 2em;
-}
-
-textarea#descripcion {
-  width: 50em;
-  height: 8em;
-}
-
-/* Etiquetas de campos erroneos */
-label.error {
-	color : red;
-	font-weight : bold;
-}
-
-/* Mensajes de Error */
-div.error {
-	color : #A52A2A; /* brown */	
-	border : 2px solid red;
-	padding : 10px;
-	margin: 10px;
 }

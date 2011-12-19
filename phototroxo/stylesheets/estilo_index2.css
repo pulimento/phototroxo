@@ -1,4 +1,4 @@
-/* Photrotroxo - estilo_head.css */
+/* Photrotroxo - estilo_index2.css */
 
 body {
 	background-color : #F2F2F2; /* beige */
@@ -8,13 +8,17 @@ body {
 	font-family: Helvetica;
 }
 
-table{
-	border: 5px double #000000;
-	width: 500px;
-	margin: 20px auto;
+#div_header{
 	text-align: center;
 }
 
-#div_header .img {
-	width: 200px;	
+#img_header{
+	width : 600px;
+}
+
+#div_content{
+	padding-top : 3%;
+}
+#inicio{
+	margin-top: 30px;
 }
