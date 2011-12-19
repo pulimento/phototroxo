@@ -1,0 +1,17 @@
+/* Estilos generales */
+
+body {
+	background-color : #F2F2F2; /* beige */
+	width : 800px;
+	margin-left : auto;
+	margin-right : auto;
+	font-family: Helvetica;
+}
+
+#div_header{
+	text-align: center;
+}
+
+#img_header{
+	width : 600px;
+}
