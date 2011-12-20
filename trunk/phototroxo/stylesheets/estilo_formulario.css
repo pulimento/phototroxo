@@ -57,7 +57,7 @@ input,select,textarea{
 
 #div_sexo {
   float: right;
-  margin-right : 6%;
+  margin-right : 4%;
 }
 
 #div_dni, #div_nombre, #div_apellidos, #div_email, #div_calle, #div_poblacion, #div_provincia,  #div_fechanacimiento,

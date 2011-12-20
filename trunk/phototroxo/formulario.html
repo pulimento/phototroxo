@@ -165,7 +165,7 @@
 	<body>
 		<!-- Header -->
 		<div id="div_header">
-			<img id="img_header" src="images/header.png" alt="Phototroxo"/>
+			<img id="img_header" src="images/header.png" alt="Phototroxo" />
 		</div>
 		<div id="div_info">
 			<p id="info_text" class="hint">
@@ -205,13 +205,27 @@
 						<legend>
 							Datos personales
 						</legend>
-						I -->
+						<!-- DNI -->
 						<div id="div_dni">
 							<label id="label_dni" for="dni">D.N.I.:</label>
 							<input id="dni" name="dni" type="text" maxlength="8" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;"/>
 							-
 							<input id="letra" name="letra" type="text" maxlength="1" onChange="javascript:this.value=this.value.toUpperCase();"/>
-						</div>
+						</div>						
+						<!-- Elección del sexo -->
+						<div id="div_sexo">
+							<div id="div_titulo_sexo">
+								Sexo:
+							</div>
+							<div id="div_sexo_hombre">
+								<input id="sexo_hombre" name="sexo" type="radio" value="H"/>
+								<label id="label_hombre" for="sexo_hombre">Hombre</label>
+							</div>
+							<div id="div_sexo_mujer">
+								<input id="sexo_mujer" name="sexo" type="radio" value="M"/>
+								<label id="label_mujer" for="sexo_mujer">Mujer</label>
+							</div>
+						</div>						
 						<!-- Nombre -->
 						<div id="div_nombre">
 							<label id="label_nombre" for="nombre">Nombre:</label>
@@ -234,20 +248,6 @@
 							<label id="label_fechanacimiento" for="fechanacimiento">Fecha nac.:</label>
 							<input type="text" name="datepicker" id="datepicker" readonly="readonly" size="12" />
 							<label id="user_hint" class="hint">Comprobaci&oacute;n de edad</label>
-						</div>
-						<!-- Elección del sexo -->
-						<div id="div_sexo">
-							<div id="div_titulo_sexo">
-								Sexo:
-							</div>
-							<div id="div_sexo_hombre">
-								<input id="sexo_hombre" name="sexo" type="radio" value="H"/>
-								<label id="label_hombre" for="sexo_hombre">Hombre</label>
-							</div>
-							<div id="div_sexo_mujer">
-								<input id="sexo_mujer" name="sexo" type="radio" value="M"/>
-								<label id="label_mujer" for="sexo_mujer">Mujer</label>
-							</div>
 						</div>
 					</fieldset>
 				</div>

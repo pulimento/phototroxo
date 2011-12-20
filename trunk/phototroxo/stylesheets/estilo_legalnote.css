@@ -10,8 +10,9 @@ body {
 
 #div_header{
 	text-align: center;
+	margin-bottom: 3em;
 }
 
 #img_header{
-	width : 600px;
+	width: 600px;
 }
