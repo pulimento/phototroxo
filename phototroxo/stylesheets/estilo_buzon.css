@@ -13,15 +13,21 @@ body {
 }
 
 #div_enviar {
-	margin: 750px;
 	height: 40px;
-	margin-top: 0px;
+	float: right;
+	margin-top: 2em;
+	margin-right: 1em;
 }
 
 textarea {
 	resize: none;
 }
 
+#div_header{
+	text-align: center;
+	margin-bottom: 3em;
+}
+
 #img_header{
-	width : 600px;
+	width: 600px;
 }

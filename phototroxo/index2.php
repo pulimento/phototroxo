@@ -11,7 +11,7 @@
 	<body>
 		<!-- Header -->
 		<div id="div_header">
-			<img id="img_header" src="images/header.png" alt="Phototroxo"/>
+			<img id="img_header" src="images/header.png" alt="Phototroxo" />
 		</div>
 		<!-- Contenido -->
 		<div id="div_content">
