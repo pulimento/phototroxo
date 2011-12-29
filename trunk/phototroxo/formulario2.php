@@ -123,11 +123,10 @@
 				if (!empty($my_error)) {
 					echo "Ha habido un error al insertar los valores. $my_error";
 				} else {
-
-				}	echo "Los datos han sido introducidos satisfactoriamente ;)";
-
-				echo "<a id=\"inicio\" href=\"head.html\"> Inicio </a>";
-			} else {
+					echo "Te acabas de registrar satisfactoriamente en Phototroxo, " . $user . " ;) <br/><br/>";
+					echo "Puedes volver a la <a id=\"inicio\" href=\"index.html\">página principal</a> para iniciar sesión";
+				}
+			} else { // No se ha superado la validación del lado del servidor
 				echo "<br/><br/>Los datos que ha introducido no son válidos, por favor vuelva a intentarlo";
 			}
 			?>
