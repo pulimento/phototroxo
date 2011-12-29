@@ -25,8 +25,11 @@
 					dateFormat : 'dd/mm/yy',
 					firstDay : 1,
 					isRTL : false,
+					//buttonImage: 'images/calendar-icon.png',
+					//buttonImageOnly: true,
 					showOn : 'button',
-					buttonText : 'Select...',
+					constrainInput : true,
+					buttonText : 'Seleccionar fecha',
 					showMonthAfterYear : false,
 					yearSuffix : ''
 				};
@@ -58,7 +61,7 @@
 				var ctrlNombre = document.getElementById("nombre");
 				var ctrlApellidos = document.getElementById("apellidos");
 				var ctrlEmail = document.getElementById("email");
-				var ctrlDatepicker = document.getElementById("datepicker");
+				var ctrlFecha = document.getElementById("datepicker");
 				var ctrlCalle = document.getElementById("nombre");
 				var ctrlPoblacion = document.getElementById("poblacion");
 				var ctrlProvincia = document.getElementById("provincia");
@@ -68,6 +71,7 @@
 				var letrasDNI = "TRWAGMYFPDXBNJZSQVHLCKET";
 				var validado = true;
 				var msgError = "";
+				var patronFecha = /^\d{2}\/\d{2}\/\d{4}$/;
 
 				//Pone todos los labels en negro, útil si el usuario se equivoca dos veces
 				var labels = document.getElementsByTagName("label"), i;
@@ -131,9 +135,9 @@
 					validado = false;
 				}
 
-				if(ctrlDatepicker.value == "") {
-					msgError += "- El campo 'Fecha de Nacimiento' no puede estar vac\xEDo\n";
-					document.getElementById("label_fechanacimiento").setAttribute("class", "error");
+				if(patronFecha.test(ctrlFecha.value) == false) {
+					msgError += "- Formato de fecha no v\xE1lido (debe ser DD/MM/AAAA)\n";
+					document.getElementById("label_datepicker").setAttribute("class", "error");
 					validado = false;
 				}
 
@@ -158,6 +162,7 @@
 				if(msgError != "") {
 					alert("Los datos introducidos no son v\xE1lidos, por favor compruebe lo siguiente:\n\n" + msgError);
 				}
+
 				return validado;
 			}
 		</script>
@@ -247,8 +252,8 @@
 						</div>
 						<!--Fecha nacimiento-->
 						<div id="div_fechanacimiento">
-							<label id="label_fechanacimiento" for="fechanacimiento">Fecha nac.:</label>
-							<input type="text" name="datepicker" id="datepicker" readonly="readonly" size="12" />
+							<label id="label_datepicker" for="datepicker">Fecha nac.:</label>
+							<input type="text" name="datepicker" id="datepicker" size="12" />
 							<label id="user_hint" class="hint">Comprobaci&oacute;n de edad</label>
 						</div>
 					</fieldset>
