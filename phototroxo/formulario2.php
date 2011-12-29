@@ -74,7 +74,7 @@
 
 			//fecha es un array con día, mes y año
 			if (count($fecha) == 1) {
-				echo "- El campo 'Fecha de Nacimiento' no puede estar vacío<br/>";
+				echo "- La fecha introducida no es válida<br/>";
 				$validado = false;
 			} else {
 				$fechaSQL = $fecha[2] . "-" . $fecha[1] . "-" . $fecha[0];
@@ -126,8 +126,8 @@
 					echo "Te acabas de registrar satisfactoriamente en Phototroxo, " . $user . " ;) <br/><br/>";
 					echo "Puedes volver a la <a id=\"inicio\" href=\"index.html\">página principal</a> para iniciar sesión";
 				}
-			} else { // No se ha superado la validación del lado del servidor
-				echo "<br/><br/>Los datos que ha introducido no son válidos, por favor vuelva a intentarlo";
+			} else {// No se ha superado la validación del lado del servidor
+				echo "<br/><br/>Los datos que ha introducido no son válidos, por favor <a href=\"#\" onclick=\"history.back(1);return false\">vuelva a intentarlo</a>";
 			}
 			?>
 		</div>
