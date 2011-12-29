@@ -25,6 +25,8 @@
 					dateFormat : 'dd/mm/yy',
 					firstDay : 1,
 					isRTL : false,
+					showOn : 'button',
+					buttonText : 'Select...',
 					showMonthAfterYear : false,
 					yearSuffix : ''
 				};
@@ -211,7 +213,7 @@
 							<input id="dni" name="dni" type="text" maxlength="8" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;"/>
 							-
 							<input id="letra" name="letra" type="text" maxlength="1" onChange="javascript:this.value=this.value.toUpperCase();"/>
-						</div>						
+						</div>
 						<!-- Elección del sexo -->
 						<div id="div_sexo">
 							<div id="div_titulo_sexo">
@@ -225,7 +227,7 @@
 								<input id="sexo_mujer" name="sexo" type="radio" value="M"/>
 								<label id="label_mujer" for="sexo_mujer">Mujer</label>
 							</div>
-						</div>						
+						</div>
 						<!-- Nombre -->
 						<div id="div_nombre">
 							<label id="label_nombre" for="nombre">Nombre:</label>
