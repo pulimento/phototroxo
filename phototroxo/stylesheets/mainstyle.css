@@ -15,7 +15,8 @@ body {
 #table_mainmenu {
 	margin-top: -30px;
 	margin-bottom: 20px;
-	border: 5px groove #000000;
+	border: 2px;
+	border-style:inset;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -23,13 +24,14 @@ body {
 .celdamenu {
 	padding: 4px 15px 4px 15px;
 	font-weight: bolder;
-	background-color: #00AAEE;
+	background-color: #0033EE;
 }
-a.celdamenu /*:active a.celdamenu:visited*/ link.celdamenu {
+a:active, a:visited, a:link {
 	color: white;
 	text-decoration: none;
 }
-a.celdamenu:hover {
+a:hover {
 	color: red;
-	/*text-decoration: underline;*/
+	text-decoration: underline;
+	font-weight: bold;
 }
