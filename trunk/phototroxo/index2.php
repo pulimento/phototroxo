@@ -65,10 +65,15 @@ session_start();
 					if (!empty($row)) {//Si el usuario y contraseña son válidos
 						$idUsuario = $row["idU"];
 						$nombreUsuario = $row["Nombre"];
+						$_SESSION["idUsuario"] = $idUsuario;
+						$_SESSION["nombreUsuario"] = $nombreUsuario;
 						//Mandar a head.html
-						header('Location: head.php');
-						//Guardar variables de sesión
 						
+						header('Location: head.php');
+						
+						//Guardar variables de sesión
+						$_SESSION["idUsuario"] = $idUsuario;
+						$_SESSION["nombreUsuario"] = $nombreUsuario;
 					} else {//No está registrado!!
 						echo "Fallo en el usuario y/o contraseña, por favor <a href=\"#\" onclick=\"history.back(1);return false\">vuelva a intentarlo</a>";
 					}

@@ -1,11 +1,1 @@
 @import url('mainstyle.css');
-
-a:visited {
-	color: white;
-}
-a:hover {
-	color: red;
-}
-a:active {
-	color: green;
-}
