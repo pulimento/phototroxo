@@ -26,9 +26,9 @@ session_start();
 			<label><b>&Uacute;ltimos comentarios</b></label>
 		</div>
 		<div align="left">
-			<br/>
-			<br/>
-			<label><b>¿Qui&eacute;nes somos?</b></label>
+			<a href="quienessomos.html">¿Qui&eacute;nes somos?</a>
+		</div>
+		<div id = "sugerencia">
 			<a href="mailto:staff@phototroxo.com">Enviar sugerencia al correo</a>
 		</div>
 	</body>
