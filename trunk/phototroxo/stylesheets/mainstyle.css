@@ -3,10 +3,11 @@ body {
 	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
-	font-family: Helvetica,Verdana;
+	font-family: Helvetica, Verdana;
 }
 #div_header {
 	text-align: center;
+	margin-top: -20px;
 	margin-bottom: 3em;
 }
 #img_header {
@@ -16,22 +17,32 @@ body {
 	margin-top: -30px;
 	margin-bottom: 20px;
 	border: 2px;
-	border-style:inset;
+	border-style: inset;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 }
 .celdamenu {
-	padding: 4px 15px 4px 15px;
-	font-weight: bolder;
+	padding: 5px 20px 5px 20px;
 	background-color: #0033EE;
 }
 a:active, a:visited, a:link {
-	color: white;
 	text-decoration: none;
 }
 a:hover {
-	color: red;
 	text-decoration: underline;
+	color: red;
+}
+.celdamenu a:active, .celdamenu a:visited, .celdamenu a:link {
 	font-weight: bold;
+	color: white;
+}
+.celdamenu a:hover {
+	color: red;
+	font-weight: bolder;
+}
+#sesion {
+	font-size: 0.7em;
+	color: #111111;
+	text-align: right;
 }
