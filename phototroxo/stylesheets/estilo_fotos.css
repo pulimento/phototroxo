@@ -1,9 +1,11 @@
-@import url('mainstyle.css');
-
-#div_content {
-	margin-left: 2em;
+body {
+	background-color : #F2F2F2; /* beige */
+	width : 800px;
+	margin-left : auto;
+	margin-right : auto;
+	font-family: Helvetica;
 }
-#input_search {
-	width: 20em;
-	margin-left: 2em;
+
+#img_header{
+	width: 800px;
 }
