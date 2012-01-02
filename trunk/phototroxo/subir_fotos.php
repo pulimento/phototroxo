@@ -29,7 +29,7 @@ session_start();
 					<label id="label_uploadphoto" for="uploadedphoto">Selecciona una foto:</label>
 					<input name="uploadedphoto" type="file" />
 				</div>
-				<button id="submit">
+				<button id="button_subirfoto">
 					Subir foto
 				</button>
 			</form>
