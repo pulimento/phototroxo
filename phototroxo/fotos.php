@@ -18,7 +18,7 @@ session_start();
 		<!-- Contenido -->
 		<div id="div_content">
 			<h2 id="text_busca">Tus Fotos</h2>
-			//Lista de Fotos
+			<p>Aqui iran las fotos del propio usuario</p>
 		</div>
 	</body>
 </html>
