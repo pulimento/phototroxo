@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
@@ -23,6 +27,7 @@
 			//Definición de variables
 			$user = $_POST['user'];
 			$password = $_POST['password'];
+
 			$validado = true;
 
 			//Validación del lado del servidor
@@ -41,36 +46,32 @@
 
 			/*echo $user."<br/>";
 			 echo $password."<br/>";
-			 echo $sexo."<br/>";
-			 echo $dniconletra."<br/>";
-			 echo $nombre."<br/>";
-			 echo $apellidos."<br/>";
-			 echo $email."<br/>";
-			 echo $_POST['datepicker']."<br/>";
-			 echo $fecha[0]."<br/>";
-			 echo $fecha[1]."<br/>";
-			 echo $fecha[2]."<br/>";
-			 echo "FechaSQL ".$fechaSQL."<br/>";
-			 echo $calle."<br/>";
-			 echo $poblacion."<br/>";
-			 echo $provincia."<br/>";*/
+			 */
 
 			if ($validado) {
 				$link = mysql_connect("localhost", "root", "");
 				mysql_select_db("phototroxo", $link);
 
-				// Con esta sentencia SQL insertaremos los datos en la base de datos
-				mysql_query("INSERT INTO usuario (User,Pass) VALUES ('$user','$password')", $link);
+				$result = mysql_query("SELECT * FROM usuario WHERE User = '$user' AND Pass = '$password'", $link);
+				$row = mysql_fetch_assoc($result);
 
 				// Ahora comprobaremos que todo ha ido correctamente (tratamiento de errores)
 				$my_error = mysql_error($link);
 
-				if (!empty($my_error)) {
-					echo "Ha habido un error al insertar los valores. $my_error";
+				if (!empty($my_error)) {//Si hay error accediendo a la BD
+					echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
 				} else {
-
-				}	echo "Los datos han sido introducidos satisfactoriamente ;)";
-			} else {
+					//echo sizeof($result);
+					if (!empty($row)) {//Si el usuario y contraseña son válidos
+						//Mandar a head.html
+						header('Location: head.php');
+						//Guardar variables de sesión
+						
+					} else {//No está registrado!!
+						echo "Fallo en el usuario y/o contraseña, por favor <a href=\"#\" onclick=\"history.back(1);return false\">vuelva a intentarlo</a>";
+					}
+				}
+			} else {//Si no ha pasado la validación
 				echo "<br/><br/>Los datos que ha introducido no son válidos, por favor vuelva a intentarlo";
 			}
 			?>
