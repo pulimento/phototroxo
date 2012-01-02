@@ -9,17 +9,10 @@
 		<meta name="author" content="alumno" />
 	</head>
 	<body>
-		<div id="div_header">
-			<img id="img_header" src="images/header.png" alt="Phototroxo" />
-		</div style="font-weight: bold;">
-		<table summary = "tabla que contiene el menu principal">
-			<tr id="fila">
-				<td><a href="head.html"> Inicio </a></td>
-				<td><a href="fotos.html"> Fotos </a></td>
-				<td><a href="buscar_fotos.html"> BuscarFotos </a></td>
-				<td><a href="subir_fotos.html"> SubirFotos </a></td>
-			</tr>
-		</table>
+		<!-- Cabecera(logo y menú) -->
+		<?php include("cabecera.php"); ?>
+		
+		<!-- Contenido -->
 		<div align="center">
 			<br />
 			<label><b>&Uacute;ltimas fotos subidas</b></label>
@@ -32,7 +25,7 @@
 			<br/>
 			<br/>
 			<label><b>¿Qui&eacute;nes somos?</b></label>
-			<a href="mailto:pulimento@gmail.com">Enviar sugerencia al correo</a>
+			<a href="mailto:staff@phototroxo.com">Enviar sugerencia al correo</a>
 		</div>
 	</body>
 </html>

@@ -1,56 +1,37 @@
-/* Photrotroxo - estilo_index.css */
+@import url('mainstyle.css');
 
-body {
-	background-color : #F2F2F2; /* beige */
-	width : 800px;
-	margin-left : auto;
-	margin-right : auto;
-	font-family: Helvetica;
+input, select, textarea {
+	width: 20em;
+	margin-left: 2em;
 }
-
-input,select,textarea {
-	border: 1px solid black;
-	font-weight : bold;
-}
-
-#div_header{
-	text-align: center;
-	margin-bottom: 3em;
-}
-
-#img_header{
-	width: 600px;
-}
-
 #div_submit, #div_acepto {
-	text-align : center;
-	margin-bottom : 0.5em;
+	text-align: center;
+	margin-bottom: 0.5em;
 }
-
 legend {
-  font-weight: bolder;
+	font-weight: bolder;
 }
-
 #label_pass, #label_usuario {
-	margin-top : auto;
-	margin-bottom : auto;
-  	display: block;
-  	float: left;
-  	text-align: right;
-  	width: 6em;
-  	padding-right: 0.5em;
+	margin-top: auto;
+	margin-bottom: auto;
+	display: block;
+	float: left;
+	text-align: right;
+	width: 6em;
+	padding-right: 0.5em;
 }
-
 #div_pass, #div_usuario {
 	margin-bottom: 0.5em;
 }
-
-#div_passolvidada{
-	text-align: center;	
-	margin-top: 3em;	
+#div_passolvidada {
+	text-align: center;
+	margin-top: 3em;
 }
-
-#div_copyright{
+#div_copyright {
 	margin-top: 1em;
-	text-align: center;	
+	text-align: center;
+}
+#input_search {
+	width: 20em;
+	margin-left: 2em;
 }

@@ -9,42 +9,36 @@
 		<link rel="stylesheet" type="text/css" href="stylesheets/estilo_formulario2.css" />
 	</head>
 	<body>
-		<!-- Header -->
-		<div id="div_header">
-			<img id="img_header" src="images/header.png" alt="Phototroxo"/>
-		</div>
+		<!-- Cabecera(logo y menú) -->
+		<?php include("cabecera.php"); ?>
+		
 		<!-- Contenido -->
-
 		<div id="div_content">
 			<?php
- 
-		$titulo =$_GET['titulo'];
- 		$valido=true;
-       
-        
-        if($foto == ""){
-        	echo "- El titulo de la foto no puede ser vacío<br/>";
-				$validado = false; 
-		}
-		
-		if ($validado) {
-			$config = array();
-			$config["sql_host"] = "localhost";
-			$config["sql_user"] = "root";
-			$config["sql_pass"] = "******";
-			$config["sql_database"] = "phototroxo";
-			$sql_link = @mysql_connect($config['sql_host'], $config['sql_user'], $config['sql_pass']) or die(mysql_error($sql_link));
-			@mysql_select_db($config['sql_database'],$sql_link);
-			
-			$q = "SELECT * FROM `authorize` WHERE titulo = '$titulo'";
-        	$result = mysql_query($q, $sql_link) or die(mysql_error($sql_link));
-        	$snd_tot = mysql_num_rows($result);
-       		 mysql_free_result($result);
-		}
-       ?> 
 
-    
-        
-	</div>
+			$titulo = $_GET['titulo'];
+			$valido = true;
+
+			if ($foto == "") {
+				echo "- El titulo de la foto no puede ser vacío<br/>";
+				$validado = false;
+			}
+
+			if ($validado) {
+				$config = array();
+				$config["sql_host"] = "localhost";
+				$config["sql_user"] = "root";
+				$config["sql_pass"] = "******";
+				$config["sql_database"] = "phototroxo";
+				$sql_link = @mysql_connect($config['sql_host'], $config['sql_user'], $config['sql_pass']) or die(mysql_error($sql_link));
+				@mysql_select_db($config['sql_database'], $sql_link);
+
+				$q = "SELECT * FROM `authorize` WHERE titulo = '$titulo'";
+				$result = mysql_query($q, $sql_link) or die(mysql_error($sql_link));
+				$snd_tot = mysql_num_rows($result);
+				mysql_free_result($result);
+			}
+			?>
+		</div>
 	</body>
 </html>

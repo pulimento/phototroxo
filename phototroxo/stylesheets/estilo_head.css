@@ -1,41 +1,11 @@
-/* Photrotroxo - estilo_head.css */
+@import url('mainstyle.css');
 
-body {
-	background-color : #F2F2F2; /* beige */
-	width : 800px;
-	margin-left : auto;
-	margin-right : auto;
-	font-family: Helvetica;
-}
-
-table{
-	border: 5px groove #000000;
-	width: 500px;
-	margin: 20px auto;
-	text-align: center;
-	
-}
-
-#div_header{
-	text-align: center;
-	margin-bottom: 3em;
-}
-
-#img_header{
-	width: 600px;
-}
-
-td{
-	font-weight: 700 ;
-	color: white;
-	background-color:#045FB4;
-}
-a:visited{
+a:visited {
 	color: white;
 }
-a:hover{
-	color:red;
+a:hover {
+	color: red;
 }
-a:active{
-	color:green;
+a:active {
+	color: green;
 }

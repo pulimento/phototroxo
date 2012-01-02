@@ -5,42 +5,84 @@
 		<title>&iexcl;Bienvenido a Phototroxo!</title>
 		<link rel="stylesheet" type="text/css"  href="stylesheets/estilo_index.css" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
+		<meta name="author" content="Patricia Raigada" />
+		<!-- INICIO DE JAVASCRIPT -->
+		<!-- Validación del formulario -->
+		<script type="text/javascript" language="JavaScript">
+			function procesarIndex() {
+				//Definición de variables
+				var ctrlUser = document.getElementById("usuario");
+				var ctrlPassword = document.getElementById("pass");
+				var ctrlAcepto = document.getElementById("acepto");
+				var validado = true;
+				var msgError = "";
+
+				//Pone todos los labels en negro, útil si el usuario se equivoca dos veces
+				var labels = document.getElementsByTagName("label"), i;
+				for( i = 0; i < labels.length; i++)
+				labels[i].setAttribute("class", "default");
+
+				if(ctrlUser.value.length < 4) {
+					msgError += "- El usuario debe tener al menos cuatro caracteres\n";
+					document.getElementById("label_usuario").setAttribute("class", "error");
+					ctrlUser.value = "";
+					validado = false;
+				}
+
+				if(ctrlPassword.value.length < 6) {
+					msgError += "- La contrase\xF1a debe tener al menos seis caracteres\n";
+					document.getElementById("label_pass").setAttribute("class", "error");
+					ctrlPassword.value = "";
+					validado = false;
+				}
+
+				if(ctrlAcepto.checked == false) {
+					msgError += "- Debe aceptar las condiciones generales y la pol\xEDtica de privacidad\n";
+					document.getElementById("label_acepto").setAttribute("class", "error");
+					validado = false;
+				}
+
+				if(msgError != "") {
+					alert("Los datos introducidos no son v\xE1lidos, por favor compruebe lo siguiente:\n\n" + msgError);
+				}
+				return validado;
+			}
+		</script>
+		<!-- Fin de validación del formulario -->
+		<!-- FIN DE JAVASCRIPT -->
 	</head>
 	<body>
 		<div id="div_header">
 			<img id="img_header" src="images/header.png" alt="Phototroxo" />
 		</div>
 		<div id="div_form">
-			<form>
+			<form id="index" action="index2.php" method="post" onsubmit="return procesarIndex()">
 				<!-- <fieldset> -->
 				<div id="div_registro">
 					<div id="div_usuario">
 						<label id="label_usuario" for="usuario">Usuario:</label>
-						<input id="usuario" name="usuario" type="text" />
+						<input id="usuario" name="user" type="text" />
 					</div>
 					<div id="div_pass">
 						<label id="label_pass" for="pass">Contrase&ntilde;a:</label>
-						<input id="pass" name="pass" type="password" />
+						<input id="input_search" name="password" type="password" />
 					</div>
 				</div>
 				<!-- </fieldset> -->
+				<div id="div_botones">
+					<button id="submit" />
+					Enviar <a href="formulario.html" id="boton_registrar"> Reg&iacute;strate
+					</button>
+				</div>
+				<div id="div_passolvidada">
+					<a id="text_passolvidada" href="dondesea">&iquest;Has olvidado tu contrase&ntilde;a?</a>
+				</div>
+				<div id="div_copyright">
+					<p id="text_copyright">
+						&copy; PhotoTroxo 2011
+					</p>
+				</div>
 			</form>
-		</div>
-		<div id="div_botones">
-			<button onclick="location.href = 'head.html'" id="boton_enviar">
-				Enviar
-			</button>
-			<button onclick="location.href = 'formulario.html'" id="boton_registrar">
-				Reg&iacute;strate
-			</button>
-		</div>
-		<div id="div_passolvidada">
-			<a id="text_passolvidada" href="dondesea">&iquest;Has olvidado tu contrase&ntilde;a?</a>
-		</div>
-		<div id="div_copyright">
-			<p id="text_copyright">
-				&copy; PhotoTroxo 2011
-			</p>
 		</div>
 	</body>
 </html>
