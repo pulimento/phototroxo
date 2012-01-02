@@ -3,7 +3,7 @@ body {
 	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
-	font-family: Helvetica;
+	font-family: Helvetica,Verdana;
 }
 #div_header {
 	text-align: center;

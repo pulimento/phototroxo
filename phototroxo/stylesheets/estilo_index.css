@@ -1,27 +1,32 @@
 @import url('mainstyle.css');
-
-input, select, textarea {
-	width: 20em;
-	margin-left: 2em;
-}
-#div_submit, #div_acepto {
-	text-align: center;
-	margin-bottom: 0.5em;
+input {
+	width: 15em;
+	height: 1.5em;
+	margin-left: 1.4em;
 }
 legend {
 	font-weight: bolder;
 }
 #label_pass, #label_usuario {
-	margin-top: auto;
-	margin-bottom: auto;
 	display: block;
 	float: left;
 	text-align: right;
-	width: 6em;
+	width: 10em;
 	padding-right: 0.5em;
+	line-height: 1.5em;
 }
 #div_pass, #div_usuario {
-	margin-bottom: 0.5em;
+	margin-bottom: 0.4em;
+}
+#div_botones {
+	padding-left: 5em;
+	padding-top: 1em;
+}
+#button_submit {
+	margin-right: 1.5em;
+	font-size: 1.1em;
+	color: white;
+	background: #0055FF;
 }
 #div_passolvidada {
 	text-align: center;
@@ -30,8 +35,4 @@ legend {
 #div_copyright {
 	margin-top: 1em;
 	text-align: center;
-}
-#input_search {
-	width: 20em;
-	margin-left: 2em;
 }

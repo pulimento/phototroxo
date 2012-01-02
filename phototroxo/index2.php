@@ -52,8 +52,8 @@ session_start();
 				$link = mysql_connect("localhost", "root", "");
 				mysql_select_db("phototroxo", $link);
 
-				$result = mysql_query("SELECT * FROM usuario WHERE User = '$user' AND Pass = '$password'", $link);
-				$row = mysql_fetch_assoc($result);
+				$result = mysql_query("SELECT u.User, u.Pass, u.idU, u.Nombre FROM usuario u WHERE User = '$user' AND Pass = '$password'", $link);
+				$row = mysql_fetch_array($result);
 
 				// Ahora comprobaremos que todo ha ido correctamente (tratamiento de errores)
 				$my_error = mysql_error($link);
@@ -63,6 +63,8 @@ session_start();
 				} else {
 					//echo sizeof($result);
 					if (!empty($row)) {//Si el usuario y contraseña son válidos
+						$idUsuario = $row["idU"];
+						$nombreUsuario = $row["Nombre"];
 						//Mandar a head.html
 						header('Location: head.php');
 						//Guardar variables de sesión
