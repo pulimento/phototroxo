@@ -2,3 +2,22 @@
 #sugerencia {
 	text-align: right;
 }
+.foto_tabla{
+	max-height: 200px;
+	max-width: 150px;
+	padding: 1px 5px 1px 5px;
+}
+.celda_tabla_fotos{
+	width : 180px;
+	height : 200px;
+}
+#tabla_ultimasfotos{
+	border: solid;
+	margin-top : 20px;
+}
+#ultimasfotos{
+	margin: 10px 0px 10px 0px;
+}
+#ultimoscomentarios{
+	margin: 10px 0px 10px 0px;
+}
