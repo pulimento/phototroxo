@@ -44,7 +44,8 @@ $idU = $_SESSION["idUsuario"];
 				//Mostrar las fotos
 				echo "<table id=\"tabla_ultimasfotos\"><tr>";//Inicio de la tabla
 				for ($j = 0; $j < mysql_num_rows($result); $j++) {
-					echo "<td class=\"celda_tabla_fotos\"><img class=\"foto_tabla\" src=\"" . $arrayfotos[$j][0] . "\"</img></td>";
+					echo "<td class=\"celda_tabla_fotos\">";
+					echo "<a href=\"verfoto.php?idI=".$arrayfotos[$j][2]."\"><img class=\"foto_tabla\" src=\"" . $arrayfotos[$j][0] . "\"</img></a></td>";
 				}
 				echo "</tr></table>";//Cerramos las etiquetas de la tabla
 			}

@@ -1,0 +1,13 @@
+@import url('mainstyle.css');
+
+#div_title{
+	font-size: 2em;
+	margin-bottom: 1.5em;
+	padding-left: 3em; 
+}
+#foto{
+	display: block;
+	margin: auto;
+	max-height: 500px;
+	max-width: 600px;
+}

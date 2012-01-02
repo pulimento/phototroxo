@@ -21,11 +21,11 @@ session_start();
 		<div id="div_content">
 			<h2 id="text_subirfotos">Subir Fotos</h2>
 			<form enctype="multipart/form-data" action="uploadphoto.php" method="POST">
-				<div>
+				<div id="titulo_foto">
 					<label id="label_title_uploadphoto" for="title_uploadphoto">T&iacute;tulo:</label>
 					<input name="title_uploadphoto" type="text" />
 				</div>
-				<div>
+				<div id="seleccionarfoto">
 					<label id="label_uploadphoto" for="uploadedphoto">Selecciona una foto:</label>
 					<input name="uploadedphoto" type="file" />
 				</div>
