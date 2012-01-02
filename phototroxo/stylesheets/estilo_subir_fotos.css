@@ -1,7 +1,10 @@
 @import url('mainstyle.css');
 #button_subirfoto {
-	margin-top: 2em;
 	font-size: 1.1em;
 	color: white;
 	background: #0055FF;
+}
+#titulo_foto, #seleccionarfoto{
+	margin-bottom: 1em;
+	margin-left: 2em;
 }
