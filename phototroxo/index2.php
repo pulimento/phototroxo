@@ -45,7 +45,7 @@ session_start();
 			//FIN DE LA VALIDACION DEL LADO DEL SERVIDOR
 
 			if ($validado) {
-				$link = mysql_connect("localhost", "root", "") or die;
+				$link = mysql_connect("localhost", "root", "") or die ;
 				mysql_select_db("phototroxo", $link);
 
 				$result = mysql_query("SELECT u.User, u.Pass, u.idU, u.Nombre FROM usuario u WHERE User = '$user' AND Pass = '$password'", $link);
@@ -64,9 +64,9 @@ session_start();
 						$_SESSION["idUsuario"] = $idUsuario;
 						$_SESSION["nombreUsuario"] = $nombreUsuario;
 						//Mandar a head.html
-						
+
 						header('Location: head.php');
-						
+
 						//Guardar variables de sesión
 						$_SESSION["idUsuario"] = $idUsuario;
 						$_SESSION["nombreUsuario"] = $nombreUsuario;

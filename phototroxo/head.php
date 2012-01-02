@@ -14,8 +14,10 @@ session_start();
 	</head>
 	<body>
 		<!-- Cabecera(logo y menú) -->
-		<?php include("cabecera.php"); ?>
-		
+		<?php
+			include ("cabecera.php");
+		?>
+
 		<!-- Contenido -->
 		<div align="center">
 			<br />

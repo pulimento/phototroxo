@@ -55,9 +55,9 @@ session_start();
 					//echo "Guardado en: " . $ruta . "<br/>";
 					echo "<h3>La foto se ha subido correctamente ;)</h3>";
 					echo "<a href=\"subir_fotos.php\">Subir otra foto</a>";
-					echo "<br/><br/>Título : " . $titulo."<br/><br/>";
+					echo "<br/><br/>Título : " . $titulo . "<br/><br/>";
 					echo "<div id=\"div_fotoreciensubida\">
-					<img id=\"img_fotoreciensubida\" src=\"".$ruta."\"/></div>";
+					<img id=\"img_fotoreciensubida\" src=\"" . $ruta . "\"/></div>";
 				}
 
 				/*echo "<br/><br/>Upload: " . $_FILES["uploadedphoto"]["name"] . "<br />";

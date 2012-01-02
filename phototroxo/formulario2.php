@@ -109,7 +109,7 @@
 			 echo $provincia."<br/>";*/
 
 			if ($validado) {
-				$link = mysql_connect("localhost", "root", "") or die;
+				$link = mysql_connect("localhost", "root", "") or die ;
 				mysql_select_db("phototroxo", $link);
 
 				// Con esta sentencia SQL insertaremos los datos en la base de datos
