@@ -44,12 +44,8 @@ session_start();
 
 			//FIN DE LA VALIDACION DEL LADO DEL SERVIDOR
 
-			/*echo $user."<br/>";
-			 echo $password."<br/>";
-			 */
-
 			if ($validado) {
-				$link = mysql_connect("localhost", "root", "");
+				$link = mysql_connect("localhost", "root", "") or die;
 				mysql_select_db("phototroxo", $link);
 
 				$result = mysql_query("SELECT u.User, u.Pass, u.idU, u.Nombre FROM usuario u WHERE User = '$user' AND Pass = '$password'", $link);

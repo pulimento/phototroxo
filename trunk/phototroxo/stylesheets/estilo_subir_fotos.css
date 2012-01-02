@@ -1,1 +1,8 @@
 @import url('mainstyle.css');
+
+#button_subirfoto {
+	margin-top: 1.5em;
+	font-size: 1.1em;
+	color: white;
+	background: #0055FF;
+}

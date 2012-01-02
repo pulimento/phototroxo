@@ -1,0 +1,8 @@
+@import url('mainstyle.css');
+#img_fotoreciensubida {
+	max-width: 500px;
+}
+#div_fotoreciensubida {
+	margin-left: auto;
+	margin-right: auto;
+}
