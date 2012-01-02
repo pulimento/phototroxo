@@ -9,19 +9,32 @@ session_start();
 		<title>Subir Fotos</title>
 		<link rel="stylesheet" type="text/css" href="stylesheets/estilo_subir_fotos.css" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
-		<meta name="author" content="Cristina" />
+		<meta name="author" content="Javi Pulido" />
 	</head>
 	<body>
 		<!-- Cabecera(logo y menú) -->
-		<?php include("cabecera.php"); ?>
-		
+		<?php
+		include ("cabecera.php");
+		?>
+
 		<!-- Contenido -->
 		<div id="div_content">
-			<h2 id="text_busca">Subir Fotos</h2>
-			<input id="input_search"  name="input_search" type="text"/>
-			<input id="button_submit" name="button_submit" type="submit" value="Buscar"/>
+			<h2 id="text_subirfotos">Subir Fotos</h2>
+			<form enctype="multipart/form-data" action="uploadphoto.php" method="POST">
+				<div>
+					<label id="label_title_uploadphoto" for="title_uploadphoto">T&iacute;tulo:</label>
+					<input name="title_uploadphoto" type="text" />
+				</div>
+				<div>
+					<label id="label_uploadphoto" for="uploadedphoto">Selecciona una foto:</label>
+					<input name="uploadedphoto" type="file" />
+				</div>
+				<button id="submit">
+					Subir foto
+				</button>
+			</form>
 		</div>
-	
+<!--	
 <?php
 //ESTA FUNCION LA USAREMOS PARA OBTENER EL TAMAÑO DE NUESTRO ARCHIVO
 	function filesize_format($bytes, $format = '', $force = ''){
@@ -84,6 +97,6 @@ session_start();
 	echo 'Subir Otro Archivo<br /> ';
 }
 ?>
-
+-->
 	</body>
 </html>
