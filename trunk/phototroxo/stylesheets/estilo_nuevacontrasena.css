@@ -1,7 +1,15 @@
 @import url('mainstyle.css');
 
-#label_usuario, #label_confirmacioncontrasena, #label_contrasena{
+label{
 	font-weight: bolder;
+	float: left;
+	text-align: right;
 }
 
+input {
+	margin-left:auto;
+	margin-right:auto;
+	width:70%;
+	background-color:white;
+}
 
