@@ -16,8 +16,10 @@
 		<!-- actualizacion en la base de datos-->
 		<?php
 		
-		$usser = $usser['usser'];
-		$password = $password['password'];
+		//Definicion de variables 
+		
+		$user = $_POST['user'];
+		$password = $_POST['password'];
 		$validado = true;
 		
 		//validacion de datos
@@ -38,16 +40,16 @@
 				mysql_select_db("phototroxo", $link);
 		
 		
-		$result=mysql_query("SELECT * FROM usuario WHERE usser=$usser", $conexion);
+		$result=mysql_query("SELECT * FROM usuario WHERE usser=$user", $conexion);
 
-		$result=mysql_query("UPDATE usuario SET password=$password where usser=$usser,$conexion");
+		$result=mysql_query("UPDATE usuario SET password=$password where usser=$user,$conexion");
 		
 		$my_error = mysql_error($link);
 
 		if (!empty($my_error)) {
 			echo "Ha habido un error al insertar los valores. $my_error";
 		} else {
-			echo "Te acabas de registrar satisfactoriamente en Phototroxo, " . $user . " ;) <br/><br/>";
+			echo "Tu contraseña ha sido cambiada correctamente, " . $user . " ;) <br/><br/>";
 			echo "Puedes volver a la <a id=\"inicio\" href=\"index.html\">página principal</a> para iniciar sesión";
 		}
 	}
