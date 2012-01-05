@@ -32,13 +32,16 @@ session_start();
 				$fechaSubida = date("Y-m-d");
 				//Fecha actual
 				$titulo = $_POST["title_uploadphoto"];
-				$nombrearchivo = $_FILES['uploadedphoto']['name'];
+				$nombrearchivo = $titulo . "-" . $_FILES['uploadedphoto']['name'];
+				//Quitar caracteres extraños al nombre del archivo
+				include ("scripts/cleanfilenames.php");
+				$nombrearchivo = cleanFileName($nombrearchivo);
 				$nombretemporal = $_FILES["uploadedphoto"]["tmp_name"];
-				$ruta = $uploaddir . $titulo . "-" . $nombrearchivo;
-				$rutathumbnail = $uploaddir . "thumb-" . $titulo . "-" . $nombrearchivo;
+				$ruta = $uploaddir . $nombrearchivo;
+				$rutathumbnail = $uploaddir . "thumb-" . $nombrearchivo;
 
-				$result = mysql_query("INSERT INTO imagen (idU,fechaSubida,ruta,titulo)
-			VALUES ('$idUsuario','$fechaSubida','$ruta','$titulo')", $link);
+				$result = mysql_query("INSERT INTO imagen (idU,fechaSubida,ruta,titulo,rutathumbnail)
+				VALUES ('$idUsuario','$fechaSubida','$ruta','$titulo','$rutathumbnail')", $link);
 
 				// Ahora comprobaremos que todo ha ido correctamente (tratamiento de errores)
 				$my_error = mysql_error($link);
