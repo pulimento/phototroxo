@@ -68,7 +68,7 @@ $idU = $_SESSION["idUsuario"];
 			} else {
 				$resultcomentario = mysql_query("SELECT u.nombre AS name, c.comentario AS comment,
 			c.fechaC FROM comentario AS c NATURAL JOIN imagen AS i NATURAL JOIN usuario AS u
-			WHERE i.idU = '" . $idU . "' ORDER BY c.idC LIMIT 4", $link) or die ;
+			WHERE i.idU = '" . $idU . "' ORDER BY c.idC DESC LIMIT 4", $link) or die ;
 				$numcomentarios = mysql_num_rows($resultcomentario);
 				if ($numcomentarios > 0) {
 					echo "<ul>";
