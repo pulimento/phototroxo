@@ -22,14 +22,14 @@ $idU = $_SESSION["idUsuario"];
 		<!-- Contenido -->
 		<div id="ultimasfotos">
 			<h2>
-				&Uacute;ltimas fotos subidas
+				&Uacute;ltimas fotos subidas por t&iacute;
 			</h2>
 			<?php
 			$link = mysql_connect("localhost", "root", "") or die ;
 			mysql_select_db("phototroxo", $link);
-			echo "idUsuario-> " . $idU . "<br/>";
+			//echo "idUsuario-> " . $idU . "<br/>";
 			$result = mysql_query("SELECT i.ruta, i.titulo, i.idI FROM imagen i WHERE idU = '$idU' ORDER BY idI DESC LIMIT 4", $link);
-			echo "<br/>la consulta devuelve " . mysql_num_rows($result) . " tupla(s)<br/>";
+			//echo "<br/>la consulta devuelve " . mysql_num_rows($result) . " tupla(s)<br/>";
 			for ($i = 0; $i < mysql_num_rows($result); $i++) {
 				//Añade las fotos de la base de datos a un array
 				$arrayfotos[$i] = mysql_fetch_row($result);
