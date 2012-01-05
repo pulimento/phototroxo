@@ -19,37 +19,46 @@ $idU = $_SESSION["idUsuario"];
 		?>
 
 		<!-- Contenido -->
-		<div id="div_content">
-			<?php
-			$idFoto = $_GET["idI"];
-			$link = mysql_connect("localhost", "root", "") or die ;
-			mysql_select_db("phototroxo", $link);
-			$result = mysql_query("SELECT i.ruta, i.titulo, i.idI FROM imagen i WHERE idU = '$idU' AND idI = '$idFoto'", $link);
-			$foto = mysql_fetch_array($result);
-			$my_error = mysql_error($link);
+		<!-- <div id="div_content"> -->
+		<?php
+		$idFoto = $_GET["idI"];
+		$link = mysql_connect("localhost", "root", "") or die ;
+		mysql_select_db("phototroxo", $link);
+		$result = mysql_query("SELECT i.ruta AS path, i.titulo, i.idI, u.Nombre AS nombreUploader, 
+			u.Apellidos AS apellidosUploader FROM (imagen AS i NATURAL JOIN usuario AS u) 
+			WHERE idU = '$idU' AND idI = '$idFoto'", $link);
+		$foto = mysql_fetch_array($result);
+		$my_error = mysql_error($link);
 
-			if (!empty($my_error)) {//Si hay error accediendo a la BD
-				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
-			} else {
-				//Inicializamos las variables
-				$titulo = $foto["titulo"];
-				$ruta = $foto["ruta"];
-			}
-			?>
-			<div id="div_title">
-				<p id="titulo_foto">
-					<?php
-					echo $titulo;
-					?>
-				</p>
+		if (!empty($my_error)) {//Si hay error accediendo a la BD
+			echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
+		} else {
+			//Inicializamos las variables
+			$titulo = $foto["titulo"];
+			$ruta = $foto["path"];
+			$subido = $foto["nombreUploader"] . " " . $foto["apellidosUploader"];
+		}
+		?>
+		<div id="div_title">
+			<div id="titulo_foto">
+				<?php
+				echo "Foto: " . $titulo;
+				?>
 			</div>
-			<div id="div_photo">
-				<img id="foto" <?php echo "src=\"" . $ruta . "\"></img>";?>
-				</div>
-				<div id="comentarios">
-					<!-- Hay que hacerlo -->
-					Aqui van los comentarios
-				</div>
-				</div>
-				</body>
-				</html>
+			<div id="usuarioQueSubeLaFoto">
+				<?php
+				echo "Subida por " . $subido;
+				?>
+			</div>
+		</div>
+		<div id="div_photo">
+			<img id="foto" <?php echo "src=\"" . $ruta . "\"></img>";?>
+			</div>
+			<div id="comentarios">
+			<!-- Hay que hacerlo -->
+			Aqui van los comentarios
+			</div>
+			<!-- 				</div> -->
+			</body>
+			</html>
+			5
