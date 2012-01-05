@@ -24,9 +24,20 @@
 }
 #escribircomentario{
 	margin-top: 20px;
+	margin-left: 100px;
+	width: 600px;
+}
+#input_escribecomentario{
+	width: 600px;
 }
 #comentarios{
-	margin-top: 20px;
+	margin-top: 50px;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+#div_boton_comentar{
+	display: block;
+	float: right;
 }
 #boton_comentar {
 	font-size: 1.1em;

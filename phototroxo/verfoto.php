@@ -71,33 +71,43 @@ $idFoto = $_GET["idI"];
 				$commentposted_comment = $_POST["input_escribecomentario"];
 			//$commentposted_user = $_POST("input_user");
 			if (isset($commentposted_comment)) {
-				$resultinsertarcomentario = mysql_query("INSERT INTO comentario (idI, idU, comentario)
-			VALUES ('$idFoto','$idU','" . $commentposted_comment . "')", $link);
+				$resultinsertarcomentario = mysql_query("INSERT INTO comentario (idI, idU, comentario, fechaC)
+			VALUES ('$idFoto','$idU','" . $commentposted_comment . "','" . date("Y-m-d") . "')", $link) or die ;
 			}
-			//Falta el tratamiento de errores
 			?>
 
 			<div id="comentarios">
 			<?php
-			$resultcomentario = mysql_query("SELECT c.comentario AS comment, u.Nombre AS name
+			$resultcomentario = mysql_query("SELECT c.comentario AS comment, u.Nombre AS name, c.fechaC
 			FROM (comentario AS c NATURAL JOIN usuario AS u) WHERE idI = '$idFoto'", $link) or die ;
 			$my_error = mysql_error($link);
+
+			function fechaespanola($fechainglesa) {
+				list($a, $m, $d) = explode("-", $fechainglesa);
+				return $d . "-" . $m . "-" . $a;
+			};
 
 			if (!empty($my_error)) {//Si hay error accediendo a la BD
 				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
 			} else {
 				$numcomentarios = mysql_num_rows($resultcomentario);
 				if ($numcomentarios > 0) {
+					echo "<ul>";
 					for ($cont = 0; $cont < $numcomentarios; $cont++) {
 						$comentario = mysql_fetch_array($resultcomentario);
 						$comentario_user = $comentario["name"];
 						$comentario_comentario = $comentario["comment"];
-						echo "user -> " . $comentario_user . "<br/>";
-						echo "comentario ->" . $comentario_comentario . "<br/>";
+						$comentario_fecha = fechaespanola($comentario["fechaC"]);
+						echo "<li>El " . $comentario_fecha . ", " 
+						. $comentario_user . " comentó: " . $comentario_comentario . "</li><br/>";
+						//echo "user -> " . $comentario_user . "<br/>";
+						//echo "comentario ->" . $comentario_comentario . "<br/>";
 					}
+					echo "</ul>";
 				} else {
 					echo "No hay ningún comentario aún, ¡sé el primero en comentar!";
 				}
+
 			}
 			?>
 
