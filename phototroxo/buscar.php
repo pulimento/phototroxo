@@ -14,10 +14,8 @@ session_start();
 	<body>
 		<!-- Cabecera(logo y menú) -->
 		<?php
-			include ("cabecera.php");
-		?>
-
-		<!-- Contenido -->
+		include ("cabecera.php");
+		?> <!-- Contenido -->
 		<div id="div_content">
 			<?php
 
@@ -25,7 +23,9 @@ session_start();
 			$valido = true;
 
 			if ($foto == "") {
-				echo "- El titulo de la foto no puede ser vacío<br/>";
+				echo "- El titulo de la foto no puede ser vacío
+			<br/>
+			";
 				$validado = false;
 			}
 
@@ -45,5 +45,9 @@ session_start();
 			}
 			?>
 		</div>
+		<!-- Pie de página -->
+		<?php
+		include ("piedepagina.php");
+		?>
 	</body>
 </html>

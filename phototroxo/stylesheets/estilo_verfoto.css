@@ -22,3 +22,14 @@
 	float: right;
 	padding-right: 100px;
 }
+#escribircomentario{
+	margin-top: 20px;
+}
+#comentarios{
+	margin-top: 20px;
+}
+#boton_comentar {
+	font-size: 1.1em;
+	color: white;
+	background: #0055FF;
+}

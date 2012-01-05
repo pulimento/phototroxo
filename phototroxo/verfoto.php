@@ -60,12 +60,15 @@ $idFoto = $_GET["idI"];
 			<label id="label_escribecomentario" for="input_escribecomentario">Escribe tu comentario: </label>
 			<input type="text" maxlength="160" id="input_escribecomentario" name="input_escribecomentario"></input>
 			<!-- <input type="hidden" name="input_user" value="<?php echo $idU; ?>"> -->
-			<input type="submit" value="submit" name="submit">
+			<div id="div_boton_comentar">
+			<input id="boton_comentar" type="submit" value="Enviar comentario">
+			</div>
 			</form>
 			</div>
 			<?php
-			if(isset($_POST["input_escribecomentario"]))
-			$commentposted_comment = $_POST["input_escribecomentario"];
+			//Insertar un comentario
+			if (isset($_POST["input_escribecomentario"]))
+				$commentposted_comment = $_POST["input_escribecomentario"];
 			//$commentposted_user = $_POST("input_user");
 			if (isset($commentposted_comment)) {
 				$resultinsertarcomentario = mysql_query("INSERT INTO comentario (idI, idU, comentario)
@@ -83,14 +86,24 @@ $idFoto = $_GET["idI"];
 			if (!empty($my_error)) {//Si hay error accediendo a la BD
 				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
 			} else {
-				for ($cont = 0; $cont < mysql_num_rows($resultcomentario); $cont++) {
-					$comentario = mysql_fetch_array($resultcomentario);
-					$comentario_user = $comentario["name"];
-					$comentario_comentario = $comentario["comment"];
-					echo "user -> " . $comentario_user . "<br/>";
-					echo "comentario ->" . $comentario_comentario . "<br/>";
+				$numcomentarios = mysql_num_rows($resultcomentario);
+				if ($numcomentarios > 0) {
+					for ($cont = 0; $cont < $numcomentarios; $cont++) {
+						$comentario = mysql_fetch_array($resultcomentario);
+						$comentario_user = $comentario["name"];
+						$comentario_comentario = $comentario["comment"];
+						echo "user -> " . $comentario_user . "<br/>";
+						echo "comentario ->" . $comentario_comentario . "<br/>";
+					}
+				} else {
+					echo "No hay ningún comentario aún, ¡sé el primero en comentar!";
 				}
 			}
+			?>
+
+			<!-- Pie de página -->
+			<?php
+			include ("piedepagina.php");
 			?>
 			</div>
 			</body>

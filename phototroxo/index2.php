@@ -33,12 +33,16 @@ session_start();
 			//Validación del lado del servidor
 
 			if (strlen($user) < 4) {
-				echo "- El usuario debe tener al menos cuatro caracteres<br/>";
+				echo "- El usuario debe tener al menos cuatro caracteres
+			<br/>
+			";
 				$validado = false;
 			}
 
 			if (strlen($password) < 6) {
-				echo "- La contraseña debe tener al menos seis caracteres<br/>";
+				echo "- La contraseña debe tener al menos seis caracteres
+			<br/>
+			";
 				$validado = false;
 			}
 
@@ -79,5 +83,9 @@ session_start();
 			}
 			?>
 		</div>
+		<!-- Pie de página -->
+		<?php
+		include ("piedepagina.php");
+		?>
 	</body>
 </html>
