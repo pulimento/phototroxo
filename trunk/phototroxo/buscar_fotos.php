@@ -14,14 +14,16 @@ session_start();
 	<body>
 		<!-- Cabecera(logo y menú) -->
 		<?php
-			include ("cabecera.php");
-		?>
-
-		<!-- Contenido -->
+		include ("cabecera.php");
+		?> <!-- Contenido -->
 		<div id="div_content">
 			<h2 id="text_busca">Busca fotos en Phototroxo</h2>
 			<input id="input_search"  name="input_search" type="text"/>
 			<input id="button_submit" name="button_submit" type="submit" value="Buscar"/>
 		</div>
+		<!-- Pie de página -->
+		<?php
+		include ("piedepagina.php");
+		?>
 	</body>
 </html>

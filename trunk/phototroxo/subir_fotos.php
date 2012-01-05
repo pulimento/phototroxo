@@ -15,9 +15,7 @@ session_start();
 		<!-- Cabecera(logo y menú) -->
 		<?php
 		include ("cabecera.php");
-		?>
-
-		<!-- Contenido -->
+		?> <!-- Contenido -->
 		<div id="div_content">
 			<h2 id="text_subirfotos">Subir Fotos</h2>
 			<form enctype="multipart/form-data" action="uploadphoto.php" method="POST">
@@ -98,5 +96,10 @@ session_start();
 		}
 		?>
 		-->
+		
+		<!-- Pie de página -->
+		<?php
+		include ("piedepagina.php");
+		?>
 	</body>
 </html>

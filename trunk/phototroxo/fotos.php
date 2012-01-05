@@ -14,15 +14,17 @@ session_start();
 	<body>
 		<!-- Cabecera(logo y menú) -->
 		<?php
-			include ("cabecera.php");
-		?>
-
-		<!-- Contenido -->
+		include ("cabecera.php");
+		?> <!-- Contenido -->
 		<div id="div_content">
 			<h2 id="text_busca">Tus Fotos</h2>
 			<p>
 				Aqui iran las fotos del propio usuario
 			</p>
 		</div>
+		<!-- Pie de página -->
+		<?php
+		include ("piedepagina.php");
+		?>
 	</body>
 </html>

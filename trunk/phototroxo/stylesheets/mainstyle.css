@@ -7,7 +7,7 @@ body {
 }
 #div_header {
 	text-align: center;
-	margin-top: -10px;
+	margin-top: -5px;
 	margin-bottom: 3em;
 }
 #img_header {
@@ -46,4 +46,11 @@ a:hover {
 	color: #111111;
 	text-align: right;
 }
-
+#piedepagina{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+#quienessomos, #enviarsugerencia{
+	margin: 0px 30px 0px 30px;
+}

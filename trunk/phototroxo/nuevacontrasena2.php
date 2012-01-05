@@ -15,50 +15,55 @@
 		</div>
 		<!-- actualizacion en la base de datos-->
 		<?php
-		
-		//Definicion de variables 
-		
+
+		//Definicion de variables
+
 		$user = $_POST['user'];
 		$password = $_POST['password'];
 		$validado = true;
-		
+
 		//validacion de datos
-		
+
 		if (strlen($user) < 4) {
-				echo "- El usuario debe tener al menos cuatro caracteres<br/>";
-				$validado = false;
+			echo "- El usuario debe tener al menos cuatro caracteres
+		<br/>
+		";
+			$validado = false;
 		}
-		
+
 		if (strlen($password) < 6) {
-				echo "- La contraseña debe tener al menos seis caracteres<br/>";
-				$validado = false;
+			echo "- La contraseña debe tener al menos seis caracteres
+		<br/>
+		";
+			$validado = false;
 		}
 		//fin de validacion de datos, conexion con la base de datos
-		
+
 		if ($validado) {
-				$link = mysql_connect("localhost", "root", "") or die ;
-				mysql_select_db("phototroxo", $link);
-		
-		
-		$result=mysql_query("SELECT * FROM usuario WHERE usser=$user", $conexion);
+			$link = mysql_connect("localhost", "root", "") or die ;
+			mysql_select_db("phototroxo", $link);
 
-		$result=mysql_query("UPDATE usuario SET password=$password where usser=$user,$conexion");
-		
-		$my_error = mysql_error($link);
+			$result = mysql_query("SELECT * FROM usuario WHERE usser=$user", $conexion);
 
-		if (!empty($my_error)) {
-			echo "Ha habido un error al insertar los valores. $my_error";
-		} else {
-			echo "Tu contraseña ha sido cambiada correctamente, " . $user . " ;) <br/><br/>";
-			echo "Puedes volver a la <a id=\"inicio\" href=\"index.html\">página principal</a> para iniciar sesión";
+			$result = mysql_query("UPDATE usuario SET password=$password where usser=$user,$conexion");
+
+			$my_error = mysql_error($link);
+
+			if (!empty($my_error)) {
+				echo "Ha habido un error al insertar los valores. $my_error";
+			} else {
+				echo "Tu contraseña ha sido cambiada correctamente, " . $user . " ;)
+		<br/>
+		<br/>
+		";
+				echo "Puedes volver a la <a id=\"inicio\" href=\"index.html\">página principal</a> para iniciar sesión";
+			}
+		} else {// No se ha superado la validación del lado del servidor
+			echo "<br/><br/>Los datos que ha introducido no son válidos, por favor <a href=\"#\" onclick=\"history.back(1);return false\">vuelva a intentarlo</a>";
 		}
-	}
-	else {// No se ha superado la validación del lado del servidor
-		echo "<br/><br/>Los datos que ha introducido no son válidos, por favor <a href=\"#\" onclick=\"history.back(1);return false\">vuelva a intentarlo</a>";
-	}
-?>
-		
-		
-		
+		?>
+		<!-- Pie de página --> <?php
+		include ("piedepagina.php");
+		?>
 	</body>
 </html>

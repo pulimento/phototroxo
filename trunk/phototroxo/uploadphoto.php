@@ -15,13 +15,13 @@ session_start();
 		<!-- Cabecera(logo y menú) -->
 		<?php
 		include ("cabecera.php");
-		?>
-
-		<!-- Contenido -->
+		?> <!-- Contenido -->
 		<div id="div_content">
 			<?php
 			if ($_FILES["uploadedphoto"]["error"] > 0) {
-				echo "Error subiendo la foto: " . $_FILES["uploadedphoto"]["error"] . "<br />";
+				echo "Error subiendo la foto: " . $_FILES["uploadedphoto"]["error"] . "
+			<br />
+			";
 			} else {
 				$uploaddir = "user_images/";
 
@@ -36,13 +36,22 @@ session_start();
 				$nombretemporal = $_FILES["uploadedphoto"]["tmp_name"];
 				$ruta = $uploaddir . $titulo . "-" . $nombrearchivo;
 
-				/*echo "idUsuario ->" . $idUsuario . "<br/>";
-				 echo "fechaSubida ->" . $fechaSubida . "<br/>";
-				 echo "ruta ->" . $ruta . "<br/>";
-				 echo "titulo ->" . $titulo . "<br/><br/>";*/
+				/*echo "idUsuario ->" . $idUsuario . "
+				 <br/>
+				 ";
+				 echo "fechaSubida ->" . $fechaSubida . "
+				 <br/>
+				 ";
+				 echo "ruta ->" . $ruta . "
+				 <br/>
+				 ";
+				 echo "titulo ->" . $titulo . "
+				 <br/>
+				 <br/>
+				 ";*/
 
-				$result = mysql_query("INSERT INTO imagen (idU,fechaSubida,ruta,titulo) 
-				VALUES ('$idUsuario','$fechaSubida','$ruta','$titulo')", $link);
+				$result = mysql_query("INSERT INTO imagen (idU,fechaSubida,ruta,titulo)
+			VALUES ('$idUsuario','$fechaSubida','$ruta','$titulo')", $link);
 
 				// Ahora comprobaremos que todo ha ido correctamente (tratamiento de errores)
 				$my_error = mysql_error($link);
@@ -52,12 +61,11 @@ session_start();
 				} else {
 					//Subir la foto al servidor
 					move_uploaded_file($nombretemporal, $ruta);
-					//echo "Guardado en: " . $ruta . "<br/>";
 					echo "<h3>La foto se ha subido correctamente ;)</h3>";
 					echo "<a href=\"subir_fotos.php\">Subir otra foto</a>";
 					echo "<br/><br/>Título : " . $titulo . "<br/><br/>";
 					echo "<div id=\"div_fotoreciensubida\">
-					<img id=\"img_fotoreciensubida\" src=\"" . $ruta . "\"/></div>";
+			<img id=\"img_fotoreciensubida\" src=\"" . $ruta . "\"/></div>";
 				}
 
 				/*echo "<br/><br/>Upload: " . $_FILES["uploadedphoto"]["name"] . "<br />";
@@ -67,5 +75,9 @@ session_start();
 			}
 			?>
 		</div>
+		<!-- Pie de página -->
+		<?php
+		include ("piedepagina.php");
+		?>
 	</body>
 </html>
