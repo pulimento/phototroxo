@@ -30,7 +30,7 @@ $idU = $_SESSION["idUsuario"];
 			if (!empty($my_error)) {//Si hay error accediendo a la BD
 				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
 			} else {
-				$result = mysql_query("SELECT i.ruta, i.titulo, i.idI FROM imagen i
+				$result = mysql_query("SELECT i.ruta, i.rutathumbnail, i.idI FROM imagen i
 			WHERE idU = '$idU' ORDER BY idI DESC LIMIT 4", $link);
 				if (mysql_num_rows($result) > 0) {
 					echo "<table id=\"tabla_ultimasfotos\"><tr>";
@@ -38,10 +38,8 @@ $idU = $_SESSION["idUsuario"];
 					for ($j = 0; $j < mysql_num_rows($result); $j++) {
 						$foto = mysql_fetch_array($result);
 						echo "<td class=\"celda_tabla_fotos\">";
-						$explodepath = explode('/', $foto["ruta"]);
-						$thumbnailpath = $explodepath[0] . "/thumb-" . $explodepath[1];
 						echo "<a href=\"verfoto.php?idI=" . $foto["idI"] . "\">
-			<img class=\"foto_tabla\" src=\"" . $thumbnailpath . "\"</img></a></td>";
+			<img class=\"foto_tabla\" src=\"" . $foto["rutathumbnail"] . "\"</img></a></td>";
 					}
 					//Cerramos las etiquetas de la tabla
 					echo "</tr></table>";
