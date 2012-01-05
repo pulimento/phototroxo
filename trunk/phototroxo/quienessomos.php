@@ -10,29 +10,30 @@
 		<!-- Date: 2012-01-02 -->
 	</head>
 	<body>
-		<div id="div_header">
-			<img id="img_header" src="images/header.png" alt="Phototroxo" />
-		</div>
+		<!-- Cabecera(logo y menú) -->
+		<?php
+		include ("cabecera.php");
+		?>
 		<div id="quienes_somos">
 			<h1> ¿Qui&eacute;nes somos?</h1>
 			<p>
-				S&oacute;mos un grupo de estudiantes de Ingenier&iacute;a Inform&aacute;tica de Gesti&oacute;n.
+				Somos un grupo de estudiantes de Ingenier&iacute;a Inform&aacute;tica de Gesti&oacute;n.
 
 				La web es con fines acad&eacute;micos, para la asignatura de tercero ABD.
 			</p>
 			<p>
-				S&oacute;mos el grupo 65. Nuestros integrantes son:
+				Somos el grupo 65. Nuestros integrantes son:
 				<br />
 				<br />
-				Francisco Javier Pulido Espina.
+				Francisco Javier Pulido Espina
 				<br />
-				Cristina Del Marco Mart&iacute;nez.
+				Cristina Del Marco Mart&iacute;nez
 				<br />
-				Patricia Raigada Romero.
+				Patricia Raigada Romero
 				<br />
-				Margarita Vela Jim&eacute;nez.
+				Margarita Vela Jim&eacute;nez
 				<br />
-				Jos&eacute; Manuel Llamas Llamas.
+				Jos&eacute; Manuel Llamas Llamas
 				<br />
 			</p>
 		</div>
