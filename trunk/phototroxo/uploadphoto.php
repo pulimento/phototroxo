@@ -35,20 +35,7 @@ session_start();
 				$nombrearchivo = $_FILES['uploadedphoto']['name'];
 				$nombretemporal = $_FILES["uploadedphoto"]["tmp_name"];
 				$ruta = $uploaddir . $titulo . "-" . $nombrearchivo;
-
-				/*echo "idUsuario ->" . $idUsuario . "
-				 <br/>
-				 ";
-				 echo "fechaSubida ->" . $fechaSubida . "
-				 <br/>
-				 ";
-				 echo "ruta ->" . $ruta . "
-				 <br/>
-				 ";
-				 echo "titulo ->" . $titulo . "
-				 <br/>
-				 <br/>
-				 ";*/
+				$rutathumbnail = $uploaddir . "thumb-" . $titulo . "-" . $nombrearchivo;
 
 				$result = mysql_query("INSERT INTO imagen (idU,fechaSubida,ruta,titulo)
 			VALUES ('$idUsuario','$fechaSubida','$ruta','$titulo')", $link);
@@ -59,19 +46,23 @@ session_start();
 				if (!empty($my_error)) {//Si hay error accediendo a la BD
 					echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
 				} else {
+					//Reducimos (si es necesario) la foto que se acaba de subir y creamos el thumbnail
+					include ('scripts/resizeimages.php');
 					//Subir la foto al servidor
 					move_uploaded_file($nombretemporal, $ruta);
+					$image = new SimpleImage();
+					$image -> load($ruta);
+					$image -> resizeToWidth(800);
+					$image -> save($ruta);
+					$image -> resizeToWidth(256);
+					$image -> save($rutathumbnail);
+
 					echo "<h3>La foto se ha subido correctamente ;)</h3>";
 					echo "<a href=\"subir_fotos.php\">Subir otra foto</a>";
 					echo "<br/><br/>Título : " . $titulo . "<br/><br/>";
 					echo "<div id=\"div_fotoreciensubida\">
 			<img id=\"img_fotoreciensubida\" src=\"" . $ruta . "\"/></div>";
 				}
-
-				/*echo "<br/><br/>Upload: " . $_FILES["uploadedphoto"]["name"] . "<br />";
-				 echo "Type: " . $_FILES["uploadedphoto"]["type"] . "<br />";
-				 echo "Size: " . ($_FILES["uploadedphoto"]["size"] / 1024) . " Kb<br />";
-				 echo "Stored in: " . $_FILES["uploadedphoto"]["tmp_name"];*/
 			}
 			?>
 		</div>

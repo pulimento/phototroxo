@@ -33,17 +33,15 @@ $idU = $_SESSION["idUsuario"];
 				$result = mysql_query("SELECT i.ruta, i.titulo, i.idI FROM imagen i
 			WHERE idU = '$idU' ORDER BY idI DESC LIMIT 4", $link);
 				if (mysql_num_rows($result) > 0) {
-					for ($i = 0; $i < mysql_num_rows($result); $i++) {
-						//Añade las fotos de la base de datos a un array
-						$arrayfotos[$i] = mysql_fetch_row($result);
-					}
-					//Mostrar las fotos
 					echo "<table id=\"tabla_ultimasfotos\"><tr>";
-					//Inicio de la tabla
+
 					for ($j = 0; $j < mysql_num_rows($result); $j++) {
+						$foto = mysql_fetch_array($result);
 						echo "<td class=\"celda_tabla_fotos\">";
-						echo "<a href=\"verfoto.php?idI=" . $arrayfotos[$j][2] . "\">
-			<img class=\"foto_tabla\" src=\"" . $arrayfotos[$j][0] . "\"</img></a></td>";
+						$explodepath = explode('/', $foto["ruta"]);
+						$thumbnailpath = $explodepath[0] . "/thumb-" . $explodepath[1];
+						echo "<a href=\"verfoto.php?idI=" . $foto["idI"] . "\">
+			<img class=\"foto_tabla\" src=\"" . $thumbnailpath . "\"</img></a></td>";
 					}
 					//Cerramos las etiquetas de la tabla
 					echo "</tr></table>";
