@@ -23,6 +23,22 @@ session_start();
 			<br />
 			";
 			} else {
+				$filename = strtolower($_FILES['uploadedphoto']['name']);
+				$whitelist = array('jpg', 'png', 'gif', 'jpeg');
+				$blacklist = array('php', 'php3', 'php4', 'phtml', 'exe');
+				$arraynombrefichero = explode('.', $filename);//Se hace así para que no de warnings
+				$extensionfichero = end($arraynombrefichero);
+				if (!in_array($extensionfichero, $whitelist)) {
+					echo 'Tipo de archivo no válido, sólo se aceptan fotos JPG, PNG y GIF. 
+					<a href="subir_fotos.php">Volver</a>';
+					exit(0);
+				}
+				if (in_array($extensionfichero, $blacklist)) {
+					echo 'Tipo de archivo no válido, sólo se aceptan fotos JPG, PNG y GIF. 
+					<a href="subir_fotos.php">Volver</a>';
+					exit(0);
+				}
+
 				$uploaddir = "user_images/";
 
 				$link = mysql_connect("localhost", "root", "") or die ;
