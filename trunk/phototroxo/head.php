@@ -63,8 +63,8 @@ $idU = $_SESSION["idUsuario"];
 				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
 			} else {
 				$resultcomentario = mysql_query("SELECT u.nombre AS name, c.comentario AS comment,
-			c.fechaC FROM comentario AS c NATURAL JOIN imagen AS i NATURAL JOIN usuario AS u
-			WHERE i.idU = '" . $idU . "' ORDER BY c.idC DESC LIMIT 4", $link) or die ;
+			c.fechaC, i.idI, i.titulo FROM comentario as c NATURAL JOIN usuario AS u, imagen AS i
+			WHERE i.idU = '$idU' AND i.idI = c.idI ORDER BY c.idC DESC LIMIT 4", $link) or die ;
 				$numcomentarios = mysql_num_rows($resultcomentario);
 				if ($numcomentarios > 0) {
 					echo "<ul>";
@@ -73,7 +73,11 @@ $idU = $_SESSION["idUsuario"];
 						$comentario_user = $comentario["name"];
 						$comentario_comentario = $comentario["comment"];
 						$comentario_fecha = fechaespanola($comentario["fechaC"]);
-						echo "<li>El " . $comentario_fecha . ", " . $comentario_user . " comentó: " . $comentario_comentario . "</li><br/>";
+						$comentario_idI = $comentario["idI"];
+						$comentario_titulofoto = $comentario["titulo"];
+						echo "<li>El " . $comentario_fecha . ", " . $comentario_user . " comentó
+						en la foto <a href=\"verfoto.php?idI=" . $comentario_idI .
+						 "\">" . $comentario_titulofoto . "</a>: " . $comentario_comentario . "</li><br/>";
 						//echo "user -> " . $comentario_user . "<br/>";
 						//echo "comentario ->" . $comentario_comentario . "<br/>";
 					}
