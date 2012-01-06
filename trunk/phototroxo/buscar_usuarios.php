@@ -7,9 +7,9 @@ session_start();
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
-		<title>Phototroxo - Buscarfoto</title>
+		<title>Phototroxo - Buscador de usuarios</title>
 		<meta name="author" content="Javi Pulido" />
-		<link rel="stylesheet" type="text/css" href="stylesheets/estilo_formulario2.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/estilo_buscar_usuarios.css" />
 	</head>
 	<body>
 		<!-- Cabecera(logo y menú) -->

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 	<head>
-		<title>Reg&iacute;strate en Phototroxo</title>
+		<title>Phototroxo - Registro</title>
 		<link rel="stylesheet" type="text/css" href="stylesheets/estilo_formulario.css" />
 		<link rel="stylesheet" type="text/css" href="stylesheets/jquery-ui-1.7.2.pul.css" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
