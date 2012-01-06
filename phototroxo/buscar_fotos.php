@@ -17,9 +17,11 @@ session_start();
 		include ("cabecera.php");
 		?> <!-- Contenido -->
 		<div id="div_content">
-			<h2 id="text_busca">Busca fotos en Phototroxo</h2>
-			<input id="input_search"  name="input_search" type="text"/>
-			<input id="button_submit" name="button_submit" type="submit" value="Buscar"/>
+			
+			Aquí lo que habría que poner es un formulario con un solo campo de búsqueda,</br>
+			hacer la consulta SQL correspondiente, y buscar por título de foto. Luego habría que</br>
+			mostrar los resultados en una lista
+						
 		</div>
 		<!-- Pie de página -->
 		<?php
