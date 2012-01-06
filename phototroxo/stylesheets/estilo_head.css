@@ -10,10 +10,11 @@
 .celda_tabla_fotos{
 	width : 180px;
 	height : 200px;
+	text-align: center;
 }
 #tabla_ultimasfotos{
 	/*border: solid;*/
-	margin-top : 20px;
+	margin-top : 10px;
 }
 #ultimasfotos{
 	margin: 10px 0px 10px 0px;
