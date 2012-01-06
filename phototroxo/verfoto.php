@@ -26,7 +26,7 @@ $idFoto = $_GET["idI"];
 		mysql_select_db("phototroxo", $link);
 		$result = mysql_query("SELECT i.ruta AS path, i.titulo, i.idI, u.Nombre AS nombreUploader,
 		u.Apellidos AS apellidosUploader FROM (imagen AS i NATURAL JOIN usuario AS u)
-		WHERE idU = '$idU' AND idI = '$idFoto'", $link) or die ;
+		WHERE idI = '$idFoto'", $link) or die ;
 		$foto = mysql_fetch_array($result);
 		$my_error = mysql_error($link);
 
