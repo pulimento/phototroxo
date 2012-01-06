@@ -17,11 +17,9 @@ session_start();
 		include ("cabecera.php");
 		?> <!-- Contenido -->
 		<div id="div_content">
-			
 			Aquí lo que habría que poner es un formulario con un solo campo de búsqueda,</br>
 			hacer la consulta SQL correspondiente, y buscar por nombre de usuario. Luego habría que</br>
 			mostrar los resultados en una lista. Hay código muy parecido en lo de mostrar comentarios.
-			
 		</div>
 		<!-- Pie de página -->
 		<?php

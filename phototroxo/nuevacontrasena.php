@@ -61,7 +61,8 @@
 		} else {// No se ha superado la validación del lado del servidor
 			echo "<br/><br/>Los datos que ha introducido no son válidos, por favor <a href=\"#\" onclick=\"history.back(1);return false\">vuelva a intentarlo</a>";
 		}
-		?> <!-- Pie de página --> <?php
+		?> <!-- Pie de página -->
+		<?php
 		include ("piedepagina.php");
 		?>
 	</body>
