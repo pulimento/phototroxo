@@ -31,7 +31,7 @@ $idU = $_SESSION["idUsuario"];
 				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
 			} else {
 				$result = mysql_query("SELECT i.ruta, i.rutathumbnail, i.idI FROM imagen i
-			WHERE idU = '$idU' ORDER BY idI DESC LIMIT 4", $link);
+			WHERE idU = '$idU' ORDER BY idI DESC LIMIT 4", $link) or die;
 				if (mysql_num_rows($result) > 0) {
 					echo "<table id=\"tabla_ultimasfotos\"><tr>";
 
