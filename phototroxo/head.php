@@ -85,6 +85,30 @@ $idU = $_SESSION["idUsuario"];
 			?>
 
 			</div>
+			<div id="ultimasfotosamigos">
+			<h2>
+			&Uacute;ltimas fotos subidas por otros usuarios
+			</h2>
+
+			<?php
+			$result = mysql_query("SELECT i.ruta, i.rutathumbnail, i.idI FROM imagen i
+			WHERE idU != '$idU' ORDER BY idI DESC LIMIT 4", $link);
+			if (mysql_num_rows($result) > 0) {
+				echo "<table id=\"tabla_ultimasfotos\"><tr>";
+
+				for ($j = 0; $j < mysql_num_rows($result); $j++) {
+					$foto = mysql_fetch_array($result);
+					echo "<td class=\"celda_tabla_fotos\">";
+					echo "<a href=\"verfoto.php?idI=" . $foto["idI"] . "\">
+			<img class=\"foto_tabla\" src=\"" . $foto["rutathumbnail"] . "\"</img></a></td>";
+				}
+				//Cerramos las etiquetas de la tabla
+				echo "</tr></table>";
+			} else {
+				echo "No hay fotos que mostrar, el resto de usuarios aún no han subido fotos";
+			}
+			?>
+			</div>
 
 			<!-- Pie de página -->
 

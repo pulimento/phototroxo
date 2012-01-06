@@ -26,7 +26,8 @@ session_start();
 				$filename = strtolower($_FILES['uploadedphoto']['name']);
 				$whitelist = array('jpg', 'png', 'gif', 'jpeg');
 				$blacklist = array('php', 'php3', 'php4', 'phtml', 'exe');
-				$arraynombrefichero = explode('.', $filename);//Se hace así para que no de warnings
+				$arraynombrefichero = explode('.', $filename);
+				//Se hace así para que no de warnings, por estar en modo estricto
 				$extensionfichero = end($arraynombrefichero);
 				if (!in_array($extensionfichero, $whitelist)) {
 					echo 'Tipo de archivo no válido, sólo se aceptan fotos JPG, PNG y GIF. 
