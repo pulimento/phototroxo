@@ -10,7 +10,7 @@ $idU = $_SESSION["idUsuario"];
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
 		<link rel="stylesheet" type="text/css" href="stylesheets/estilo_head.css" />
-		<title>P&aacute;gina de inicio</title>
+		<title>Phototroxo - Inicio</title>
 		<meta name="author" content="alumno" />
 	</head>
 	<body>
