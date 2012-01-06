@@ -20,12 +20,11 @@ $idFoto = $_GET["idI"];
 		include ("cabecera.php");
 		?> <!-- Contenido -->
 		<?php
-
 		//Conectando a la base de datos
 		$link = mysql_connect("localhost", "root", "") or die ;
 		mysql_select_db("phototroxo", $link);
 		$result = mysql_query("SELECT i.ruta AS path, i.titulo, i.idI, u.Nombre AS nombreUploader,
-		u.Apellidos AS apellidosUploader FROM (imagen AS i NATURAL JOIN usuario AS u)
+		u.Apellidos AS apellidosUploader, u.idU FROM (imagen AS i NATURAL JOIN usuario AS u)
 		WHERE idI = '$idFoto'", $link) or die ;
 		$foto = mysql_fetch_array($result);
 		$my_error = mysql_error($link);
@@ -37,6 +36,7 @@ $idFoto = $_GET["idI"];
 			$titulo = $foto["titulo"];
 			$ruta = $foto["path"];
 			$subido = $foto["nombreUploader"] . " " . $foto["apellidosUploader"];
+			$subido_idU = $foto["idU"];
 		}
 		?>
 		<div id="div_title">
@@ -46,8 +46,8 @@ $idFoto = $_GET["idI"];
 				?>
 			</div>
 			<div id="usuarioQueSubeLaFoto">
-				<?php
-				echo "Subida por " . $subido;
+				<?php				
+				echo "Subida por <a href=\"album.php?idU=" . $subido_idU . "\">" . $subido . "</a>";
 				?>
 			</div>
 		</div>
