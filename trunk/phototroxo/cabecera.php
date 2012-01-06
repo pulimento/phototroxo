@@ -21,6 +21,7 @@
 			<td class="celdamenu"><a href="head.php">Inicio</a></td>
 			<td class="celdamenu"><a <?php echo 'href="album.php?idU='.$idU.'"'; ?>>Mis Fotos</a></td>
 			<td class="celdamenu"><a href="buscar_fotos.php">Busca una foto</a></td>
+			<td class="celdamenu"><a href="buscar_usuarios.php">Busca un usuario</a></td>
 			<td class="celdamenu"><a href="subir_fotos.php">Sube una foto</a></td>
 		</tr>
 	</table>
