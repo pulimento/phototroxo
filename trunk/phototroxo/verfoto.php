@@ -46,7 +46,7 @@ $idFoto = $_GET["idI"];
 				?>
 			</div>
 			<div id="usuarioQueSubeLaFoto">
-				<?php				
+				<?php
 				echo "Subida por <a href=\"album.php?idU=" . $subido_idU . "\">" . $subido . "</a>";
 				?>
 			</div>

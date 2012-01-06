@@ -26,7 +26,9 @@ session_start();
 				<div id="seleccionarfoto">
 					<label id="label_uploadphoto" for="uploadedphoto">Selecciona una foto:</label>
 					<input name="uploadedphoto" type="file" />
-					<p>Se admiten im&aacute;genes en formato JPG, PNG y GIF</p>
+					<p>
+						Se admiten im&aacute;genes en formato JPG, PNG y GIF
+					</p>
 				</div>
 				<button id="button_subirfoto">
 					Subir foto
@@ -97,7 +99,6 @@ session_start();
 		}
 		?>
 		-->
-		
 		<!-- Pie de página -->
 		<?php
 		include ("piedepagina.php");

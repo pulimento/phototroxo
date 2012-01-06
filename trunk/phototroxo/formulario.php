@@ -306,9 +306,9 @@
 			</form>
 		</div>
 		<br/>
-					<!-- Pie de página -->
-			<?php
-			include ("piedepagina.php");
-			?>
+		<!-- Pie de página -->
+		<?php
+		include ("piedepagina.php");
+		?>
 	</body>
 </html>

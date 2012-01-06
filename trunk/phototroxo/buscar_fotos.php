@@ -17,11 +17,9 @@ session_start();
 		include ("cabecera.php");
 		?> <!-- Contenido -->
 		<div id="div_content">
-			
 			Aquí lo que habría que poner es un formulario con un solo campo de búsqueda,</br>
 			hacer la consulta SQL correspondiente, y buscar por título de foto. Luego habría que</br>
 			mostrar los resultados en una lista
-						
 		</div>
 		<!-- Pie de página -->
 		<?php

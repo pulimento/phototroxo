@@ -31,7 +31,7 @@ $idU = $_SESSION["idUsuario"];
 				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
 			} else {
 				$result = mysql_query("SELECT i.ruta, i.rutathumbnail, i.idI FROM imagen i
-			WHERE idU = '$idU' ORDER BY idI DESC LIMIT 4", $link) or die;
+			WHERE idU = '$idU' ORDER BY idI DESC LIMIT 4", $link) or die ;
 				if (mysql_num_rows($result) > 0) {
 					echo "<table id=\"tabla_ultimasfotos\"><tr>";
 
@@ -77,8 +77,7 @@ $idU = $_SESSION["idUsuario"];
 						$comentario_titulofoto = $comentario["titulo"];
 						$comentario_idU = $comentario["idU"];
 						echo "<li>El " . $comentario_fecha . ", <a href=\"album.php?idU=" . $comentario_idU . "\">" . $comentario_user . "</a> comentó
-						en la foto <a href=\"verfoto.php?idI=" . $comentario_idI .
-						 "\">" . $comentario_titulofoto . "</a>: " . $comentario_comentario . "</li><br/>";
+			en la foto <a href=\"verfoto.php?idI=" . $comentario_idI . "\">" . $comentario_titulofoto . "</a>: " . $comentario_comentario . "</li><br/>";
 						//echo "user -> " . $comentario_user . "<br/>";
 						//echo "comentario ->" . $comentario_comentario . "<br/>";
 					}

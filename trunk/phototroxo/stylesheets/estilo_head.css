@@ -2,23 +2,23 @@
 #sugerencia {
 	text-align: right;
 }
-.foto_tabla{
+.foto_tabla {
 	max-height: 200px;
 	max-width: 150px;
 	padding: 1px 5px 1px 5px;
 }
-.celda_tabla_fotos{
-	width : 180px;
-	height : 200px;
+.celda_tabla_fotos {
+	width: 180px;
+	height: 200px;
 	text-align: center;
 }
-#tabla_ultimasfotos{
+#tabla_ultimasfotos {
 	/*border: solid;*/
-	margin-top : 10px;
+	margin-top: 10px;
 }
-#ultimasfotos{
+#ultimasfotos {
 	margin: 10px 0px 10px 0px;
 }
-#ultimoscomentarios{
+#ultimoscomentarios {
 	margin: 10px 0px 10px 0px;
 }
