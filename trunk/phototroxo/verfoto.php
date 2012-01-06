@@ -78,7 +78,7 @@ $idFoto = $_GET["idI"];
 
 			<div id="comentarios">
 			<?php
-			$resultcomentario = mysql_query("SELECT c.comentario AS comment, u.Nombre AS name, c.fechaC
+			$resultcomentario = mysql_query("SELECT c.comentario AS comment, u.Nombre AS name, c.fechaC, c.idU
 			FROM (comentario AS c NATURAL JOIN usuario AS u) WHERE idI = '$idFoto'", $link) or die ;
 			$my_error = mysql_error($link);
 
@@ -98,8 +98,8 @@ $idFoto = $_GET["idI"];
 						$comentario_user = $comentario["name"];
 						$comentario_comentario = $comentario["comment"];
 						$comentario_fecha = fechaespanola($comentario["fechaC"]);
-						echo "<li>El " . $comentario_fecha . ", " 
-						. $comentario_user . " comentó: " . $comentario_comentario . "</li><br/>";
+						$comentario_idU = $comentario["idU"];
+						echo "<li>El " . $comentario_fecha . ", <a href=\"album.php?idU=" . $comentario_idU . "\">" . $comentario_user . "</a> comentó: " . $comentario_comentario . "</li><br/>";
 						//echo "user -> " . $comentario_user . "<br/>";
 						//echo "comentario ->" . $comentario_comentario . "<br/>";
 					}
