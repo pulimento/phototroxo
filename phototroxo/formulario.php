@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<html lang="es">
 	<head>
 		<title>Phototroxo - Registro</title>
 		<link rel="stylesheet" type="text/css" href="stylesheets/estilo_formulario.css" />
