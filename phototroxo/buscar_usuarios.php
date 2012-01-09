@@ -17,8 +17,8 @@ session_start();
 		include ("cabecera.php");
 		?> <!-- Contenido -->
 		<div id="div_content">
-			<form action="buscar.php" method="post">
-			Buscar foto: <input name="palabra">
+			<form action="buscarUsuarios.php" method="post">
+			Buscar Usuario: <input name="palabra">
 			<input type="submit" name="buscador" value="Buscar">
 			</form>
 		</div>

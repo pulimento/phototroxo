@@ -17,18 +17,27 @@ session_start();
 		include ("cabecera.php");
 		?> <!-- Contenido -->
 		<div id="div_content">
+	
+
 			<?php
-             header ("Content-type: image/gif");
+             /*header ("Content-type: image/gif");*/
 			 
-			 $idI = (isset ($_GET["idfoto"])) ? $_GET["idfoto"] : exit ();
+			$idI = (isset ($_GET["idfoto"])) ? $_GET["idfoto"] : exit ();
 			 $titulo = (isset($_GET["titulo"])) ? $_GET["titulo"]:exit ();
 			 $sql = "SELECT $idI,titulo FROM imagen WHERE idI=$idI AND titulo=$titulo"; 
 
               
 			$link = mysql_connect("localhost", "root", "") or die ;
 			mysql_select_db("phototroxo", $link);
-
-			$result = mysql_query("SELECT titulo FROM imagen WHERE (titulo,idI) LIKE ('%titulo',%idI)", $link);
+			
+			
+		
+		 $result = mysql_query("SELECT titulo FROM imagen  WHERE idI=56");
+         $result_array = mysql_fetch_array($result);
+         header("Content-Type: image/jpg");
+         echo $result_array[0];
+			
+			/*$result = mysql_query("SELECT titulo FROM imagen WHERE (titulo,idI) LIKE ('%titulo',%idI)", $link);*/
 
 			// Ahora comprobaremos que todo ha ido correctamente (tratamiento de errores)
 			$my_error = mysql_error($link);
