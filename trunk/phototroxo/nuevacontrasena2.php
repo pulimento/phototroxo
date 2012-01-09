@@ -20,6 +20,7 @@
 
 		$user = $_POST['user'];
 		$password = $_POST['password'];
+		$password2 = $_POST['password2'];
 		$validado = true;
 
 		//validacion de datos
@@ -28,6 +29,13 @@
 			echo "- El usuario debe tener al menos cuatro caracteres
 		<br/>
 		";
+			$validado = false;
+		}
+		
+		if($password != $password2){
+			echo "- Las contraseñas no coinciden
+			<br/>
+			";
 			$validado = false;
 		}
 
@@ -40,12 +48,12 @@
 		//fin de validacion de datos, conexion con la base de datos
 
 		if ($validado) {
-			$link = mysql_connect("localhost", "root", "") or die ;
+			$link = mysql_connect("localhost", "root", "root") or die ;
 			mysql_select_db("phototroxo", $link);
+			
+			$result = mysql_query("SELECT * FROM usuario WHERE User='$user'", $link);
 
-			$result = mysql_query("SELECT * FROM usuario WHERE usser=$user", $conexion);
-
-			$result = mysql_query("UPDATE usuario SET password=$password where usser=$user,$conexion");
+			$result = mysql_query("UPDATE usuario SET Pass='$password' where User='$user'",$link);
 
 			$my_error = mysql_error($link);
 
