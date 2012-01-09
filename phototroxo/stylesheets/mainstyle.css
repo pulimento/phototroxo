@@ -24,7 +24,7 @@ body {
 }
 .celdamenu {
 	padding: 5px 20px 5px 20px;
-	background-color: #0033EE;
+	background-color: #045FB4/*#0033EE*/;
 }
 a:active, a:visited, a:link {
 	text-decoration: none;
