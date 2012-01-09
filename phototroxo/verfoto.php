@@ -80,6 +80,7 @@ $idFoto = $_GET["idI"];
 			<?php
 			$resultcomentario = mysql_query("SELECT c.comentario AS comment, u.Nombre AS name, c.fechaC, c.idU
 			FROM (comentario AS c NATURAL JOIN usuario AS u) WHERE idI = '$idFoto'", $link) or die ;
+
 			$my_error = mysql_error($link);
 
 			function fechaespanola($fechainglesa) {
@@ -111,6 +112,7 @@ $idFoto = $_GET["idI"];
 			}
 			?>
 			</div>
+
 			
 			<!-- Se le permite al usuario que subió la foto -->
 			<?php
@@ -127,3 +129,4 @@ $idFoto = $_GET["idI"];
 			?>
 			</body>
 			</html>
+>>>>>>> .r76

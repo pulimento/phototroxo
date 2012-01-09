@@ -4,64 +4,86 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
-		<title>nuevacontrasena</title>
-		<link rel="stylesheet" type="text/css" href="stylesheets/estilo_nuevacontrasena2.css" />
+		<title>Nueva Contraseña</title>
+		<link rel="stylesheet" type="text/css"  href="stylesheets/estilo_nuevacontrasena.css" />
 		<meta name="author" content="Margari" />
-		<!-- Date: 2012-01-03 -->
+		<!-- Date: 2012-01-02 -->
+		<!-- INICIO DE JAVASCRIPT -->
+		<!-- Validación del formulario -->
+		<script type="text/javascript" language="JavaScript">
+			function procesarFormulario() {
+				//Definición de variables
+				var ctrlUser = document.getElementById("input_usuario");
+				var ctrlPassword = document.getElementById("input_nuevaContrasena");
+				var ctrlPassword2 = document.getElementById("input_confirmacion");
+				var validado = true;
+				var msgError = "";
+
+				//Pone todos los labels en negro, útil si el usuario se equivoca dos veces
+				var labels = document.getElementsByTagName("label"), i;
+				for( i = 0; i < labels.length; i++)
+				labels[i].setAttribute("class", "default");
+
+				if(ctrlUser.value.length < 4) {
+					msgError += "- El usuario debe tener al menos cuatro caracteres\n";
+					document.getElementById("label_usuario").setAttribute("class", "error");
+					ctrlUser.value = "";
+					validado = false;
+				}
+
+				if(ctrlPassword.value.length < 6) {
+					msgError += "- La contrase\xF1a debe tener al menos seis caracteres\n";
+					document.getElementById("label_contrasena").setAttribute("class", "error");
+					document.getElementById("label_confirmacioncontrasena").setAttribute("class", "error");
+					validado = false;
+				}
+
+				if(ctrlPassword2.value != ctrlPassword.value) {
+					msgError += "- Las contrase\xF1as no coinciden\n";
+					document.getElementById("label_contrasena").setAttribute("class", "error");
+					document.getElementById("label_confirmacioncontrasena").setAttribute("class", "error");
+					validado = false;
+				};
+
+				if(msgError != "") {
+					alert("Los datos introducidos no son v\xE1lidos, por favor compruebe lo siguiente:\n\n" + msgError);
+					ctrlPassword.value = "";
+					ctrlPassword2.value = "";
+				}
+				return validado;
+			}
+		</script>
+		<!-- Fin de validación del formulario -->
+		<!-- FIN DE JAVASCRIPT -->
 	</head>
 	<body>
 		<div id="div_header">
-			<img id="img_header" src="images/header.png" alt="Phototroxo"/>
+			<img id="img_header" src="images/header.png" alt="Phototroxo" />
 		</div>
-		<!-- actualizacion en la base de datos-->
-		<?php
-
-		//Definicion de variables
-
-		$user = $_POST['user'];
-		$password = $_POST['password'];
-		$validado = true;
-
-		//validacion de datos
-
-		if (strlen($user) < 4) {
-			echo "- El usuario debe tener al menos cuatro caracteres
-		<br/>
-		";
-			$validado = false;
-		}
-
-		if (strlen($password) < 6) {
-			echo "- La contraseña debe tener al menos seis caracteres
-		<br/>
-		";
-			$validado = false;
-		}
-		//fin de validacion de datos, conexion con la base de datos
-
-		if ($validado) {
-			$link = mysql_connect("localhost", "root", "") or die ;
-			mysql_select_db("phototroxo", $link);
-
-			$result = mysql_query("SELECT * FROM usuario WHERE usser=$user", $conexion);
-
-			$result = mysql_query("UPDATE usuario SET password=$password where usser=$user,$conexion");
-
-			$my_error = mysql_error($link);
-
-			if (!empty($my_error)) {
-				echo "Ha habido un error al insertar los valores. $my_error";
-			} else {
-				echo "Tu contraseña ha sido cambiada correctamente, " . $user . " ;)
-		<br/>
-		<br/>
-		";
-				echo "Puedes volver a la <a id=\"inicio\" href=\"index.html\">página principal</a> para iniciar sesión";
-			}
-		} else {// No se ha superado la validación del lado del servidor
-			echo "<br/><br/>Los datos que ha introducido no son válidos, por favor <a href=\"#\" onclick=\"history.back(1);return false\">vuelva a intentarlo</a>";
-		}
-		?> <!-- Pie de página -->
+		<div id="div_form">
+			<form id="contrasena" action="nuevacontrasena2.php" method="post" onsubmit="return procesarFormulario()">
+				<h1 id="nueva contraseña">&iquest;Has olvidado tu contrase&ntilde;a?</h1>
+				<div id="usuario">
+					<label id="label_usuario">Introduzca su nombre de usuario:</label>
+					<input id="input_usuario"  name="user" type="text"/>
+				</div>
+				<div id="introduzca_contrasena">
+					<label id="label_contrasena">Introduzca su nueva contraseña:</label>
+					<input id="input_nuevaContrasena"  name="password" type="text"/>
+				</div>
+				<div id= "confirmacion">
+					<label id="label_confirmacioncontrasena">Confirme su nueva contraseña:</label>
+					<input id="input_confirmacion"  name="password2" type="text"/>
+				</div>
+				<div id = "boton_confirmar">
+					<input id="boton_enviar" type="submit" value="Enviar" />
+					<!--<button id="confirmar">
+					Enviar
+					</button>-->
+				</div>
+			</form>
+		</div>
+		<!-- Pie de página -->
 		<?php
 		include ("piedepagina.php");
 		?>

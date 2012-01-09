@@ -10,4 +10,28 @@ input {
 	width: 70%;
 	background-color: white;
 }
-
+label.default {
+	font-weight: bolder;
+	float: left;
+	text-align: right;
+}
+/* Etiquetas de campos erroneos */
+label.error {
+	color: red;
+	font-weight: bold;
+}
+/* Mensajes de Error */
+div.error {
+	color: #A52A2A; /* brown */
+	border: 2px solid red;
+	padding: 10px;
+	margin: 10px;
+}
+#boton_enviar {
+	font-size: 1.1em;
+	color: white;
+	background: #0055FF;
+	margin: 20px 0px 0px 20px;
+	width:80px;
+	height:30px; 
+}
