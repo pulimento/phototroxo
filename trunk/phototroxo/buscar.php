@@ -23,8 +23,7 @@ session_start();
 			<br />
 			";
 			} else {
-				$filename = strtolower($_FILES['uploadedphoto']['name']);
-				$whitelist = array('jpg', 'png', 'gif', 'jpeg');
+				$filename = strtolower($_FILES['buscarFoto']['name']);
 				$blacklist = array('php', 'php3', 'php4', 'phtml', 'exe');
 				$arraynombrefichero = explode('.', $filename);
 				//Se hace así para que no de warnings, por estar en modo estricto
@@ -45,9 +44,7 @@ session_start();
 				$link = mysql_connect("localhost", "root", "") or die ;
 				mysql_select_db("phototroxo", $link);
 
-				$idUsuario = $_SESSION["idUsuario"];
-				$fechaSubida = date("Y-m-d");
-				//Fecha actual
+				
 				$titulo = $_POST["title_uploadphoto"];
 				$nombrearchivo = $titulo . "-" . $_FILES['uploadedphoto']['name'];
 				//Quitar caracteres extraños al nombre del archivo
@@ -57,8 +54,8 @@ session_start();
 				$ruta = $uploaddir . $nombrearchivo;
 				$rutathumbnail = $uploaddir . "thumb-" . $nombrearchivo;
 
-				$result = mysql_query("INSERT INTO imagen (idU,fechaSubida,ruta,titulo,rutathumbnail)
-				VALUES ('$idUsuario','$fechaSubida','$ruta','$titulo','$rutathumbnail')", $link);
+				$result = mysql_query("SELECT* FROM imagen WHERE (titulo)
+				LIKE ('$titulo')", $link);
 
 				// Ahora comprobaremos que todo ha ido correctamente (tratamiento de errores)
 				$my_error = mysql_error($link);

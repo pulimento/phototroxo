@@ -48,7 +48,7 @@
 		//fin de validacion de datos, conexion con la base de datos
 
 		if ($validado) {
-			$link = mysql_connect("localhost", "root", "root") or die ;
+			$link = mysql_connect("localhost", "root", "") or die ;
 			mysql_select_db("phototroxo", $link);
 			
 			$result = mysql_query("SELECT * FROM usuario WHERE User='$user'", $link);
