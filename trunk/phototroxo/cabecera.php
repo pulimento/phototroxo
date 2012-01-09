@@ -1,4 +1,5 @@
 <div id="cabecera">
+	
 	<div id="sesion">
 		<?php
 		$idU = $_SESSION["idUsuario"];
