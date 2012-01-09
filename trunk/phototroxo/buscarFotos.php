@@ -9,7 +9,7 @@ session_start();
 		<title>Buscar Fotos</title>
 		<link rel="stylesheet" type="text/css" href="stylesheets/estilo_buscar.css" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
-		<meta name="author" content="Javi Pulido" />
+		<meta name="author" content="Patricia_Raigada" />
 	</head>
 	<body>
 		<!-- Cabecera(logo y menú) -->
@@ -18,7 +18,13 @@ session_start();
 		?> <!-- Contenido -->
 		<div id="div_content">
 			<?php
+             header ("Content-type: image/gif");
+			 
+			 $idI = (isset ($_GET["idfoto"])) ? $_GET["idfoto"] : exit ();
+			 $titulo = (isset($_GET["titulo"])) ? $_GET["titulo"]:exit ();
+			 $sql = "SELECT $idI,titulo FROM imagen WHERE idI=$idI AND titulo=$titulo"; 
 
+              
 			$link = mysql_connect("localhost", "root", "") or die ;
 			mysql_select_db("phototroxo", $link);
 
