@@ -9,7 +9,7 @@ session_start();
 		<title>Phototroxo - Buscador de Fotos</title>
 		<link rel="stylesheet" type="text/css" href="stylesheets/estilo_buscar_fotos.css" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
-		<meta name="author" content="Javi Pulido" />
+		<meta name="author" content="Patricia_Raigada" />
 	</head>
 	<body>
 		<!-- Cabecera(logo y menú) -->
