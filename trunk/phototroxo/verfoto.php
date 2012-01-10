@@ -129,4 +129,3 @@ $idFoto = $_GET["idI"];
 			?>
 			</body>
 			</html>
->>>>>>> .r76

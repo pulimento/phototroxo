@@ -18,11 +18,11 @@ session_start();
 		?> <!-- Contenido -->
 		<div id="div_content">
 			<form action="buscarFotos.php" method="post">
-			Buscar Foto: <input name="palabra">
-			<input type="submit" name="boton" value="Buscar">
+				<label for="palabra">Buscar Foto:</label>
+				<input type="text" name="palabra" />
+				<input type="submit" name="boton" value="Buscar" />
 			</form>
-		</div>	
-			
+		</div>
 		<!-- Pie de página -->
 		<?php
 		include ("piedepagina.php");
