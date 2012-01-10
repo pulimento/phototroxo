@@ -9,7 +9,7 @@ session_start();
 		<title>Buscar Fotos</title>
 		<link rel="stylesheet" type="text/css" href="stylesheets/estilo_buscar.css" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
-		<meta name="author" content="Patricia_Raigada" />
+		<meta name="author" content="Margari_Vela" />
 	</head>
 	<body>
 		<!-- Cabecera(logo y menú) -->
@@ -20,31 +20,31 @@ session_start();
 	
 
 			<?php
-             /*header ("Content-type: image/gif");*/
-			 
-			$idU = (isset ($_GET["idU"])) ? $_GET["idU"] : exit ();
+            $user = $_POST['palabra'];
 			
-			 $sql = "SELECT $idU FROM usuario WHERE idU=$idU"; 
-
-              
 			$link = mysql_connect("localhost", "root", "") or die ;
 			mysql_select_db("phototroxo", $link);
 			
-			
-		
-		 $result = mysql_query("SELECT idU FROM usuario  WHERE idU=1");
-         $result_array = mysql_fetch_array($result);
-         echo $result_array[0];
-			
-			/*$result = mysql_query("SELECT titulo FROM imagen WHERE (titulo,idI) LIKE ('%titulo',%idI)", $link);*/
-
-			// Ahora comprobaremos que todo ha ido correctamente (tratamiento de errores)
 			$my_error = mysql_error($link);
-
+			
 			if (!empty($my_error)) {//Si hay error accediendo a la BD
- 				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
+					echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
+			}
+			else {
+				$consulta = mysql_query("SELECT nombre FROM usuario WHERE User='$user'", $link);
+				if(mysql_num_rows($consulta)>0){
+					for ($i=0; $i < mysql_num_rows($consulta); $i++) { 
+						$array = mysql_fetch_array($consulta);
+						$nombreUsuario = $array["nombre"];
+						
+						echo "Nombre: ".$nombreUsuario;
+					}
+				}else{
+					echo"No hay ninguno";
 				}
-			?>
+			}
+
+		?>
 		</div>
 		<!-- Pie de página -->
 		<?php
