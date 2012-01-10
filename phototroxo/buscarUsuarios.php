@@ -31,13 +31,14 @@ session_start();
 					echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
 			}
 			else {
-				$consulta = mysql_query("SELECT nombre FROM usuario WHERE User='$user'", $link);
+				$consulta = mysql_query("SELECT nombre,apellidos FROM usuario WHERE User='$user'", $link);
 				if(mysql_num_rows($consulta)>0){
 					for ($i=0; $i < mysql_num_rows($consulta); $i++) { 
 						$array = mysql_fetch_array($consulta);
 						$nombreUsuario = $array["nombre"];
+						$apellidosUsuario = $array["apellidos"];
+						echo "Nombre: ".$nombreUsuario.$apellidosUsuario;
 						
-						echo "Nombre: ".$nombreUsuario;
 					}
 				}else{
 					echo"No hay ninguno";

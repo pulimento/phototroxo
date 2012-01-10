@@ -19,8 +19,18 @@ session_start();
 		<?php
 		$titulo = $_POST["palabra"];
 		?>
-
+		
+		<div id="div_title">
+			<div id="titulo_foto">
+				<?php
+				echo  $titulo;
+				?>
+			</div>
+			
+</div>
+<br />
 		<div id="div_content">
+			
 			<?php
 			/*header ("Content-type: image/gif");*/
 
@@ -30,10 +40,10 @@ session_start();
 
 			// Ahora comprobaremos que todo ha ido correctamente (tratamiento de errores)
 			$my_error = mysql_error($link);
-echo "titulo -> " . $titulo;
+            
 
 			$result = mysql_query("SELECT i.rutathumbnail FROM imagen AS i WHERE i.titulo = '$titulo'", $link);
-			echo "resultados -> " . mysql_num_rows($result);
+			/*echo "resultados -> " . mysql_num_rows($result);*/
 
 			if (!empty($my_error)) {//Si hay error accediendo a la BD
 				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
