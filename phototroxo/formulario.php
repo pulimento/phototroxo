@@ -190,19 +190,19 @@
 						<!-- user -->
 						<div id="div_user">
 							<label id="label_user" for="user">Usuario:</label>
-							<input id="user" name="user" type="text" />
+							<input id="user" name="user" type="text" onFocus="blur" />
 							<label id="user_hint" class="hint">Cuatro caracteres como m&iacute;nimo</label>
 						</div>
 						<!-- password -->
 						<div id="div_password">
 							<label id="label_password" for="password">Contrase&ntilde;a:</label>
-							<input id="password" name="password" type="password" />
+							<input id="password" name="password" type="password" onFocus="blur" />
 							<label id="password_hint" class="hint">Seis caracteres como m&iacute;nimo</label>
 						</div>
 						<!-- repetir password -->
 						<div id="div_password2">
 							<label id="label_password2" for="password2">Repetir Contrase&ntilde;a:</label>
-							<input id="password2" name="password2" type="password" />
+							<input id="password2" name="password2" type="password" onFocus="blur" />
 						</div>
 					</fieldset>
 				</div>
@@ -215,9 +215,9 @@
 						<!-- DNI -->
 						<div id="div_dni">
 							<label id="label_dni" for="dni">D.N.I.:</label>
-							<input id="dni" name="dni" type="text" maxlength="8" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;"/>
+							<input id="dni" name="dni" type="text" onFocus="blur" maxlength="8" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;"/>
 							-
-							<input id="letra" name="letra" type="text" maxlength="1" onChange="javascript:this.value=this.value.toUpperCase();"/>
+							<input id="letra" name="letra" type="text" maxlength="1" onFocus="blur" onChange="javascript:this.value=this.value.toUpperCase();"/>
 						</div>
 						<!-- Elección del sexo -->
 						<div id="div_sexo">
@@ -236,24 +236,24 @@
 						<!-- Nombre -->
 						<div id="div_nombre">
 							<label id="label_nombre" for="nombre">Nombre:</label>
-							<input id="nombre" name="nombre" type="text"/>
+							<input id="nombre" name="nombre" type="text" onFocus="blur" />
 							<label id="nombre_hint" class="hint">Tu nombre de pila</label>
 						</div>
 						<!-- Apellidos -->
 						<div id="div_apellidos">
 							<label id="label_apellidos" for="apellidos">Apellidos:</label>
-							<input id="apellidos" name="apellidos" type="text"/>
+							<input id="apellidos" name="apellidos" type="text" onFocus="blur" />
 						</div>
 						<!--Email-->
 						<div id="div_email">
 							<label id="label_email" for="email">Email:</label>
-							<input id="email" name="email" type="text"/>
+							<input id="email" name="email" type="text" onFocus="blur" />
 							<label id="email_hint" class="hint">Debe ser una direcci&oacute;n v&aacute;lida</label>
 						</div>
 						<!--Fecha nacimiento-->
 						<div id="div_fechanacimiento">
 							<label id="label_datepicker" for="datepicker">Fecha nac.:</label>
-							<input type="text" name="datepicker" id="datepicker" size="12" />
+							<input type="text" name="datepicker" id="datepicker" size="12" onFocus="blur" />
 							<label id="user_hint" class="hint">Comprobaci&oacute;n de edad</label>
 						</div>
 					</fieldset>
@@ -267,15 +267,15 @@
 						</legend>
 						<div id="div_calle">
 							<label id="label_calle" for="calle">Calle/Avda.:</label>
-							<input id="calle" name="calle" type="text"/>
+							<input id="calle" name="calle" type="text" onFocus="blur" />
 						</div>
 						<div id="div_poblacion">
 							<label id="label_poblacion" for="poblacion">Poblaci&oacute;n:</label>
-							<input id="poblacion" name="poblacion" type="text"/>
+							<input id="poblacion" name="poblacion" type="text" onFocus="blur" />
 						</div>
 						<div id="div_provincia">
 							<label id="label_provincia" for="provincia">Provincia:</label>
-							<select id="provincia" name="provincia">
+							<select id="provincia" name="provincia" onFocus="blur">
 								<optgroup label="Andaluc&iacute;a">
 									<option>Sevilla</option>
 									<option>Almer&iacute;a</option>
@@ -295,7 +295,7 @@
 					</fieldset>
 				</div>
 				<div id="div_acepto">
-					<input id="acepto" name="acepto" type="checkbox"/>
+					<input id="acepto" name="acepto" type="checkbox" onFocus="blur" />
 					<label id="label_acepto" for="acepto">He le&iacute;do y acepto las <a href="legalnote.html">condiciones generales y la pol&iacute;tica de privacidad</a></label>
 				</div>
 				<div id="div_submit">
