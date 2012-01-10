@@ -19,7 +19,7 @@ session_start();
 		<div id="div_content">
 			<form action="buscarFotos.php" method="post">
 			Buscar Foto: <input name="palabra">
-			<input type="submit" name="buscador" value="Buscar">
+			<input type="submit" name="boton" value="Buscar">
 			</form>
 		</div>	
 			

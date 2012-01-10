@@ -16,35 +16,42 @@ session_start();
 		<?php
 		include ("cabecera.php");
 		?> <!-- Contenido -->
+		<?php
+		$titulo = $_POST["palabra"];
+		?>
+
 		<div id="div_content">
-	
-
 			<?php
-             /*header ("Content-type: image/gif");*/
-			 
-			$idI = (isset ($_GET["idfoto"])) ? $_GET["idfoto"] : exit ();
-			 $titulo = (isset($_GET["titulo"])) ? $_GET["titulo"]:exit ();
-			 $sql = "SELECT $idI,titulo FROM imagen WHERE idI=$idI AND titulo=$titulo"; 
+			/*header ("Content-type: image/gif");*/
 
-              
+			//Conectar base de datos
 			$link = mysql_connect("localhost", "root", "") or die ;
 			mysql_select_db("phototroxo", $link);
-			
-			
-		
-		 $result = mysql_query("SELECT titulo FROM imagen ", $link);
-         $result_array = mysql_fetch_array($result);
-         header("Content-Type: image/jpg");
-         echo $result_array[0];
-			
-			/*$result = mysql_query("SELECT titulo FROM imagen WHERE (titulo,idI) LIKE ('%titulo',%idI)", $link);*/
 
 			// Ahora comprobaremos que todo ha ido correctamente (tratamiento de errores)
 			$my_error = mysql_error($link);
+echo "titulo -> " . $titulo;
+
+			$result = mysql_query("SELECT i.rutathumbnail FROM imagen AS i WHERE i.titulo = '$titulo'", $link);
+			echo "resultados -> " . mysql_num_rows($result);
 
 			if (!empty($my_error)) {//Si hay error accediendo a la BD
- 				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
+				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
+			} else {
+				
+				if (mysql_num_rows($result) > 0) {
+					
+					for ($i = 0; $i < mysql_num_rows($result); $i++) {
+						$array = mysql_fetch_array($result);
+						$ruta = $array["rutathumbnail"];
+
+						echo "<img src=\"" . $ruta . "\" />";
+					}
+				} else {
+					echo 'sin resultados';
 				}
+			}
+			
 			?>
 		</div>
 		<!-- Pie de página -->
