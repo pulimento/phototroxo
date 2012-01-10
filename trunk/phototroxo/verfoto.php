@@ -42,7 +42,7 @@ $idFoto = $_GET["idI"];
 		<div id="div_title">
 			<div id="titulo_foto">
 				<?php
-				echo "Foto: " . $titulo;
+				echo /*"Foto: " .*/ $titulo;
 				?>
 			</div>
 			<div id="usuarioQueSubeLaFoto">
@@ -128,4 +128,6 @@ $idFoto = $_GET["idI"];
 			include ("piedepagina.php");
 			?>
 			</body>
+
 			</html>
+			
