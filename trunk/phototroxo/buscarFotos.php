@@ -32,7 +32,7 @@ session_start();
 			
 			
 		
-		 $result = mysql_query("SELECT titulo FROM imagen  WHERE idI=56");
+		 $result = mysql_query("SELECT titulo FROM imagen ", $link);
          $result_array = mysql_fetch_array($result);
          header("Content-Type: image/jpg");
          echo $result_array[0];
