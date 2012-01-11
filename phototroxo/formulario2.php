@@ -18,19 +18,17 @@
 			<!-- Procesamiento del formulario e inserción en la base de datos si procede -->
 			<?php
 
-			//tenemos que ver qué es lo que se va a mostrar una vez que el usuario esté registrado
-
 			//Definición de variables
-			$user = $_POST['user'];
-			$password = $_POST['password'];
-			$dniconletra = $_POST['dni'] . $_POST['letra'];
-			$nombre = $_POST['nombre'];
-			$apellidos = $_POST['apellidos'];
-			$email = $_POST['email'];
-			$fecha = explode("/", $_POST['datepicker']);
-			$calle = $_POST['calle'];
-			$poblacion = $_POST['poblacion'];
-			$provincia = $_POST['provincia'];
+			$user = strip_tags($_POST['user']);
+			$password = strip_tags($_POST['password']);
+			$dniconletra = strip_tags($_POST['dni']) . strip_tags($_POST['letra']);
+			$nombre = strip_tags($_POST['nombre']);
+			$apellidos = strip_tags($_POST['apellidos']);
+			$email = strip_tags($_POST['email']);
+			$fecha = explode("/", strip_tags($_POST['datepicker']));
+			$calle = strip_tags($_POST['calle']);
+			$poblacion = strip_tags($_POST['poblacion']);
+			$provincia = strip_tags($_POST['provincia']);
 			$validado = true;
 
 			//Validación del lado del servidor
@@ -91,22 +89,6 @@
 			}
 
 			//FIN DE LA VALIDACION DEL LADO DEL SERVIDOR
-
-			/*echo $user."<br/>";
-			 echo $password."<br/>";
-			 echo $sexo."<br/>";
-			 echo $dniconletra."<br/>";
-			 echo $nombre."<br/>";
-			 echo $apellidos."<br/>";
-			 echo $email."<br/>";
-			 echo $_POST['datepicker']."<br/>";
-			 echo $fecha[0]."<br/>";
-			 echo $fecha[1]."<br/>";
-			 echo $fecha[2]."<br/>";
-			 echo "FechaSQL ".$fechaSQL."<br/>";
-			 echo $calle."<br/>";
-			 echo $poblacion."<br/>";
-			 echo $provincia."<br/>";*/
 
 			if ($validado) {
 				$link = mysql_connect("localhost", "root", "") or die ;

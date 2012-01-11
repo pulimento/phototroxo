@@ -36,8 +36,11 @@ session_start();
 			<br/>
 			";
 				$validado = false;
+				
+			}else if(!preg_match("/^[a-zA-Z]+$/", $user))  {
+				echo "- El usuario no puede contener símbolos <br/>";
+        		$validado = false;  
 			}
-
 			if (strlen($password) < 6) {
 				echo "- La contraseña debe tener al menos seis caracteres
 			<br/>
