@@ -69,6 +69,8 @@ $idFoto = $_GET["idI"];
 			</div>
 			<?php
 			//Insertar un comentario
+			
+			
 			if (isset($_POST["input_escribecomentario"]))
 				$commentposted_comment = $_POST["input_escribecomentario"];
 			//$commentposted_user = $_POST("input_user");
@@ -76,10 +78,13 @@ $idFoto = $_GET["idI"];
 				$resultinsertarcomentario = mysql_query("INSERT INTO comentario (idI, idU, comentario, fechaC)
 			VALUES ('$idFoto','$idU','" . $commentposted_comment . "','" . date("Y-m-d") . "')", $link) or die ;
 			}
+			
 			?>
 
 			<div id="comentarios">
-			<?php
+			<?php 
+			
+			
 			$resultcomentario = mysql_query("SELECT c.comentario AS comment, u.Nombre AS name, c.fechaC, c.idU
 			FROM (comentario AS c NATURAL JOIN usuario AS u) WHERE idI = '$idFoto'", $link) or die ;
 
@@ -112,6 +117,7 @@ $idFoto = $_GET["idI"];
 				}
 
 			}
+			
 			?>
 			</div>
 
