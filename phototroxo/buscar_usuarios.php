@@ -6,10 +6,9 @@ session_start();
 <html lang="es">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link href="images/favicon.ico" rel="shortcut icon" />
-		<title>Phototroxo - Buscador de usuarios</title>
-		<meta name="author" content="Patricia Raigada" />
+		<title>Phototroxo - Buscador de Usuarios</title>
 		<link rel="stylesheet" type="text/css" href="stylesheets/estilo_buscar_usuarios.css" />
+		<link href="images/favicon.ico" rel="shortcut icon" />
 	</head>
 	<body>
 		<!-- Cabecera(logo y menú) -->
@@ -17,9 +16,10 @@ session_start();
 		include ("cabecera.php");
 		?> <!-- Contenido -->
 		<div id="div_content">
-			<form action="buscarUsuarios.php" method="post">
-			Buscar Usuario: <input name="palabra">
-			<input type="submit" name="buscador" value="Buscar">
+			<form id="form_buscar_usuario" action="resultadoBuscarUsuarios.php" method="post">
+				<label id="label_palabra" for="palabra">Buscar usuario:</label>
+				<input id="input_palabra" type="text" name="palabra" />
+				<input id="boton_submit" type="submit" name="boton" value="Buscar" />
 			</form>
 		</div>
 		<!-- Pie de página -->
