@@ -18,8 +18,16 @@ $busqueda = $_POST["palabra"];
 		?> <!-- Contenido -->
 		<div id="div_content">
 			<?php
-
+			$validado = true;
+			if (strlen($busqueda) < 4) {
+				echo "- El usuario debe tener al menos cuatro caracteres
+			<br/>
+			";
+				$validado = false;
+			}
+			
 			//Conectar base de datos
+			if($validado){
 			$link = mysql_connect("localhost", "root", "") or die ;
 			mysql_select_db("phototroxo", $link);
 
@@ -47,6 +55,7 @@ $busqueda = $_POST["palabra"];
 				} else {
 					echo 'No se ha encontrado ning&uacute;n usuario con los criterios de búsqueda especificados';
 				}
+			}
 			}
 			?>
 		</div>
