@@ -25,7 +25,6 @@ $idFoto = $_GET["idI"];
 			//Conectando a la base de datos
 			$link = mysql_connect('localhost', 'root', '') or die;
 			mysql_select_db("phototroxo", $link);
-			$result_borrarcomentarios = mysql_query("DELETE FROM comentario WHERE idI = '$idFoto'", $link);
 			$result_borrarfoto = mysql_query("DELETE FROM imagen WHERE idI = '$idFoto'", $link);
 			$my_error = mysql_error($link);
 
