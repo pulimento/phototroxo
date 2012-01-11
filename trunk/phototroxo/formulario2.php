@@ -39,7 +39,7 @@
 			}
 
 			if (strlen($password) < 6) {
-				echo "- La contraseña debe tener al menos seis caracteres<br/>";
+				echo "- La contrase&ntilde;a debe tener al menos seis caracteres<br/>";
 				$validado = false;
 			}
 
@@ -70,7 +70,7 @@
 				$validado = false;
 			}
 
-			//fecha es un array con d&#237;a, mes y año
+			//fecha es un array con d&#237;a, mes y a&ntilde;o
 			if (count($fecha) == 1) {
 				echo "- La fecha introducida no es v&#225;lida<br/>";
 				$validado = false;

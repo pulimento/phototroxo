@@ -33,14 +33,14 @@
 		}
 		
 		if($password != $password2){
-			echo "- Las contraseñas no coinciden
+			echo "- Las contrase&ntilde;as no coinciden
 			<br/>
 			";
 			$validado = false;
 		}
 
 		if (strlen($password) < 6) {
-			echo "- La contraseña debe tener al menos seis caracteres
+			echo "- La contrase&ntilde;a debe tener al menos seis caracteres
 		<br/>
 		";
 			$validado = false;
@@ -60,7 +60,7 @@
 			if (!empty($my_error)) {
 				echo "Ha habido un error al insertar los valores. $my_error";
 			} else {
-				echo "Tu contraseña ha sido cambiada correctamente, " . $user . " ;)
+				echo "Tu contrase&ntilde;a ha sido cambiada correctamente, " . $user . " ;)
 		<br/>
 		<br/>
 		";

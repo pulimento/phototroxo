@@ -9,7 +9,7 @@ function cleanFileName($str) {
 	$cleaner[] = array('expression' => "/[ì&#237;îï]/", 'replace' => "i");
 	$cleaner[] = array('expression' => "/[ò&#243;õôö]/", 'replace' => "o");
 	$cleaner[] = array('expression' => "/[ù&#250;ûü]/", 'replace' => "u");
-	$cleaner[] = array('expression' => "/[ñ]/", 'replace' => "n");
+	$cleaner[] = array('expression' => "/[&ntilde;]/", 'replace' => "n");
 	$cleaner[] = array('expression' => "/[ç]/", 'replace' => "c");
 	$str = strtolower($str);
 	$ext_point = strripos($str, ".");

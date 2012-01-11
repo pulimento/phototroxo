@@ -37,12 +37,9 @@ session_start();
 			";
 				$validado = false;
 				
-			}else if(!preg_match("/^[a-zA-Z]+$/", $user))  {
-				echo "- El usuario no puede contener s&#237;mbolos <br/>";
-        		$validado = false;  
 			}
 			if (strlen($password) < 6) {
-				echo "- La contraseña debe tener al menos seis caracteres
+				echo "- La contrase&ntilde;a debe tener al menos seis caracteres
 			<br/>
 			";
 				$validado = false;
@@ -64,7 +61,7 @@ session_start();
 					echo "Ha habido un error accediendo a la base de datos. Int&#233;ntelo m&#225;s tarde. $my_error";
 				} else {
 					//echo sizeof($result);
-					if (!empty($row)) {//Si el usuario y contraseña son v&#225;lidos
+					if (!empty($row)) {//Si el usuario y contrase&ntilde;a son v&#225;lidos
 						$idUsuario = $row["idU"];
 						$nombreUsuario = $row["Nombre"];
 						$_SESSION["idUsuario"] = $idUsuario;
@@ -77,7 +74,7 @@ session_start();
 						$_SESSION["idUsuario"] = $idUsuario;
 						$_SESSION["nombreUsuario"] = $nombreUsuario;
 					} else {//No est&#225; registrado!!
-						echo "Fallo en el usuario y/o contraseña, por favor <a href=\"#\" onclick=\"history.back(1);return false\">vuelva a intentarlo</a>";
+						echo "Fallo en el usuario y/o contrase&ntilde;a, por favor <a href=\"#\" onclick=\"history.back(1);return false\">vuelva a intentarlo</a>";
 					}
 				}
 			} else {//Si no ha pasado la validaci&#243;n
