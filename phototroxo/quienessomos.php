@@ -7,7 +7,7 @@ $idU = $_SESSION["idUsuario"];
 "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="es">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
 		<title>Phototroxo - Quienes Somos</title>
 		<meta name="author" content="Margari" />
