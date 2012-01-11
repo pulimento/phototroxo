@@ -68,74 +68,73 @@ $idFoto = $_GET["idI"];
 			</form>
 			</div>
 			<?php
+
 			//Insertar un comentario
-			
-			
-			if (isset($_POST["input_escribecomentario"]))
-				$commentposted_comment = $_POST["input_escribecomentario"];
-			//$commentposted_user = $_POST("input_user");
-			if (isset($commentposted_comment)) {
-				$resultinsertarcomentario = mysql_query("INSERT INTO comentario (idI, idU, comentario, fechaC)
-			VALUES ('$idFoto','$idU','" . $commentposted_comment . "','" . date("Y-m-d") . "')", $link) or die ;
+
+			if (isset($_POST["input_escribecomentario"])) {
+			$commentposted_comment = $_POST["input_escribecomentario"];
 			}
-			
-			?>
 
-			<div id="comentarios">
-			<?php 
-			
-			
-			$resultcomentario = mysql_query("SELECT c.comentario AS comment, u.Nombre AS name, c.fechaC, c.idU
-			FROM (comentario AS c NATURAL JOIN usuario AS u) WHERE idI = '$idFoto'", $link) or die ;
-
-			$my_error = mysql_error($link);
+			if (isset($commentposted_comment)) {
+			$validado = true;
+			if (strlen($commentposted_comment) == 0){
+			$msg = "Ha introducido un comentario vacío, inténtelo de nuevo";
+			$validado = false;
+			}
 
 			function fechaespanola($fechainglesa) {
-				list($a, $m, $d) = explode("-", $fechainglesa);
-				return $d . "-" . $m . "-" . $a;
+			list($a, $m, $d) = explode("-", $fechainglesa);
+			return $d . "-" . $m . "-" . $a;
 			};
 
-			if (!empty($my_error)) {//Si hay error accediendo a la BD
-				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
-			} else {
-				$numcomentarios = mysql_num_rows($resultcomentario);
-				if ($numcomentarios > 0) {
-					echo "<ul>";
-					for ($cont = 0; $cont < $numcomentarios; $cont++) {
-						$comentario = mysql_fetch_array($resultcomentario);
-						$comentario_user = $comentario["name"];
-						$comentario_comentario = $comentario["comment"];
-						$comentario_fecha = fechaespanola($comentario["fechaC"]);
-						$comentario_idU = $comentario["idU"];
-						echo "<li>El " . $comentario_fecha . ", <a href=\"album.php?idU=" . $comentario_idU . "\">" . $comentario_user . "</a> comentó: " . $comentario_comentario . "</li><br/>";
-						//echo "user -> " . $comentario_user . "<br/>";
-						//echo "comentario ->" . $comentario_comentario . "<br/>";
-					}
-					echo "</ul>";
-				} else {
-					echo "No hay ningún comentario aún, ¡sé el primero en comentar!";
-				}
+			if($validado){
+				$resultinsertarcomentario = mysql_query("INSERT INTO comentario (idI, idU, comentario, fechaC)
+				VALUES ('$idFoto','$idU','" . $commentposted_comment . "','" . date("Y-m-d") . "')", $link) or die ;
 
+				echo '<div id="comentarios">';
+				$resultcomentario = mysql_query("SELECT c.comentario AS comment, u.Nombre AS name, c.fechaC, c.idU
+				FROM (comentario AS c NATURAL JOIN usuario AS u) WHERE idI = '$idFoto'", $link) or die ;
+
+				$my_error = mysql_error($link);
+
+				if (!empty($my_error)) {//Si hay error accediendo a la BD
+					echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
+				} else {
+				$numcomentarios = mysql_num_rows($resultcomentario);
+					if ($numcomentarios > 0) {
+						echo "<ul>";
+						for ($cont = 0; $cont < $numcomentarios; $cont++) {
+							$comentario = mysql_fetch_array($resultcomentario);
+							$comentario_user = $comentario["name"];
+							$comentario_comentario = $comentario["comment"];
+							$comentario_fecha = fechaespanola($comentario["fechaC"]);
+							$comentario_idU = $comentario["idU"];
+							echo "<li>El " . $comentario_fecha . ", <a href=\"album.php?idU=" . $comentario_idU . "\">" . $comentario_user . "</a> comentó: " . $comentario_comentario . "</li><br/>";
+						}
+						echo "</ul>";
+					} else {
+						echo "No hay ningún comentario aún, ¡sé el primero en comentar!";
+					}
+				}
+			} else {
+				echo $msg;
 			}
-			
+			}
 			?>
 			</div>
 
-			
 			<!-- Se le permite al usuario que subió la foto -->
 			<?php
-				if ($subido_idU == $idU){
-					echo '<div id="opcionesfoto">';
-					echo '<a href="opcionesfoto.php?idI=' . $idFoto . '">Modificar el título o borrar la foto</a>';
-					echo '</div>';
-				}
-			?>	
+			if ($subido_idU == $idU) {
+				echo '<div id="opcionesfoto">';
+				echo '<a href="opcionesfoto.php?idI=' . $idFoto . '">Modificar el título o borrar la foto</a>';
+				echo '</div>';
+			}
+			?>
 
 			<!-- Pie de página -->
 			<?php
 			include ("piedepagina.php");
-			?>
-			</body>
+			?>			</body>
 
 			</html>
-			
