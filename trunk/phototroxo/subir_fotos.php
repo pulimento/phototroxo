@@ -12,7 +12,7 @@ session_start();
 		<meta name="author" content="Javi Pulido" />
 	</head>
 	<body>
-		<!-- Cabecera(logo y menú) -->
+		<!-- Cabecera(logo y men&#250;) -->
 		<?php
 		include ("cabecera.php");
 		?> <!-- Contenido -->
@@ -20,14 +20,14 @@ session_start();
 			<h2 id="text_subirfotos">Subir Fotos</h2>
 			<form enctype="multipart/form-data" action="uploadphoto.php" method="POST">
 				<div id="titulo_foto">
-					<label id="label_title_uploadphoto" for="title_uploadphoto">T&iacute;tulo:</label>
+					<label id="label_title_uploadphoto" for="title_uploadphoto">T&#237;tulo:</label>
 					<input name="title_uploadphoto" type="text" />
 				</div>
 				<div id="seleccionarfoto">
 					<label id="label_uploadphoto" for="uploadedphoto">Selecciona una foto:</label>
 					<input name="uploadedphoto" type="file" />
 					<p>
-						Se admiten im&aacute;genes en formato JPG, PNG y GIF
+						Se admiten im&#225;genes en formato JPG, PNG y GIF
 					</p>
 				</div>
 				<button id="button_subirfoto">
@@ -35,7 +35,7 @@ session_start();
 				</button>
 			</form>
 		</div>
-		<!-- Pie de página -->
+		<!-- Pie de p&#225;gina -->
 		<?php
 		include ("piedepagina.php");
 		?>

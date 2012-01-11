@@ -11,7 +11,7 @@ session_start();
 		<link href="images/favicon.ico" rel="shortcut icon" />
 	</head>
 	<body>
-		<!-- Cabecera(logo y menú) -->
+		<!-- Cabecera(logo y men&#250;) -->
 		<?php
 		include ("cabecera.php");
 		?> <!-- Contenido -->
@@ -22,7 +22,7 @@ session_start();
 				<input id="boton_submit" type="submit" name="boton" value="Buscar" />
 			</form>
 		</div>
-		<!-- Pie de página -->
+		<!-- Pie de p&#225;gina -->
 		<?php
 		include ("piedepagina.php");
 		?>

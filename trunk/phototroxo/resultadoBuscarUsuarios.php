@@ -7,12 +7,12 @@ $busqueda = $_POST["palabra"];
 <html lang="es">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-		<title>Phototroxo - Resultados de la b&uacute;squeda de usuarios</title>
+		<title>Phototroxo - Resultados de la b&#250;squeda de usuarios</title>
 		<link rel="stylesheet" type="text/css" href="stylesheets/estilo_fotos.css" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
 	</head>
 	<body>
-		<!-- Cabecera(logo y menú) -->
+		<!-- Cabecera(logo y men&#250;) -->
 		<?php
 		include ("cabecera.php");
 		?> <!-- Contenido -->
@@ -34,9 +34,9 @@ $busqueda = $_POST["palabra"];
 			// Ahora comprobaremos que todo ha ido correctamente (tratamiento de errores)
 			$my_error = mysql_error($link);
 
-			echo '<h2 id="text_busca">Resultados de la b&uacute;squeda de usuarios</h2>';
+			echo '<h2 id="text_busca">Resultados de la b&#250;squeda de usuarios</h2>';
 			if (!empty($my_error)) {//Si hay error accediendo a la BD
-				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
+				echo "Ha habido un error accediendo a la base de datos. Int&#233;ntelo m&#225;s tarde. $my_error";
 			} else {
 				$resultusuarios = mysql_query("SELECT u.idU,u.nombre,u.apellidos FROM usuario AS u WHERE User LIKE '%$busqueda%'", $link);
 				$numResultados = mysql_num_rows($resultusuarios);
@@ -53,13 +53,13 @@ $busqueda = $_POST["palabra"];
 					echo "</ul>";
 
 				} else {
-					echo 'No se ha encontrado ning&uacute;n usuario con los criterios de búsqueda especificados';
+					echo 'No se ha encontrado ning&#250;n usuario con los criterios de b&#250;squeda especificados';
 				}
 			}
 			}
 			?>
 		</div>
-		<!-- Pie de página -->
+		<!-- Pie de p&#225;gina -->
 		<?php
 		include ("piedepagina.php");
 		?>

@@ -64,13 +64,13 @@
 		<br/>
 		<br/>
 		";
-				echo "Puedes volver a la <a id=\"inicio\" href=\"index.html\">página principal</a> para iniciar sesión";
+				echo "Puedes volver a la <a id=\"inicio\" href=\"index.html\">p&#225;gina principal</a> para iniciar sesi&#243;n";
 			}
-		} else {// No se ha superado la validación del lado del servidor
-			echo "<br/><br/>Los datos que ha introducido no son válidos, por favor <a href=\"#\" onclick=\"history.back(1);return false\">vuelva a intentarlo</a>";
+		} else {// No se ha superado la validaci&#243;n del lado del servidor
+			echo "<br/><br/>Los datos que ha introducido no son v&#225;lidos, por favor <a href=\"#\" onclick=\"history.back(1);return false\">vuelva a intentarlo</a>";
 		}
 		?>
-		<!-- Pie de página -->
+		<!-- Pie de p&#225;gina -->
 		<?php
 		include ("piedepagina.php");
 		?>

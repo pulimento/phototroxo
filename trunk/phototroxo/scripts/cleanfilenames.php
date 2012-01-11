@@ -4,11 +4,11 @@
 
 function cleanFileName($str) {
 	$cleaner = array();
-	$cleaner[] = array('expression' => "/[àáäãâª]/", 'replace' => "a");
-	$cleaner[] = array('expression' => "/[èéêë]/", 'replace' => "e");
-	$cleaner[] = array('expression' => "/[ìíîï]/", 'replace' => "i");
-	$cleaner[] = array('expression' => "/[òóõôö]/", 'replace' => "o");
-	$cleaner[] = array('expression' => "/[ùúûü]/", 'replace' => "u");
+	$cleaner[] = array('expression' => "/[à&#225;äãâª]/", 'replace' => "a");
+	$cleaner[] = array('expression' => "/[è&#233;êë]/", 'replace' => "e");
+	$cleaner[] = array('expression' => "/[ì&#237;îï]/", 'replace' => "i");
+	$cleaner[] = array('expression' => "/[ò&#243;õôö]/", 'replace' => "o");
+	$cleaner[] = array('expression' => "/[ù&#250;ûü]/", 'replace' => "u");
 	$cleaner[] = array('expression' => "/[ñ]/", 'replace' => "n");
 	$cleaner[] = array('expression' => "/[ç]/", 'replace' => "c");
 	$str = strtolower($str);

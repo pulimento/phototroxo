@@ -12,7 +12,7 @@ session_start();
 		<meta name="author" content="Javi Pulido" />
 	</head>
 	<body>
-		<!-- Cabecera(logo y menú) -->
+		<!-- Cabecera(logo y men&#250;) -->
 		<?php
 		include ("cabecera.php");
 		?> <!-- Contenido -->
@@ -20,7 +20,7 @@ session_start();
 			<?php
 			
 			 
-			//Validación del lado del servidor
+			//Validaci&#243;n del lado del servidor
 
 			
 			
@@ -33,15 +33,15 @@ session_start();
 				$whitelist = array('jpg', 'png', 'gif', 'jpeg');
 				$blacklist = array('php', 'php3', 'php4', 'phtml', 'exe');
 				$arraynombrefichero = explode('.', $filename);
-				//Se hace así para que no de warnings, por estar en modo estricto
+				//Se hace as&#237; para que no de warnings, por estar en modo estricto
 				$extensionfichero = end($arraynombrefichero);
 				if (!in_array($extensionfichero, $whitelist)) {
-					echo 'Tipo de archivo no válido, sólo se aceptan fotos JPG, PNG y GIF. 
+					echo 'Tipo de archivo no v&#225;lido, s&#243;lo se aceptan fotos JPG, PNG y GIF. 
 					<a href="subir_fotos.php">Volver</a>';
 					exit(0);
 				}
 				if (in_array($extensionfichero, $blacklist)) {
-					echo 'Tipo de archivo no válido, sólo se aceptan fotos JPG, PNG y GIF. 
+					echo 'Tipo de archivo no v&#225;lido, s&#243;lo se aceptan fotos JPG, PNG y GIF. 
 					<a href="subir_fotos.php">Volver</a>';
 					exit(0);
 				}
@@ -72,7 +72,7 @@ session_start();
 				$my_error = mysql_error($link);
 
 				if (!empty($my_error)) {//Si hay error accediendo a la BD
-					echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
+					echo "Ha habido un error accediendo a la base de datos. Int&#233;ntelo m&#225;s tarde. $my_error";
 				} else {
 					//Reducimos (si es necesario) la foto que se acaba de subir y creamos el thumbnail
 					include ('scripts/resizeimages.php');
@@ -87,7 +87,7 @@ session_start();
 
 					echo "<h3>La foto se ha subido correctamente ;)</h3>";
 					echo "<a href=\"subir_fotos.php\">Subir otra foto</a>";
-					echo "<br/><br/>Título : " . $titulo . "<br/><br/>";
+					echo "<br/><br/>T&#237;tulo : " . $titulo . "<br/><br/>";
 					echo "<div id=\"div_fotoreciensubida\">
 			<img id=\"img_fotoreciensubida\" src=\"" . $ruta . "\"/></div>";
 				}
@@ -95,7 +95,7 @@ session_start();
 			
 			?>
 		</div>
-		<!-- Pie de página -->
+		<!-- Pie de p&#225;gina -->
 		<?php
 		include ("piedepagina.php");
 		?>

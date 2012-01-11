@@ -18,9 +18,9 @@
 					currentText : 'Hoy',
 					monthNames : ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
 					monthNamesShort : ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
-					dayNames : ['Domingo', 'Lunes', 'Martes', 'Mi&eacute;rcoles', 'Jueves', 'Viernes', 'S&aacute;bado'],
-					dayNamesShort : ['Dom', 'Lun', 'Mar', 'Mi&eacute;', 'Juv', 'Vie', 'S&aacute;b'],
-					dayNamesMin : ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'S&aacute;'],
+					dayNames : ['Domingo', 'Lunes', 'Martes', 'Mi&#233;rcoles', 'Jueves', 'Viernes', 'S&#225;bado'],
+					dayNamesShort : ['Dom', 'Lun', 'Mar', 'Mi&#233;', 'Juv', 'Vie', 'S&#225;b'],
+					dayNamesMin : ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'S&#225;'],
 					weekHeader : 'Sm',
 					dateFormat : 'dd/mm/yy',
 					firstDay : 1,
@@ -47,10 +47,10 @@
 			});
 
 		</script>
-		<!-- Validación del formulario -->
+		<!-- Validaci&#243;n del formulario -->
 		<script type="text/javascript" language="JavaScript">
 			function procesarFormulario() {
-				//Definición de variables
+				//Definici&#243;n de variables
 				var ctrlUser = document.getElementById("user");
 				var ctrlPassword = document.getElementById("password");
 				var ctrlPassword2 = document.getElementById("password2");
@@ -73,7 +73,7 @@
 				var msgError = "";
 				var patronFecha = /^\d{2}\/\d{2}\/\d{4}$/;
 
-				//Pone todos los labels en negro, útil si el usuario se equivoca dos veces
+				//Pone todos los labels en negro, &#250;til si el usuario se equivoca dos veces
 				var labels = document.getElementsByTagName("label"), i;
 				for( i = 0; i < labels.length; i++)
 				labels[i].setAttribute("class", "default");
@@ -166,7 +166,7 @@
 				return validado;
 			}
 		</script>
-		<!-- Fin de validación del formulario -->
+		<!-- Fin de validaci&#243;n del formulario -->
 		<!-- FIN DE JAVASCRIPT -->
 	</head>
 	<body>
@@ -191,13 +191,13 @@
 						<div id="div_user">
 							<label id="label_user" for="user">Usuario:</label>
 							<input id="user" name="user" type="text" onFocus="blur" />
-							<label id="user_hint" class="hint">Cuatro caracteres como m&iacute;nimo</label>
+							<label id="user_hint" class="hint">Cuatro caracteres como m&#237;nimo</label>
 						</div>
 						<!-- password -->
 						<div id="div_password">
 							<label id="label_password" for="password">Contrase&ntilde;a:</label>
 							<input id="password" name="password" type="password" onFocus="blur" />
-							<label id="password_hint" class="hint">Seis caracteres como m&iacute;nimo</label>
+							<label id="password_hint" class="hint">Seis caracteres como m&#237;nimo</label>
 						</div>
 						<!-- repetir password -->
 						<div id="div_password2">
@@ -219,7 +219,7 @@
 							-
 							<input id="letra" name="letra" type="text" maxlength="1" onFocus="blur" onChange="javascript:this.value=this.value.toUpperCase();"/>
 						</div>
-						<!-- Elección del sexo -->
+						<!-- Elecci&#243;n del sexo -->
 						<div id="div_sexo">
 							<div id="div_titulo_sexo">
 								Sexo:
@@ -248,47 +248,47 @@
 						<div id="div_email">
 							<label id="label_email" for="email">Email:</label>
 							<input id="email" name="email" type="text" onFocus="blur" />
-							<label id="email_hint" class="hint">Debe ser una direcci&oacute;n v&aacute;lida</label>
+							<label id="email_hint" class="hint">Debe ser una direcci&#243;n v&#225;lida</label>
 						</div>
 						<!--Fecha nacimiento-->
 						<div id="div_fechanacimiento">
 							<label id="label_datepicker" for="datepicker">Fecha nac.:</label>
 							<input type="text" name="datepicker" id="datepicker" size="12" onFocus="blur" />
-							<label id="user_hint" class="hint">Comprobaci&oacute;n de edad</label>
+							<label id="user_hint" class="hint">Comprobaci&#243;n de edad</label>
 						</div>
 					</fieldset>
 				</div>
 				<!-- Fin de los datos personales -->
-				<!-- Dirección (calle, número y provincia) -->
+				<!-- Direcci&#243;n (calle, n&#250;mero y provincia) -->
 				<div id="div_direccion">
 					<fieldset>
 						<legend>
-							Direcci&oacute;n
+							Direcci&#243;n
 						</legend>
 						<div id="div_calle">
 							<label id="label_calle" for="calle">Calle/Avda.:</label>
 							<input id="calle" name="calle" type="text" onFocus="blur" />
 						</div>
 						<div id="div_poblacion">
-							<label id="label_poblacion" for="poblacion">Poblaci&oacute;n:</label>
+							<label id="label_poblacion" for="poblacion">Poblaci&#243;n:</label>
 							<input id="poblacion" name="poblacion" type="text" onFocus="blur" />
 						</div>
 						<div id="div_provincia">
 							<label id="label_provincia" for="provincia">Provincia:</label>
 							<select id="provincia" name="provincia" onFocus="blur">
-								<optgroup label="Andaluc&iacute;a">
+								<optgroup label="Andaluc&#237;a">
 									<option>Sevilla</option>
-									<option>Almer&iacute;a</option>
-									<option>C&aacute;diz</option>
-									<option>C&oacute;rdoba</option>
+									<option>Almer&#237;a</option>
+									<option>C&#225;diz</option>
+									<option>C&#243;rdoba</option>
 									<option>Granada</option>
 									<option>Huelva</option>
-									<option>Ja&eacute;n</option>
-									<option>M&aacute;laga</option>
+									<option>Ja&#233;n</option>
+									<option>M&#225;laga</option>
 								</optgroup>
 								<optgroup label="Extremadura">
 									<option>Badajoz</option>
-									<option>C&aacute;ceres</option>
+									<option>C&#225;ceres</option>
 								</optgroup>
 							</select>
 						</div>
@@ -296,7 +296,7 @@
 				</div>
 				<div id="div_acepto">
 					<input id="acepto" name="acepto" type="checkbox" onFocus="blur" />
-					<label id="label_acepto" for="acepto">He le&iacute;do y acepto las <a href="legalnote.html">condiciones generales y la pol&iacute;tica de privacidad</a></label>
+					<label id="label_acepto" for="acepto">He le&#237;do y acepto las <a href="legalnote.html">condiciones generales y la pol&#237;tica de privacidad</a></label>
 				</div>
 				<div id="div_submit">
 					<button id="submit">
@@ -306,7 +306,7 @@
 			</form>
 		</div>
 		<br/>
-		<!-- Pie de página -->
+		<!-- Pie de p&#225;gina -->
 		<?php
 		include ("piedepagina.php");
 		?>

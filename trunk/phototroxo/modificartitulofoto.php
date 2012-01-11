@@ -7,13 +7,13 @@ $idU = $_SESSION["idUsuario"];
 <html lang="es">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-		<title>Phototroxo - Modificar el t&iacute;tulo de la foto</title>
+		<title>Phototroxo - Modificar el t&#237;tulo de la foto</title>
 		<link rel="stylesheet" type="text/css" href="stylesheets/estilo_borrar_foto.css" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
 		<meta name="author" content="Javi Pulido" />
 	</head>
 	<body>
-		<!-- Cabecera(logo y menú) -->
+		<!-- Cabecera(logo y men&#250;) -->
 		<?php
 		include ("cabecera.php");
 		?>
@@ -24,7 +24,7 @@ $idU = $_SESSION["idUsuario"];
 			$titulo = $_GET["titulo"];
 			
 			   $validado = true;
-			//Validación del lado del servidor
+			//Validaci&#243;n del lado del servidor
 
 			if (strlen($titulo) < 4) {
 				echo "- El titulo debe tener al menos cuatro caracteres
@@ -42,14 +42,14 @@ $idU = $_SESSION["idUsuario"];
 			$my_error = mysql_error($link);
 
 			if (!empty($my_error)) {//Si hay error accediendo a la BD
-				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
+				echo "Ha habido un error accediendo a la base de datos. Int&#233;ntelo m&#225;s tarde. $my_error";
 			} else {
-				echo 'El título se ha modificado correctamente. <a href="verfoto.php?idI=' . $idFoto . '">Volver a la foto</a>';
+				echo 'El t&#237;tulo se ha modificado correctamente. <a href="verfoto.php?idI=' . $idFoto . '">Volver a la foto</a>';
 			}
 			}
 			?>
 		</div>
-		<!-- Pie de página -->
+		<!-- Pie de p&#225;gina -->
 		<?php
 		include ("piedepagina.php");
 		?>

@@ -9,17 +9,17 @@
 		<meta name="author" content="Margari" />
 		<!-- Date: 2012-01-02 -->
 		<!-- INICIO DE JAVASCRIPT -->
-		<!-- Validación del formulario -->
+		<!-- Validaci&#243;n del formulario -->
 		<script type="text/javascript" language="JavaScript">
 			function procesarFormulario() {
-				//Definición de variables
+				//Definici&#243;n de variables
 				var ctrlUser = document.getElementById("input_usuario");
 				var ctrlPassword = document.getElementById("input_nuevaContrasena");
 				var ctrlPassword2 = document.getElementById("input_confirmacion");
 				var validado = true;
 				var msgError = "";
 
-				//Pone todos los labels en negro, útil si el usuario se equivoca dos veces
+				//Pone todos los labels en negro, &#250;til si el usuario se equivoca dos veces
 				var labels = document.getElementsByTagName("label"), i;
 				for( i = 0; i < labels.length; i++)
 				labels[i].setAttribute("class", "default");
@@ -53,7 +53,7 @@
 				return validado;
 			}
 		</script>
-		<!-- Fin de validación del formulario -->
+		<!-- Fin de validaci&#243;n del formulario -->
 		<!-- FIN DE JAVASCRIPT -->
 	</head>
 	<body>
@@ -83,7 +83,7 @@
 				</div>
 			</form>
 		</div>
-		<!-- Pie de página -->
+		<!-- Pie de p&#225;gina -->
 		<?php
 		include ("piedepagina.php");
 		?>

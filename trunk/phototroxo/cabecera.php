@@ -5,12 +5,12 @@
 		$idU = $_SESSION["idUsuario"];
 		if (!empty($_SESSION["nombreUsuario"])) {
 			echo "Bienvenid@ " . $_SESSION["nombreUsuario"] . "  ";
-			echo "<a href=\"cerrarsesion.php\">Cerrar sesi&oacute;n</a>";
+			echo "<a href=\"cerrarsesion.php\">Cerrar sesi&#243;n</a>";
 		} else {
-			//Cuando se está dentro de la página y no están declaradas las variables de sesión
-			//(no se ha iniciado sesión), ahora mismo muestra esto, pero debería mandar al index
-			//para que se inicie la sesión. Esto está así de prueba
-			echo "No se ha iniciado sesión!!!";
+			//Cuando se est&#225; dentro de la p&#225;gina y no est&#225;n declaradas las variables de sesi&#243;n
+			//(no se ha iniciado sesi&#243;n), ahora mismo muestra esto, pero deber&#237;a mandar al index
+			//para que se inicie la sesi&#243;n. Esto est&#225; as&#237; de prueba
+			echo "No se ha iniciado sesi&#243;n!!!";
 		}
 		?>
 	</div>

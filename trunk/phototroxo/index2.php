@@ -18,18 +18,18 @@ session_start();
 		</div>
 		<!-- Contenido -->
 		<div id="div_content">
-			<!-- Procesamiento del formulario e inserción en la base de datos si procede -->
+			<!-- Procesamiento del formulario e inserci&#243;n en la base de datos si procede -->
 			<?php
 
-			//tenemos que ver qué es lo que se va a mostrar una vez que el usuario esté registrado
+			//tenemos que ver qu&#233; es lo que se va a mostrar una vez que el usuario est&#233; registrado
 
-			//Definición de variables
+			//Definici&#243;n de variables
 			$user = $_POST['user'];
 			$password = $_POST['password'];
 
 			$validado = true;
 
-			//Validación del lado del servidor
+			//Validaci&#243;n del lado del servidor
 
 			if (strlen($user) < 4) {
 				echo "- El usuario debe tener al menos cuatro caracteres
@@ -38,7 +38,7 @@ session_start();
 				$validado = false;
 				
 			}else if(!preg_match("/^[a-zA-Z]+$/", $user))  {
-				echo "- El usuario no puede contener símbolos <br/>";
+				echo "- El usuario no puede contener s&#237;mbolos <br/>";
         		$validado = false;  
 			}
 			if (strlen($password) < 6) {
@@ -61,10 +61,10 @@ session_start();
 				$my_error = mysql_error($link);
 
 				if (!empty($my_error)) {//Si hay error accediendo a la BD
-					echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
+					echo "Ha habido un error accediendo a la base de datos. Int&#233;ntelo m&#225;s tarde. $my_error";
 				} else {
 					//echo sizeof($result);
-					if (!empty($row)) {//Si el usuario y contraseña son válidos
+					if (!empty($row)) {//Si el usuario y contraseña son v&#225;lidos
 						$idUsuario = $row["idU"];
 						$nombreUsuario = $row["Nombre"];
 						$_SESSION["idUsuario"] = $idUsuario;
@@ -73,19 +73,19 @@ session_start();
 
 						header('Location: head.php');
 
-						//Guardar variables de sesión
+						//Guardar variables de sesi&#243;n
 						$_SESSION["idUsuario"] = $idUsuario;
 						$_SESSION["nombreUsuario"] = $nombreUsuario;
-					} else {//No está registrado!!
+					} else {//No est&#225; registrado!!
 						echo "Fallo en el usuario y/o contraseña, por favor <a href=\"#\" onclick=\"history.back(1);return false\">vuelva a intentarlo</a>";
 					}
 				}
-			} else {//Si no ha pasado la validación
-				echo "<br/><br/>Los datos que ha introducido no son válidos, por favor vuelva a intentarlo";
+			} else {//Si no ha pasado la validaci&#243;n
+				echo "<br/><br/>Los datos que ha introducido no son v&#225;lidos, por favor vuelva a intentarlo";
 			}
 			?>
 		</div>
-		<!-- Pie de página -->
+		<!-- Pie de p&#225;gina -->
 		<?php
 		include ("piedepagina.php");
 		?>
