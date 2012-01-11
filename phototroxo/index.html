@@ -2,21 +2,21 @@
 "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="es">
 	<head>
-		<title>&iexcl;Bienvenido a Phototroxo!</title>
+		<title>&#161;Bienvenido a Phototroxo!</title>
 		<link rel="stylesheet" type="text/css"  href="stylesheets/estilo_index.css" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
 		<!-- INICIO DE JAVASCRIPT -->
-		<!-- Validación del formulario -->
+		<!-- Validaci&#243;n del formulario -->
 		<script type="text/javascript" language="JavaScript">
 			function procesarIndex() {
-				//Definición de variables
+				//Definici&#243;n de variables
 				var ctrlUser = document.getElementById("usuario");
 				var ctrlPassword = document.getElementById("pass");
 				var ctrlAcepto = document.getElementById("acepto");
 				var validado = true;
 				var msgError = "";
 
-				//Pone todos los labels en negro, útil si el usuario se equivoca dos veces
+				//Pone todos los labels en negro, &#250;til si el usuario se equivoca dos veces
 				var labels = document.getElementsByTagName("label"), i;
 				for( i = 0; i < labels.length; i++)
 				labels[i].setAttribute("class", "default");
@@ -47,7 +47,7 @@
 				return validado;
 			}
 		</script>
-		<!-- Fin de validación del formulario -->
+		<!-- Fin de validaci&#243;n del formulario -->
 		<!-- FIN DE JAVASCRIPT -->
 	</head>
 	<body>
@@ -70,9 +70,9 @@
 				<!-- </fieldset> -->
 				<div id="div_botones">
 					<button id="button_submit">
-						Iniciar sesi&oacute;n
+						Iniciar sesi&#243;n
 					</button>
-					<a href="formulario.php" id="boton_registrar">&iquest;A&uacute;n no eres usuario? &iexcl;Reg&iacute;strate!</a>
+					<a href="formulario.php" id="boton_registrar">&iquest;A&#250;n no eres usuario? &#161;Reg&#237;strate!</a>
 				</div>
 				<div id="div_passolvidada">
 					<a id="text_passolvidada" href="nuevacontrasena.php">&iquest;Has olvidado tu contrase&ntilde;a?</a>

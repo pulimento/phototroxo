@@ -15,7 +15,7 @@ $idFoto = $_GET["idI"];
 		<meta name="author" content="Javi Pulido" />
 	</head>
 	<body>
-		<!-- Cabecera(logo y menú) -->
+		<!-- Cabecera(logo y men&#250;) -->
 		<?php
 		include ("cabecera.php");
 		?>
@@ -24,9 +24,9 @@ $idFoto = $_GET["idI"];
 		<div>
 			<h2>Opciones de foto</h2>
 			<div id="modificartitulo">
-				<h3>Modificar el t&iacute;tulo de la foto</h3>
+				<h3>Modificar el t&#237;tulo de la foto</h3>
 				<form id="form_modificar_titulo" action="modificartitulofoto.php" method="get">
-					<label for="titulo">Introduce el nuevo t&iacute;tulo de la foto : </label>
+					<label for="titulo">Introduce el nuevo t&#237;tulo de la foto : </label>
 					<input type="text" name="titulo" />
 					<input type="hidden" name="idI" value="<?php echo $idFoto;?> "; />
 					<button id="button_subirfoto">
@@ -37,11 +37,11 @@ $idFoto = $_GET["idI"];
 			<div id="borrarfoto">
 				<h3>Borrar la foto</h3>
 				<?php
-				echo 'Si quieres borrar esta foto, pulsa <a href="borrarfoto.php?idI=' . $idFoto . '">aqu&iacute;</a>';
+				echo 'Si quieres borrar esta foto, pulsa <a href="borrarfoto.php?idI=' . $idFoto . '">aqu&#237;</a>';
 				?>
 			</div>
 		</div>
-		<!-- Pie de página -->
+		<!-- Pie de p&#225;gina -->
 		<?php
 		include ("piedepagina.php");
 		?>

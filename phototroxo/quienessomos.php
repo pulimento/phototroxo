@@ -15,16 +15,16 @@ $idU = $_SESSION["idUsuario"];
 		<!-- Date: 2012-01-02 -->
 	</head>
 	<body>
-		<!-- Cabecera(logo y menú) -->
+		<!-- Cabecera(logo y men&#250;) -->
 		<?php
 		include ("cabecera.php");
 		?>
 		<div id="quienes_somos">
-			<h1> ¿Qui&eacute;nes somos?</h1>
+			<h1> ¿Qui&#233;nes somos?</h1>
 			<p>
-				Somos un grupo de estudiantes de Ingenier&iacute;a Inform&aacute;tica de Gesti&oacute;n.
+				Somos un grupo de estudiantes de Ingenier&#237;a Inform&#225;tica de Gesti&#243;n.
 
-				La web es con fines acad&eacute;micos, para la asignatura de tercero ABD.
+				La web es con fines acad&#233;micos, para la asignatura de tercero ABD.
 			</p>
 			<p>
 				Somos el grupo 65. Nuestros integrantes son:
@@ -32,17 +32,17 @@ $idU = $_SESSION["idUsuario"];
 				<br />
 				Francisco Javier Pulido Espina
 				<br />
-				Cristina Del Marco Mart&iacute;nez
+				Cristina Del Marco Mart&#237;nez
 				<br />
 				Patricia Raigada Romero
 				<br />
-				Margarita Vela Jim&eacute;nez
+				Margarita Vela Jim&#233;nez
 				<br />
-				Jos&eacute; Manuel Llamas Llamas
+				Jos&#233; Manuel Llamas Llamas
 				<br />
 			</p>
 		</div>
-		<!-- Pie de página -->
+		<!-- Pie de p&#225;gina -->
 		<?php
 		include ("piedepagina.php");
 		?>

@@ -15,7 +15,7 @@ $idFoto = $_GET["idI"];
 		<meta name="author" content="Javi Pulido" />
 	</head>
 	<body>
-		<!-- Cabecera(logo y menú) -->
+		<!-- Cabecera(logo y men&#250;) -->
 		<?php
 		include ("cabecera.php");
 		?>
@@ -29,13 +29,13 @@ $idFoto = $_GET["idI"];
 			$my_error = mysql_error($link);
 
 			if (!empty($my_error)) {//Si hay error accediendo a la BD
-				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
+				echo "Ha habido un error accediendo a la base de datos. Int&#233;ntelo m&#225;s tarde. $my_error";
 			} else {
-				echo 'La foto se ha borrado correctamente. <a href="album.php?idU=' . $idU . '">Volver a tu &aacute;lbum</a>';
+				echo 'La foto se ha borrado correctamente. <a href="album.php?idU=' . $idU . '">Volver a tu &#225;lbum</a>';
 			}
 			?>
 		</div>
-		<!-- Pie de página -->
+		<!-- Pie de p&#225;gina -->
 		<?php
 		include ("piedepagina.php");
 		?>

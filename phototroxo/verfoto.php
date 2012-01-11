@@ -15,7 +15,7 @@ $idFoto = $_GET["idI"];
 		<meta name="author" content="Javi Pulido" />
 	</head>
 	<body>
-		<!-- Cabecera(logo y menú) -->
+		<!-- Cabecera(logo y men&#250;) -->
 		<?php
 		include ("cabecera.php");
 		?> <!-- Contenido -->
@@ -30,7 +30,7 @@ $idFoto = $_GET["idI"];
 		$my_error = mysql_error($link);
 
 		if (!empty($my_error)) {//Si hay error accediendo a la BD
-			echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
+			echo "Ha habido un error accediendo a la base de datos. Int&#233;ntelo m&#225;s tarde. $my_error";
 		} else {
 			//Inicializamos las variables
 			//Los strip_tags son para que quite los tags en los Strings, en caso de que las haya, hacer esto
@@ -68,73 +68,68 @@ $idFoto = $_GET["idI"];
 			</form>
 			</div>
 			<?php
-
 			//Insertar un comentario
-
-			if (isset($_POST["input_escribecomentario"])) {
-			$commentposted_comment = $_POST["input_escribecomentario"];
-			}
-
+			if (isset($_POST["input_escribecomentario"]))
+				$commentposted_comment = $_POST["input_escribecomentario"];
+			//$commentposted_user = $_POST("input_user");
 			if (isset($commentposted_comment)) {
-			$validado = true;
-			if (strlen($commentposted_comment) == 0){
-			$msg = "Ha introducido un comentario vacío, inténtelo de nuevo";
-			$validado = false;
+				$resultinsertarcomentario = mysql_query("INSERT INTO comentario (idI, idU, comentario, fechaC)
+			VALUES ('$idFoto','$idU','" . $commentposted_comment . "','" . date("Y-m-d") . "')", $link) or die ;
 			}
+			?>
+
+			<div id="comentarios">
+			<?php
+			$resultcomentario = mysql_query("SELECT c.comentario AS comment, u.Nombre AS name, c.fechaC, c.idU
+			FROM (comentario AS c NATURAL JOIN usuario AS u) WHERE idI = '$idFoto'", $link) or die ;
+
+			$my_error = mysql_error($link);
 
 			function fechaespanola($fechainglesa) {
-			list($a, $m, $d) = explode("-", $fechainglesa);
-			return $d . "-" . $m . "-" . $a;
+				list($a, $m, $d) = explode("-", $fechainglesa);
+				return $d . "-" . $m . "-" . $a;
 			};
 
-			if($validado){
-				$resultinsertarcomentario = mysql_query("INSERT INTO comentario (idI, idU, comentario, fechaC)
-				VALUES ('$idFoto','$idU','" . $commentposted_comment . "','" . date("Y-m-d") . "')", $link) or die ;
-
-				echo '<div id="comentarios">';
-				$resultcomentario = mysql_query("SELECT c.comentario AS comment, u.Nombre AS name, c.fechaC, c.idU
-				FROM (comentario AS c NATURAL JOIN usuario AS u) WHERE idI = '$idFoto'", $link) or die ;
-
-				$my_error = mysql_error($link);
-
-				if (!empty($my_error)) {//Si hay error accediendo a la BD
-					echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
-				} else {
-				$numcomentarios = mysql_num_rows($resultcomentario);
-					if ($numcomentarios > 0) {
-						echo "<ul>";
-						for ($cont = 0; $cont < $numcomentarios; $cont++) {
-							$comentario = mysql_fetch_array($resultcomentario);
-							$comentario_user = $comentario["name"];
-							$comentario_comentario = $comentario["comment"];
-							$comentario_fecha = fechaespanola($comentario["fechaC"]);
-							$comentario_idU = $comentario["idU"];
-							echo "<li>El " . $comentario_fecha . ", <a href=\"album.php?idU=" . $comentario_idU . "\">" . $comentario_user . "</a> comentó: " . $comentario_comentario . "</li><br/>";
-						}
-						echo "</ul>";
-					} else {
-						echo "No hay ningún comentario aún, ¡sé el primero en comentar!";
-					}
-				}
+			if (!empty($my_error)) {//Si hay error accediendo a la BD
+				echo "Ha habido un error accediendo a la base de datos. Int&#233;ntelo m&#225;s tarde. $my_error";
 			} else {
-				echo $msg;
-			}
+				$numcomentarios = mysql_num_rows($resultcomentario);
+				if ($numcomentarios > 0) {
+					echo "<ul>";
+					for ($cont = 0; $cont < $numcomentarios; $cont++) {
+						$comentario = mysql_fetch_array($resultcomentario);
+						$comentario_user = $comentario["name"];
+						$comentario_comentario = $comentario["comment"];
+						$comentario_fecha = fechaespanola($comentario["fechaC"]);
+						$comentario_idU = $comentario["idU"];
+						echo "<li>El " . $comentario_fecha . ", <a href=\"album.php?idU=" . $comentario_idU . "\">" . $comentario_user . "</a> coment&#243;: " . $comentario_comentario . "</li><br/>";
+						//echo "user -> " . $comentario_user . "<br/>";
+						//echo "comentario ->" . $comentario_comentario . "<br/>";
+					}
+					echo "</ul>";
+				} else {
+					echo "No hay ning&#250;n comentario a&#250;n, &#161;s&#233; el primero en comentar!";
+				}
+
 			}
 			?>
 			</div>
 
-			<!-- Se le permite al usuario que subió la foto -->
+			
+			<!-- Se le permite al usuario que subi&#243; la foto -->
 			<?php
-			if ($subido_idU == $idU) {
-				echo '<div id="opcionesfoto">';
-				echo '<a href="opcionesfoto.php?idI=' . $idFoto . '">Modificar el título o borrar la foto</a>';
-				echo '</div>';
-			}
-			?>
+				if ($subido_idU == $idU){
+					echo '<div id="opcionesfoto">';
+					echo '<a href="opcionesfoto.php?idI=' . $idFoto . '">Modificar el t&#237;tulo o borrar la foto</a>';
+					echo '</div>';
+				}
+			?>	
 
-			<!-- Pie de página -->
+			<!-- Pie de p&#225;gina -->
 			<?php
 			include ("piedepagina.php");
-			?>			</body>
+			?>
+			</body>
 
 			</html>
+			

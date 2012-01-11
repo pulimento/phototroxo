@@ -14,12 +14,12 @@ $idU = $_SESSION["idUsuario"];
 		<meta name="author" content="alumno" />
 	</head>
 	<body>
-		<!-- Cabecera(logo y menú) -->
+		<!-- Cabecera(logo y men&#250;) -->
 		<?php
 		include ("cabecera.php");
 		?> <!-- Contenido -->
 		<div id="ultimasfotos">
-			<h2> &Uacute;ltimas fotos subidas por t&iacute; </h2>
+			<h2> &Uacute;ltimas fotos subidas por t&#237; </h2>
 			<?php
 			$link = mysql_connect("localhost", "root", "") or die ;
 			mysql_select_db("phototroxo", $link);
@@ -28,7 +28,7 @@ $idU = $_SESSION["idUsuario"];
 			$my_error = mysql_error($link);
 
 			if (!empty($my_error)) {//Si hay error accediendo a la BD
-				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
+				echo "Ha habido un error accediendo a la base de datos. Int&#233;ntelo m&#225;s tarde. $my_error";
 			} else {
 				$result = mysql_query("SELECT i.ruta, i.rutathumbnail, i.idI FROM imagen i
 			WHERE idU = '$idU' ORDER BY idI DESC LIMIT 4", $link) or die ;
@@ -44,7 +44,7 @@ $idU = $_SESSION["idUsuario"];
 					//Cerramos las etiquetas de la tabla
 					echo "</tr></table>";
 				} else {
-					echo "¡Aún no has subido ninguna foto! <a href=\"subir_fotos.php\">Sube alguna</a> para empezar";
+					echo "&#161;A&#250;n no has subido ninguna foto! <a href=\"subir_fotos.php\">Sube alguna</a> para empezar";
 				}
 			}
 			?>
@@ -60,7 +60,7 @@ $idU = $_SESSION["idUsuario"];
 			};
 
 			if (!empty($my_error)) {//Si hay error accediendo a la BD
-				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
+				echo "Ha habido un error accediendo a la base de datos. Int&#233;ntelo m&#225;s tarde. $my_error";
 			} else {
 				$resultcomentario = mysql_query("SELECT u.nombre AS name, c.comentario AS comment,
 			c.fechaC, i.idI, i.titulo, c.idU FROM comentario as c NATURAL JOIN usuario AS u, imagen AS i
@@ -76,7 +76,7 @@ $idU = $_SESSION["idUsuario"];
 						$comentario_idI = $comentario["idI"];
 						$comentario_titulofoto = $comentario["titulo"];
 						$comentario_idU = $comentario["idU"];
-						echo "<li>El " . $comentario_fecha . ", <a href=\"album.php?idU=" . $comentario_idU . "\">" . $comentario_user . "</a> comentó
+						echo "<li>El " . $comentario_fecha . ", <a href=\"album.php?idU=" . $comentario_idU . "\">" . $comentario_user . "</a> coment&#243;
 			en la foto <a href=\"verfoto.php?idI=" . $comentario_idI . "\">" . $comentario_titulofoto . "</a>: " . $comentario_comentario . "</li><br/>";
 						//echo "user -> " . $comentario_user . "<br/>";
 						//echo "comentario ->" . $comentario_comentario . "<br/>";
@@ -109,12 +109,12 @@ $idU = $_SESSION["idUsuario"];
 				//Cerramos las etiquetas de la tabla
 				echo "</tr></table>";
 			} else {
-				echo "No hay fotos que mostrar, el resto de usuarios aún no han subido fotos";
+				echo "No hay fotos que mostrar, el resto de usuarios a&#250;n no han subido fotos";
 			}
 			?>
 			</div>
 
-			<!-- Pie de página -->
+			<!-- Pie de p&#225;gina -->
 
 			<?php
 			include ("piedepagina.php");

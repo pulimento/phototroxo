@@ -15,10 +15,10 @@
 		</div>
 		<!-- Contenido -->
 		<div id="div_content">
-			<!-- Procesamiento del formulario e inserción en la base de datos si procede -->
+			<!-- Procesamiento del formulario e inserci&#243;n en la base de datos si procede -->
 			<?php
 
-			//Definición de variables
+			//Definici&#243;n de variables
 			$user = strip_tags($_POST['user']);
 			$password = strip_tags($_POST['password']);
 			$dniconletra = strip_tags($_POST['dni']) . strip_tags($_POST['letra']);
@@ -31,7 +31,7 @@
 			$provincia = strip_tags($_POST['provincia']);
 			$validado = true;
 
-			//Validación del lado del servidor
+			//Validaci&#243;n del lado del servidor
 
 			if (strlen($user) < 4) {
 				echo "- El usuario debe tener al menos cuatro caracteres<br/>";
@@ -56,12 +56,12 @@
 			}
 
 			if (strlen($nombre) == 0) {
-				echo "- El campo 'Nombre' no puede estar vacío<br/>";
+				echo "- El campo 'Nombre' no puede estar vac&#237;o<br/>";
 				$validado = false;
 			}
 
 			if (strlen($apellidos) == 0) {
-				echo "- El campo 'Apellidos' no puede estar vacío<br/>";
+				echo "- El campo 'Apellidos' no puede estar vac&#237;o<br/>";
 				$validado = false;
 			}
 
@@ -70,21 +70,21 @@
 				$validado = false;
 			}
 
-			//fecha es un array con día, mes y año
+			//fecha es un array con d&#237;a, mes y año
 			if (count($fecha) == 1) {
-				echo "- La fecha introducida no es válida<br/>";
+				echo "- La fecha introducida no es v&#225;lida<br/>";
 				$validado = false;
 			} else {
 				$fechaSQL = $fecha[2] . "-" . $fecha[1] . "-" . $fecha[0];
 			}
 
 			if (strlen($calle) == 0) {
-				echo "- El campo 'Calle/Avda.' no puede estar vacío<br/>";
+				echo "- El campo 'Calle/Avda.' no puede estar vac&#237;o<br/>";
 				$validado = false;
 			}
 
 			if (strlen($poblacion) == 0) {
-				echo "- El campo 'Población' no puede estar vacío<br/>";
+				echo "- El campo 'Poblaci&#243;n' no puede estar vac&#237;o<br/>";
 				$validado = false;
 			}
 
@@ -106,10 +106,10 @@
 					echo "Ha habido un error al insertar los valores. $my_error";
 				} else {
 					echo "Te acabas de registrar satisfactoriamente en Phototroxo, " . $user . " ;) <br/><br/>";
-					echo "Puedes volver a la <a id=\"inicio\" href=\"index.html\">página principal</a> para iniciar sesión";
+					echo "Puedes volver a la <a id=\"inicio\" href=\"index.html\">p&#225;gina principal</a> para iniciar sesi&#243;n";
 				}
-			} else {// No se ha superado la validación del lado del servidor
-				echo "<br/><br/>Los datos que ha introducido no son válidos, por favor <a href=\"#\" onclick=\"history.back(1);return false\">vuelva a intentarlo</a>";
+			} else {// No se ha superado la validaci&#243;n del lado del servidor
+				echo "<br/><br/>Los datos que ha introducido no son v&#225;lidos, por favor <a href=\"#\" onclick=\"history.back(1);return false\">vuelva a intentarlo</a>";
 			}
 			?>
 		</div>

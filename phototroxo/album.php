@@ -12,7 +12,7 @@ $usuarioAlbum = $_GET['idU'];
 		<link href="images/favicon.ico" rel="shortcut icon"/>
 	</head>
 	<body>
-		<!-- Cabecera(logo y menú) -->
+		<!-- Cabecera(logo y men&#250;) -->
 		<?php
 		include ('cabecera.php');
 		?>
@@ -27,9 +27,9 @@ $usuarioAlbum = $_GET['idU'];
 			$my_error = mysql_error($link);
 
 			if (!empty($my_error)) {//Si hay error accediendo a la BD
-				echo 'Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error';
+				echo 'Ha habido un error accediendo a la base de datos. Int&#233;ntelo m&#225;s tarde. $my_error';
 			} else {
-				//Obtenemos el nombre y el apellido del usuario del álbum
+				//Obtenemos el nombre y el apellido del usuario del &#225;lbum
 				$resultusername = mysql_query("SELECT u.Nombre AS nom, u.Apellidos AS ape FROM usuario AS u WHERE u.idU = '$usuarioAlbum'", $link) or die ;
 				$array_usuarioAlbum_name = mysql_fetch_array($resultusername);
 				$usuarioAlbum_name = $array_usuarioAlbum_name['nom'];
@@ -39,9 +39,9 @@ $usuarioAlbum = $_GET['idU'];
 
 			<h2 id="text_busca">&Aacute;lbum de fotos de <?php echo $usuarioAlbum_name . " " . $usuarioAlbum_apellidos;?></h2>
 			<?php
-			//Ya se ha hecho previamente la conexión a la BD
+			//Ya se ha hecho previamente la conexi&#243;n a la BD
 			if (!empty($my_error)) {//Si hay error accediendo a la BD
-				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
+				echo "Ha habido un error accediendo a la base de datos. Int&#233;ntelo m&#225;s tarde. $my_error";
 			} else {
 				$resultfotos = mysql_query("SELECT i.ruta, i.rutathumbnail, i.idI FROM imagen i
 WHERE idU = '$usuarioAlbum' ORDER BY i.idI DESC", $link) or die ;
@@ -59,7 +59,7 @@ WHERE idU = '$usuarioAlbum' ORDER BY i.idI DESC", $link) or die ;
 						echo '</tr>';
 						$numFotos -= 4;
 					}
-					if ($numFotos <= 4) {//Si quedan más fotos por mostrar, o si había menos de cuatro fotos
+					if ($numFotos <= 4) {//Si quedan m&#225;s fotos por mostrar, o si hab&#237;a menos de cuatro fotos
 						echo '<tr>';
 						for ($j = 0; $j < $numFotos; $j++) {
 							$foto = mysql_fetch_array($resultfotos);
@@ -73,12 +73,12 @@ WHERE idU = '$usuarioAlbum' ORDER BY i.idI DESC", $link) or die ;
 					//Cerramos las etiquetas de la tabla
 					echo "</table>";
 				} else {
-					echo '¡Aún no has subido ninguna foto! <a href="subir_fotos.php">Sube alguna</a> para empezar';
+					echo '&#161;A&#250;n no has subido ninguna foto! <a href="subir_fotos.php">Sube alguna</a> para empezar';
 				}
 			}
 			?>
 			</div>
-			<!-- Pie de página -->
+			<!-- Pie de p&#225;gina -->
 			<?php
 			include ('piedepagina.php');
 			?>
