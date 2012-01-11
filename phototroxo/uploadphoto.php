@@ -58,7 +58,7 @@ session_start();
 				//Fecha actual
 				$titulo = $_POST["title_uploadphoto"];
 				$nombrearchivo = $titulo . "-" . $_FILES['uploadedphoto']['name'];
-				//Quitar caracteres extraños al nombre del archivo
+				//Quitar caracteres extra&ntilde;os al nombre del archivo
 				include ("scripts/cleanfilenames.php");
 				$nombrearchivo = cleanFileName($nombrearchivo);
 				$nombretemporal = $_FILES["uploadedphoto"]["tmp_name"];

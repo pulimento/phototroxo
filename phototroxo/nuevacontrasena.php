@@ -4,7 +4,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
-		<title>Nueva Contraseña</title>
+		<title>Nueva Contrase&ntilde;a</title>
 		<link rel="stylesheet" type="text/css"  href="stylesheets/estilo_nuevacontrasena.css" />
 		<meta name="author" content="Margari" />
 		<!-- Date: 2012-01-02 -->
@@ -62,17 +62,17 @@
 		</div>
 		<div id="div_form">
 			<form id="contrasena" action="nuevacontrasena2.php" method="post" onsubmit="return procesarFormulario()">
-				<h1 id="nueva contraseña">&iquest;Has olvidado tu contrase&ntilde;a?</h1>
+				<h1 id="nueva contrase&ntilde;a">&iquest;Has olvidado tu contrase&ntilde;a?</h1>
 				<div id="usuario">
 					<label id="label_usuario">Introduzca su nombre de usuario:</label>
 					<input id="input_usuario"  name="user" type="text"/>
 				</div>
 				<div id="introduzca_contrasena">
-					<label id="label_contrasena">Introduzca su nueva contraseña:</label>
+					<label id="label_contrasena">Introduzca su nueva contrase&ntilde;a:</label>
 					<input id="input_nuevaContrasena"  name="password" type="text"/>
 				</div>
 				<div id= "confirmacion">
-					<label id="label_confirmacioncontrasena">Confirme su nueva contraseña:</label>
+					<label id="label_confirmacioncontrasena">Confirme su nueva contrase&ntilde;a:</label>
 					<input id="input_confirmacion"  name="password2" type="text"/>
 				</div>
 				<div id = "boton_confirmar">
