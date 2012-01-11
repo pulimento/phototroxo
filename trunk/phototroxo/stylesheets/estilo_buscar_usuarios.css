@@ -1,1 +1,12 @@
 @import url('mainstyle.css');
+#form_buscar_usuario {
+	margin-left: 50px;
+}
+#input_palabra {
+	margin-right: 20px;
+}
+#boton_submit {
+	font-size: 1.1em;
+	color: white;
+	background: #045FB4 /*#0055FF*/;
+}

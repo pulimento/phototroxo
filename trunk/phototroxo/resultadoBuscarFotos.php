@@ -7,7 +7,7 @@ $titulo = $_POST["palabra"];
 <html lang="es">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Buscar Fotos</title>
+		<title>Phototroxo - Resultados de la b&uacute;squeda de fotos</title>
 		<link rel="stylesheet" type="text/css" href="stylesheets/estilo_fotos.css" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
 	</head>
