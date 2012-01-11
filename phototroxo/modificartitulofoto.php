@@ -22,7 +22,20 @@ $idU = $_SESSION["idUsuario"];
 			<?php
 			$idFoto = $_GET["idI"];
 			$titulo = $_GET["titulo"];
+			
+			   $validado = true;
+			//Validación del lado del servidor
+
+			if (strlen($titulo) < 4) {
+				echo "- El titulo debe tener al menos cuatro caracteres
+			<br/>
+			";
+				$validado = false;
+			}
+			
+			
 			//Conectando a la base de datos
+			if($validado){
 			$link = mysql_connect('localhost', 'root', '') or die;
 			mysql_select_db("phototroxo", $link);
 			$result = mysql_query("UPDATE imagen SET titulo = '$titulo' WHERE idI = '$idFoto'", $link);
@@ -32,6 +45,7 @@ $idU = $_SESSION["idUsuario"];
 				echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
 			} else {
 				echo 'El título se ha modificado correctamente. <a href="verfoto.php?idI=' . $idFoto . '">Volver a la foto</a>';
+			}
 			}
 			?>
 		</div>

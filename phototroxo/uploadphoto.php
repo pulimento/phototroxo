@@ -18,8 +18,14 @@ session_start();
 		?> <!-- Contenido -->
 		<div id="div_content">
 			<?php
+			
+			 
+			//Validación del lado del servidor
+
+			
+			
 			if ($_FILES["uploadedphoto"]["error"] > 0) {
-				echo "Error subiendo la foto: " . $_FILES["uploadedphoto"]["error"] . "
+				echo "No ha seleccionado ninguna foto: " . $_FILES["uploadedphoto"]["error"] . "
 			<br />
 			";
 			} else {
@@ -41,7 +47,9 @@ session_start();
 				}
 
 				$uploaddir = "user_images/";
-
+				
+				
+				
 				$link = mysql_connect("localhost", "root", "") or die ;
 				mysql_select_db("phototroxo", $link);
 
@@ -84,6 +92,7 @@ session_start();
 			<img id=\"img_fotoreciensubida\" src=\"" . $ruta . "\"/></div>";
 				}
 			}
+			
 			?>
 		</div>
 		<!-- Pie de página -->

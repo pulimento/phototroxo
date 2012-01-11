@@ -18,8 +18,20 @@ $titulo = $_POST["palabra"];
 		?> <!-- Contenido -->
 		<div id="div_content">
 			<?php
+            $validado = true;
+			//Validación del lado del servidor
 
+			if (strlen($titulo) < 4) {
+				echo "- El titulo debe tener al menos cuatro caracteres
+			<br/>
+			";
+				$validado = false;
+			}
+
+			
+			
 			//Conectar base de datos
+			if($validado){
 			$link = mysql_connect("localhost", "root", "") or die ;
 			mysql_select_db("phototroxo", $link);
 
@@ -62,6 +74,7 @@ $titulo = $_POST["palabra"];
 				} else {
 					echo 'No se ha encontrado ninguna foto con los criterios de búsqueda especificados';
 				}
+			}
 			}
 			?>
 			</div>

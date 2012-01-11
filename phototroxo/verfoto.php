@@ -33,16 +33,18 @@ $idFoto = $_GET["idI"];
 			echo "Ha habido un error accediendo a la base de datos. Inténtelo más tarde. $my_error";
 		} else {
 			//Inicializamos las variables
-			$titulo = $foto["titulo"];
-			$ruta = $foto["path"];
-			$subido = $foto["nombreUploader"] . " " . $foto["apellidosUploader"];
-			$subido_idU = $foto["idU"];
+			//Los strip_tags son para que quite los tags en los Strings, en caso de que las haya, hacer esto
+			//evita ciertos ataques
+			$titulo = strip_tags($foto["titulo"]);
+			$ruta = strip_tags($foto["path"]);
+			$subido = strip_tags($foto["nombreUploader"]) . " " . strip_tags($foto["apellidosUploader"]);
+			$subido_idU = strip_tags($foto["idU"]);
 		}
 		?>
 		<div id="div_title">
 			<div id="titulo_foto">
 				<?php
-				echo /*"Foto: " .*/ $titulo;
+				echo $titulo;
 				?>
 			</div>
 			<div id="usuarioQueSubeLaFoto">
