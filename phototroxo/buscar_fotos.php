@@ -17,10 +17,10 @@ session_start();
 		include ("cabecera.php");
 		?> <!-- Contenido -->
 		<div id="div_content">
-			<form action="buscarFotos.php" method="post">
-				<label for="palabra">Buscar Foto:</label>
-				<input type="text" name="palabra" />
-				<input type="submit" name="boton" value="Buscar" />
+			<form id="form_buscar_foto" action="resultadoBuscarFotos.php" method="post">
+				<label id="label_palabra" for="palabra">Buscar Foto:</label>
+				<input id="input_palabra" type="text" name="palabra" />
+				<input id="boton_submit" type="submit" name="boton" value="Buscar" />
 			</form>
 		</div>
 		<!-- Pie de página -->
