@@ -17,11 +17,9 @@ $idFoto = $_GET["idI"];
 		<!-- INICIO DE JAVASCRIPT -->
 		<!-- Validaci&#243;n del formulario -->
 		<script type="text/javascript" language="JavaScript">
-			function procesarIndex() {
+			function procesarCambio() {
 				//Definici&#243;n de variables
-				var ctrlUser = document.getElementById("usuario");
-				var ctrlPassword = document.getElementById("pass");
-				var ctrlAcepto = document.getElementById("acepto");
+				var ctrlTitulo = document.getElementById("input_titulo");
 				var validado = true;
 				var msgError = "";
 
@@ -30,28 +28,16 @@ $idFoto = $_GET["idI"];
 				for( i = 0; i < labels.length; i++)
 				labels[i].setAttribute("class", "default");
 
-				if(ctrlUser.value.length < 4) {
-					msgError += "- El usuario debe tener al menos cuatro caracteres\n";
-					document.getElementById("label_usuario").setAttribute("class", "error");
-					ctrlUser.value = "";
+				if(ctrlTitulo.value.length < 4) {
+					msgError += "- El titulo debe tener al menos cuatro caracteres\n";
+					document.getElementById("label_titulo").setAttribute("class", "error");
+					ctrlTitulo.value = "";
 					validado = false;
 				}
-
-				if(ctrlPassword.value.length < 6) {
-					msgError += "- La contrase\xF1a debe tener al menos seis caracteres\n";
-					document.getElementById("label_pass").setAttribute("class", "error");
-					ctrlPassword.value = "";
-					validado = false;
-				}
-
-				if(ctrlAcepto.checked == false) {
-					msgError += "- Debe aceptar las condiciones generales y la pol\xEDtica de privacidad\n";
-					document.getElementById("label_acepto").setAttribute("class", "error");
-					validado = false;
-				}
-
+				
 				if(msgError != "") {
-					alert("Los datos introducidos no son v\xE1lidos, por favor compruebe lo siguiente:\n\n" + msgError);
+					alert("El  introducido no es v\xE1lido, por favor compruebe lo siguiente:\n\n" + msgError);
+					
 				}
 				return validado;
 			}
@@ -71,10 +57,10 @@ $idFoto = $_GET["idI"];
 			<h2>Opciones de foto</h2>
 			<div id="modificartitulo">
 				<h3>Modificar el t&#237;tulo de la foto</h3>
-				<form id="form_modificar_titulo" action="modificartitulofoto.php" method="get">
-					<label for="titulo">Introduce el nuevo t&#237;tulo de la foto : </label>
-					<input type="text" name="titulo" />
-					<input type="hidden" name="idI" value="<?php echo $idFoto;?> "; />
+				<form id="form_modificar_titulo" action="modificartitulofoto.php" method="get" onsubmit="return procesarCambio()">
+					<label  id="label_titulo" for="titulo">Introduce el nuevo t&#237;tulo de la foto : </label>
+					<input  id="input_titulo" type="text" name="titulo" />
+					<input  type="hidden" name="idI" value="<?php echo $idFoto;?> "; />
 					<button id="button_subirfoto">
 						Modificar
 					</button>
