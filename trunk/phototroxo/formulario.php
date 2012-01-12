@@ -86,7 +86,7 @@
 				}
 
 				if(ctrlPassword.value.length < 6) {
-					msgError += "- La contrase\xF1a debe tener al menos seis caracteres\n";
+					msgError += "- La contrase" + String.fromCharCode(241) + "a debe tener al menos seis caracteres\n";
 					document.getElementById("label_password").setAttribute("class", "error");
 					ctrlPassword.value = "";
 					ctrlPassword2.value = "";
