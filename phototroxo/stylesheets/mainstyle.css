@@ -31,14 +31,14 @@ a:active, a:visited, a:link {
 }
 a:hover {
 	text-decoration: underline;
-	color: red;
+	color: black;
 }
 .celdamenu a:active, .celdamenu a:visited, .celdamenu a:link {
 	font-weight: bold;
 	color: white;
 }
 .celdamenu a:hover {
-	color: red;
+	color: black;
 	font-weight: bolder;
 }
 #sesion {
