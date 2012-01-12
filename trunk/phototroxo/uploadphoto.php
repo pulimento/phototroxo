@@ -25,9 +25,9 @@ session_start();
 			
 			
 			if ($_FILES["uploadedphoto"]["error"] > 0) {
-				echo "No ha seleccionado ninguna foto: " . $_FILES["uploadedphoto"]["error"] . "
-			<br />
-			";
+				echo "No ha seleccionado ninguna foto <br /> ";/*. $_FILES["uploadedphoto"]["error"] . "*/
+			
+			
 			} else {
 				$filename = strtolower($_FILES['uploadedphoto']['name']);
 				$whitelist = array('jpg', 'png', 'gif', 'jpeg');

@@ -88,7 +88,7 @@ $idFoto = $_GET["idI"];
 			</div>
 
 			<div id="escribircomentario">
-			<form  onsubmit="return procesarComentario() action="<?php echo $_SERVER['PHP_SELF'] . "?idI=" . $idFoto;?>" method="post"  >
+			<form   action="<?php echo $_SERVER['PHP_SELF'] . "?idI=" . $idFoto;?>" onsubmit="return procesarComentario()" method="post"  >
 			<label id="label_escribecomentario" for="input_escribecomentario">Escribe tu comentario: </label>
 			<input type="text" maxlength="160" id="input_escribecomentario" name="input_escribecomentario"></input>
 			<!-- <input type="hidden" name="input_user" value="<?php echo $idU; ?>"> -->

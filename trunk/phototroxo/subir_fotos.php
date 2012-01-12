@@ -14,10 +14,10 @@ session_start();
 		<!-- INICIO DE JAVASCRIPT -->
 		<!-- Validaci&#243;n del formulario -->
 		<script type="text/javascript" language="JavaScript">
-			function procesarSubirFotos() {
+			function procesarSubirFotos(){
 				//Definici&#243;n de variables
 				var ctrlTitulo = document.getElementById("input_title_uploadphoto");
-				var ctrlSeccionar = document.getElementById("input_uploadedphoto"");
+				var ctrlSeleccionar = document.getElementById("input_uploadphoto");
 				var validado = true;
 				var msgError = "";
 
@@ -33,15 +33,15 @@ session_start();
 					validado = false;
 				}
 
-				if(ctrlSeleccionar.value.length < 6) {
-					msgError += "- La contrase\xF1a debe tener al menos seis caracteres\n";
-					document.getElementById("label_uploadedphoto").setAttribute("class", "error");
+				if(ctrlSeleccionar.value == "") {
+					msgError += "- No ha seleccionado ninguna foto\n";
+					document.getElementById("label_uploadphoto").setAttribute("class", "error");
 					ctrlSeleccionar.value = "";
 					validado = false;
 				}
-
+				
 				if(msgError != "") {
-					alert("Los datos introducidos no son v\xE1lidos, por favor compruebe lo siguiente:\n\n" + msgError);
+					alert("Los datos introducidos no son v\xE1lidos, por favor compruebe los datos: \n" + msgError);
 				}
 				return validado;
 			}
@@ -59,11 +59,11 @@ session_start();
 			<form enctype="multipart/form-data" action="uploadphoto.php" method="post" onsubmit="return procesarSubirFotos()">
 				<div id="titulo_foto">
 					<label id="label_title_uploadphoto" for="title_uploadphoto">T&#237;tulo:</label>
-					<input name="title_uploadphoto" type="text" />
+					<input name="title_uploadphoto" id = "input_title_uploadphoto" type="text" />
 				</div>
 				<div id="seleccionarfoto">
 					<label id="label_uploadphoto" for="uploadedphoto">Selecciona una foto:</label>
-					<input name="uploadedphoto" type="file" />
+					<input name="uploadedphoto" id = "input_uploadphoto" type="file" />
 					<p>
 						Se admiten im&#225;genes en formato JPG, PNG y GIF
 					</p>
