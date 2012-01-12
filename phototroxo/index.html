@@ -4,14 +4,13 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 		<title>&#161;Bienvenido a Phototroxo!</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 		<link rel="stylesheet" type="text/css"  href="stylesheets/estilo_index.css" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
 		<!-- INICIO DE JAVASCRIPT -->
 		<!-- Validaci&#243;n del formulario -->
 		<script type="text/javascript" language="JavaScript">
-			function  procesarIndex() {
-				
+			function procesarIndex() {
+
 				//Definici&#243;n de variables
 				var ctrlUser = document.getElementById("usuario");
 				var ctrlPassword = document.getElementById("password");
@@ -29,19 +28,19 @@
 					ctrlUser.value = "";
 					validado = false;
 				}
-				
+
 				if(ctrlPassword.value.length < 6) {
-					msgError += "- La contraseña debe tener al menos cuatro caracteres\n";
+					msgError += "- La contrase" + String.fromCharCode(241) + "a debe tener al menos cuatro caracteres\n";
 					document.getElementById("label_pass").setAttribute("class", "error");
 					ctrlPassword.value = "";
 					validado = false;
 				}
 
 				/*if(ctrlAcepto.checked == false) {
-					msgError += "- Debe aceptar las condiciones generales y la pol\xEDtica de privacidad\n";
-					document.getElementById("label_acepto").setAttribute("class", "error");
-					validado = false;
-				}*/
+				 msgError += "- Debe aceptar las condiciones generales y la pol\xEDtica de privacidad\n";
+				 document.getElementById("label_acepto").setAttribute("class", "error");
+				 validado = false;
+				 }*/
 
 				if(msgError != "") {
 					alert("Los datos introducidos no son v\xE1lidos, por favor compruebe lo siguiente:\n\n" + msgError);
