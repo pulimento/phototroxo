@@ -30,7 +30,7 @@ div.error {
 #boton_enviar {
 	font-size: 1.1em;
 	color: white;
-	background: #0055FF;
+	background: #045FB4/*#0055FF*/;
 	margin: 20px 0px 0px 20px;
 	width:80px;
 	height:30px; 
