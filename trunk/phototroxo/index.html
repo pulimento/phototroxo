@@ -2,17 +2,18 @@
 "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="es">
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 		<title>&#161;Bienvenido a Phototroxo!</title>
 		<link rel="stylesheet" type="text/css"  href="stylesheets/estilo_index.css" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
 		<!-- INICIO DE JAVASCRIPT -->
 		<!-- Validaci&#243;n del formulario -->
 		<script type="text/javascript" language="JavaScript">
-			function procesarIndex() {
+			function  procesarIndex() {
+				
 				//Definici&#243;n de variables
 				var ctrlUser = document.getElementById("usuario");
-				var ctrlPassword = document.getElementById("pass");
-				var ctrlAcepto = document.getElementById("acepto");
+				var ctrlPassword = document.getElementById("password");
 				var validado = true;
 				var msgError = "";
 
@@ -22,24 +23,24 @@
 				labels[i].setAttribute("class", "default");
 
 				if(ctrlUser.value.length < 4) {
-					msgError += "- El usuario debe tener al menos cuatro caracteres\n";
+					msgError += "- El nombre de usuario debe tener al menos cuatro caracteres\n";
 					document.getElementById("label_usuario").setAttribute("class", "error");
 					ctrlUser.value = "";
 					validado = false;
 				}
-
+				
 				if(ctrlPassword.value.length < 6) {
-					msgError += "- La contrase\xF1a debe tener al menos seis caracteres\n";
+					msgError += "- La contraseña debe tener al menos cuatro caracteres\n";
 					document.getElementById("label_pass").setAttribute("class", "error");
 					ctrlPassword.value = "";
 					validado = false;
 				}
 
-				if(ctrlAcepto.checked == false) {
+				/*if(ctrlAcepto.checked == false) {
 					msgError += "- Debe aceptar las condiciones generales y la pol\xEDtica de privacidad\n";
 					document.getElementById("label_acepto").setAttribute("class", "error");
 					validado = false;
-				}
+				}*/
 
 				if(msgError != "") {
 					alert("Los datos introducidos no son v\xE1lidos, por favor compruebe lo siguiente:\n\n" + msgError);
