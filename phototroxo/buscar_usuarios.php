@@ -15,8 +15,7 @@ session_start();
 		<script type="text/javascript" language="JavaScript">
 			function procesarUsuarios() {
 				//Definici&#243;n de variables
-				var ctrlUser = document.getElementById("input_usuario");
-				var ctrlUser2= document.getElementById("input_confirmarUsuario");
+				var ctrlPalabra = document.getElementById("input_palabra");
 				var validado = true;
 				var msgError = "";
 
@@ -25,24 +24,14 @@ session_start();
 				for( i = 0; i < labels.length; i++)
 				labels[i].setAttribute("class", "default");
 
-				if(ctrlUser.value.length < 4) {
+				if(ctrlPalabra.value.length < 4) {
 					msgError += "- El usuario debe tener al menos cuatro caracteres\n";
-					document.getElementById("label_usuario").setAttribute("class", "error");
-					ctrlUser.value = "";
+					document.getElementById("label_palabra").setAttribute("class", "error");
+					ctrlPalabra.value = "";
 					validado = false;
 				}
-
-				if(ctrlUser2.value != ctrlUser.value) {
-					msgError += "- El usuario no existe\n";
-					document.getElementById("label_usuario").setAttribute("class", "error");
-					document.getElementById("label_confirmacionUsuario").setAttribute("class", "error");
-					validado = false;
-				};
-
 				if(msgError != "") {
-					alert("Los datos introducidos no son v\xE1lidos, por favor compruebe lo siguiente:\n\n" + msgError);
-					ctrlUser2.value = "";
-					
+					alert("Los datos introducidos no son v\xE1lidos, por favor compruebe lo siguiente:\n\n" + msgError);	
 				}
 				return validado;
 			}

@@ -16,9 +16,8 @@ session_start();
 		<script type="text/javascript" language="JavaScript">
 			function procesarSubirFotos() {
 				//Definici&#243;n de variables
-				var ctrluser = document.getElementById("usuario");
-				var ctrlPassword = document.getElementById("pass");
-				var ctrlAcepto = document.getElementById("acepto");
+				var ctrlTitulo = document.getElementById("input_title_uploadphoto");
+				var ctrlSeccionar = document.getElementById("input_uploadedphoto"");
 				var validado = true;
 				var msgError = "";
 
@@ -27,23 +26,17 @@ session_start();
 				for( i = 0; i < labels.length; i++)
 				labels[i].setAttribute("class", "default");
 
-				if(ctrlUser.value.length < 4) {
-					msgError += "- El usuario debe tener al menos cuatro caracteres\n";
-					document.getElementById("label_usuario").setAttribute("class", "error");
-					ctrlUser.value = "";
+				if(ctrlTitulo.value.length < 4) {
+					msgError += "- El titulo debe tener al menos cuatro caracteres\n";
+					document.getElementById("label_title_uploadphoto").setAttribute("class", "error");
+					ctrlTitulo.value = "";
 					validado = false;
 				}
 
-				if(ctrlPassword.value.length < 6) {
+				if(ctrlSeleccionar.value.length < 6) {
 					msgError += "- La contrase\xF1a debe tener al menos seis caracteres\n";
-					document.getElementById("label_pass").setAttribute("class", "error");
-					ctrlPassword.value = "";
-					validado = false;
-				}
-
-				if(ctrlAcepto.checked == false) {
-					msgError += "- Debe aceptar las condiciones generales y la pol\xEDtica de privacidad\n";
-					document.getElementById("label_acepto").setAttribute("class", "error");
+					document.getElementById("label_uploadedphoto").setAttribute("class", "error");
+					ctrlSeleccionar.value = "";
 					validado = false;
 				}
 
@@ -63,7 +56,7 @@ session_start();
 		?> <!-- Contenido -->
 		<div id="div_content">
 			<h2 id="text_subirfotos">Subir Fotos</h2>
-			<form enctype="multipart/form-data" action="uploadphoto.php" method="POST">
+			<form enctype="multipart/form-data" action="uploadphoto.php" method="post" onsubmit="return procesarSubirFotos()">
 				<div id="titulo_foto">
 					<label id="label_title_uploadphoto" for="title_uploadphoto">T&#237;tulo:</label>
 					<input name="title_uploadphoto" type="text" />
