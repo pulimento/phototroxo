@@ -10,13 +10,13 @@ session_start();
 		<link rel="stylesheet" type="text/css" href="stylesheets/estilo_buscar_fotos.css" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
 		<meta name="author" content="Patricia_Raigada" />
-		
 		<!-- INICIO DE JAVASCRIPT -->
 		<!-- Validaci&#243;n del formulario -->
 		<script type="text/javascript" language="JavaScript">
 			function procesarFotos() {
 				//Definici&#243;n de variables
-				var ctrlTitulo = document.getElementById("titulo");
+				var ctrlTitulo = document.getElementById("input_titulo");
+				var ctrlIdI  = document.getElementById("input_idI");
 				var validado = true;
 				var msgError = "";
 
@@ -26,15 +26,22 @@ session_start();
 				labels[i].setAttribute("class", "default");
 
 				if(ctrlTitulo.value.length < 4) {
-					msgError += "- El usuario debe tener al menos cuatro caracteres\n";
+					msgError += "- El titulo debe tener al menos cuatro caracteres\n";
 					document.getElementById("label_titulo").setAttribute("class", "error");
 					ctrlTitulo.value = "";
+					validado = false;
+				}
+				if(ctrlIdI.value != crtlTitulo.value){
+					msgError +="-No hay ninguna imagen con ese titulo\n";
+					document.getElementById("label_titulo").serAttribute("class", "error");
+					document.getElementById("label_confirmarTitulo").serAttribute("class", "error");
 					validado = false;
 				}
 
 
 				if(msgError != "") {
-					alert("El usuario introducido no es v\xE1lido, por favor compruebe lo siguiente:\n\n" + msgError);
+					alert("El  introducido no es v\xE1lido, por favor compruebe lo siguiente:\n\n" + msgError);
+					ctrlTitulo.value= "";
 				}
 				return validado;
 			}
