@@ -13,6 +13,36 @@ $idFoto = $_GET["idI"];
 		<link rel="stylesheet" type="text/css" href="stylesheets/estilo_verfoto.css" />
 		<link href="images/favicon.ico" rel="shortcut icon" />
 		<meta name="author" content="Javi Pulido" />
+		
+		<!-- INICIO DE JAVASCRIPT -->
+		<!-- Validaci&#243;n del formulario -->
+		<script type="text/javascript" language="JavaScript">
+			function procesarComentario() {
+				//Definici&#243;n de variables
+				var ctrlEscribircomentario = document.getElementById("input_escribecomentario");
+				var validado = true;
+				var msgError = "";
+
+				//Pone todos los labels en negro, &#250;til si el usuario se equivoca dos veces
+				var labels = document.getElementsByTagName("label"), i;
+				for( i = 0; i < labels.length; i++)
+				labels[i].setAttribute("class", "default");
+
+				if(ctrlEscribircomentario.value.length < 2) {
+					msgError += "- El comentario debe tener al menos dos caracteres\n";
+					document.getElementById("label_escribecomentario").setAttribute("class", "error");
+					ctrlEscribircomentario.value = "";
+					validado = false;
+				}
+
+				if(msgError != "") {
+					alert("Los datos introducidos no son v\xE1lidos, por favor compruebe lo siguiente:\n\n" + msgError);
+				}
+				return validado;
+			}
+		</script>
+		<!-- Fin de validaci&#243;n del formulario -->
+		<!-- FIN DE JAVASCRIPT -->
 	</head>
 	<body>
 		<!-- Cabecera(logo y men&#250;) -->
@@ -58,7 +88,7 @@ $idFoto = $_GET["idI"];
 			</div>
 
 			<div id="escribircomentario">
-			<form method="post" action="<?php echo $_SERVER['PHP_SELF'] . "?idI=" . $idFoto;?>">
+			<form  onsubmit="return procesarComentario() action="<?php echo $_SERVER['PHP_SELF'] . "?idI=" . $idFoto;?>" method="post"  >
 			<label id="label_escribecomentario" for="input_escribecomentario">Escribe tu comentario: </label>
 			<input type="text" maxlength="160" id="input_escribecomentario" name="input_escribecomentario"></input>
 			<!-- <input type="hidden" name="input_user" value="<?php echo $idU; ?>"> -->
