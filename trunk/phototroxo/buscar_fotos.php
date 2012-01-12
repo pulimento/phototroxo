@@ -15,8 +15,7 @@ session_start();
 		<script type="text/javascript" language="JavaScript">
 			function procesarFotos() {
 				//Definici&#243;n de variables
-				var ctrlTitulo = document.getElementById("input_titulo");
-				var ctrlIdI  = document.getElementById("input_idI");
+				var ctrlPalabra = document.getElementById("input_palabra");
 				var validado = true;
 				var msgError = "";
 
@@ -25,23 +24,16 @@ session_start();
 				for( i = 0; i < labels.length; i++)
 				labels[i].setAttribute("class", "default");
 
-				if(ctrlTitulo.value.length < 4) {
+				if(ctrlPalabra.value.length < 4) {
 					msgError += "- El titulo debe tener al menos cuatro caracteres\n";
-					document.getElementById("label_titulo").setAttribute("class", "error");
-					ctrlTitulo.value = "";
+					document.getElementById("label_palabra").setAttribute("class", "error");
+					ctrlPalabra.value = "";
 					validado = false;
 				}
-				if(ctrlIdI.value != crtlTitulo.value){
-					msgError +="-No hay ninguna imagen con ese titulo\n";
-					document.getElementById("label_titulo").serAttribute("class", "error");
-					document.getElementById("label_confirmarTitulo").serAttribute("class", "error");
-					validado = false;
-				}
-
-
+				
 				if(msgError != "") {
 					alert("El  introducido no es v\xE1lido, por favor compruebe lo siguiente:\n\n" + msgError);
-					ctrlTitulo.value= "";
+					
 				}
 				return validado;
 			}
