@@ -59,22 +59,7 @@ input, select, textarea {
 #password2 {
 	width: 14em;
 }
-label.default {
-	color: black;
-	font-weight: normal;
-}
-/* Etiquetas de campos erroneos */
-label.error {
-	color: red;
-	font-weight: bold;
-}
-/* Mensajes de Error */
-div.error {
-	color: #A52A2A; /* brown */
-	border: 2px solid red;
-	padding: 10px;
-	margin: 10px;
-}
+
 #div_info {
 	margin-top: -20px;
 }
