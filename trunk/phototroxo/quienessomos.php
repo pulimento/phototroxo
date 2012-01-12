@@ -19,8 +19,8 @@ $idU = $_SESSION["idUsuario"];
 		<?php
 		include ("cabecera.php");
 		?>
-		<div id="quienes_somos">
-			<h1> ¿Qui&#233;nes somos?</h1>
+		<div id="quienes_somos">			
+			<h1>&iquest;Qui&#233;nes somos?</h1>
 			<p>
 				Somos un grupo de estudiantes de Ingenier&#237;a Inform&#225;tica de Gesti&#243;n.
 
